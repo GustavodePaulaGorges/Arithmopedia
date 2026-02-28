@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d0dchjb1ekkto"
+path="res://.godot/imported/JDSherbert - Pixel UI SFX Pack - Cancel 2 (Saw).mp3-544c7cadf4f92f20fba2832983afd143.mp3str"
+
+[deps]
+
+source_file="res://assets/SFX/JDSherbert - Pixel UI SFX Pack (FREE)/Stereo/mp3/JDSherbert - Pixel UI SFX Pack - Cancel 2 (Saw).mp3"
+dest_files=["res://.godot/imported/JDSherbert - Pixel UI SFX Pack - Cancel 2 (Saw).mp3-544c7cadf4f92f20fba2832983afd143.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

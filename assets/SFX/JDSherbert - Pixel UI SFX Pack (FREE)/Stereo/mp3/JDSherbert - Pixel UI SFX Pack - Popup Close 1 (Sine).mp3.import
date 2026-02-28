@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d185dsxgl67vf"
+path="res://.godot/imported/JDSherbert - Pixel UI SFX Pack - Popup Close 1 (Sine).mp3-90f86e6b463611fd849c1ab1fdeec554.mp3str"
+
+[deps]
+
+source_file="res://assets/SFX/JDSherbert - Pixel UI SFX Pack (FREE)/Stereo/mp3/JDSherbert - Pixel UI SFX Pack - Popup Close 1 (Sine).mp3"
+dest_files=["res://.godot/imported/JDSherbert - Pixel UI SFX Pack - Popup Close 1 (Sine).mp3-90f86e6b463611fd849c1ab1fdeec554.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bfw6bmjistpgw"
+path="res://.godot/imported/JDSherbert - Pixel UI SFX Pack - Select 1 (Sine).mp3-9b87cc6ce2b652bf13c04b53019db831.mp3str"
+
+[deps]
+
+source_file="res://assets/SFX/JDSherbert - Pixel UI SFX Pack (FREE)/Stereo/mp3/JDSherbert - Pixel UI SFX Pack - Select 1 (Sine).mp3"
+dest_files=["res://.godot/imported/JDSherbert - Pixel UI SFX Pack - Select 1 (Sine).mp3-9b87cc6ce2b652bf13c04b53019db831.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
