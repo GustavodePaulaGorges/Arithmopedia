@@ -3,7 +3,7 @@ extends Node2D
 
 @export var tower_packed_scene : PackedScene = null
 @export var building_manager : BuildingManager = null
-@onready var towers_path: TileMapLayer = $Towers_Path
+@onready var towers_path: TileMapLayer = $TowersPath
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_mouse"):
