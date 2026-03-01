@@ -3,7 +3,7 @@ extends Node2D
 
 signal spawning_phase_complete
 
-@export var wave_data_array : Array = ["Enemy 1", "Enemy2", "Enemy3", "Enemy4"]
+@export var wave_data_array : Array = [12, 23, 43, 12]
 @export var path2D : Path2D
 @onready var enemy_container = $EnemyContainer
 @export var enemy_scene: PackedScene
@@ -31,8 +31,9 @@ func spawn_entity() -> void:
 	path_follow.progress_ratio = 0.0
 	path2D.add_child(path_follow)
 
-	var enemy = enemy_scene.instantiate()
-	path_follow.add_child(enemy)
+	var new_enemy = enemy_scene.instantiate()
+	new_enemy.value = wave_data_array[current_data_index]
+	path_follow.add_child(new_enemy)
 
 func _on_enemy_spawn_timer_timeout() -> void:
 	spawn_entity()
