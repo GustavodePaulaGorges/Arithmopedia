@@ -9,10 +9,6 @@ const GRID_SIZE : int = 16
 
 var used_tiles : Array[Vector2i] = []
 
-## Posiciona a torre
-## @param cell_position: posição da célula na grid
-## @param instância da cena da torre
-## @return void
 func place_tower(cell_position : Vector2i, tower_packed_scene : PackedScene) -> void:
 	if check_valid_tower_placement(cell_position) == false:
 		return
@@ -24,9 +20,6 @@ func place_tower(cell_position : Vector2i, tower_packed_scene : PackedScene) -> 
 	new_tower.add_to_group(TOWER_GROUP)
 	used_tiles.append(cell_position)
 
-## Valida se a posição é válida para colocar uma torre
-## @param cell_position: posição da célula na grid
-## @return bool se a posição é valida
 func check_valid_tower_placement(cell_position : Vector2i) -> bool :
 	var is_buildable : bool = false
 	if used_tiles.has(cell_position):

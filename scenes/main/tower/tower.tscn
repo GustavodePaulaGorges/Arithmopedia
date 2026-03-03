@@ -1,24 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4yo87akx7jhi"]
+[gd_scene format=3 uid="uid://c4yo87akx7jhi"]
 
 [ext_resource type="Script" uid="uid://cixsmdntxro1b" path="res://scenes/main/tower/tower.gd" id="1_5u4p8"]
 [ext_resource type="Texture2D" uid="uid://b53u8yaycu0ee" path="res://assets/tiles/TorreAdd.png" id="1_042oj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vbt5a"]
 
-[node name="Tower" type="Node2D"]
+[node name="Tower" type="Node2D" unique_id=2087895256]
 z_index = 10
 script = ExtResource("1_5u4p8")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=462963214]
 texture = ExtResource("1_042oj")
 centered = false
 offset = Vector2(0, -16)
 
-[node name="Range" type="Area2D" parent="."]
+[node name="Range" type="Area2D" parent="." unique_id=1333266463]
 position = Vector2(8, 0)
 scale = Vector2(4, 4)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range" unique_id=837808943]
 shape = SubResource("CircleShape2D_vbt5a")
 
 [connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]

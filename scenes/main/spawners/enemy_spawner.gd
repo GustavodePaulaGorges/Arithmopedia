@@ -5,7 +5,6 @@ signal spawning_phase_complete
 
 @export var wave_data_array : Array = [12, 23, 43, 12]
 @export var path2D : Path2D
-@onready var enemy_container = $EnemyContainer
 @export var enemy_scene: PackedScene
 @onready var enemy_spawn_timer: Timer = $EnemySpawnTimer
 
