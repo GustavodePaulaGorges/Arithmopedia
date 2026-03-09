@@ -15,14 +15,16 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Arithmopedia"
-run/main_scene="uid://mn568pawd17v"
-config/features=PackedStringArray("4.6", "Forward Plus")
+run/main_scene="uid://bvn8x7qkl2r3h"
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
 window/size/viewport_width=304
 window/size/viewport_height=224
+window/size/window_width_override=1216
+window/size/window_height_override=896
 window/stretch/mode="viewport"
 
 [input]

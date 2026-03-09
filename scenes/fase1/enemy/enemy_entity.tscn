@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/TorreDup.png" id="1_e1dtm"]
+[ext_resource type="Script" path="res://scenes/fase1/enemy/enemy_entity.gd" id="1_pn256"]
+[ext_resource type="FontFile" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="3_mloq0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fyono"]
+
+[node name="EnemyEntity" type="CharacterBody2D"]
+script = ExtResource("1_pn256")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_e1dtm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fyono")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -34.0
+offset_right = 20.0
+offset_bottom = -11.0
+theme_override_fonts/font = ExtResource("3_mloq0")
+horizontal_alignment = 1
+vertical_alignment = 1

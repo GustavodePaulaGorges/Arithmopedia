@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://crch8n1sec1bf"]
-
-[ext_resource type="Script" uid="uid://bp5tsxbu2ybav" path="res://scenes/main/managers/path_finding_manager.gd" id="1_2oqjf"]
-
-[node name="PathFindingManager" type="Node"]
-script = ExtResource("1_2oqjf")
