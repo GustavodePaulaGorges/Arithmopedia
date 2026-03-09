@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://df3j32cnb2wcn"]
 
 [ext_resource type="Script" path="res://scenes/fase1/tower/addition_tower.gd" id="1_addition"]
 

@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://d36v5y8k6osia"]
 
-[ext_resource type="Script" path="res://scenes/fase1/enemy_spawner/enemy_spawner.gd" id="1_w1txr"]
-[ext_resource type="Texture2D" path="res://assets/sprites/PortalSaida.png" id="2_amm7g"]
-[ext_resource type="FontFile" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="3_hn13w"]
+[ext_resource type="Script" uid="uid://dy1ue2qxds8nl" path="res://scenes/fase1/enemy_spawner/enemy_spawner.gd" id="1_w1txr"]
+[ext_resource type="Texture2D" uid="uid://cj0kmco813epu" path="res://assets/sprites/PortalSaida.png" id="2_amm7g"]
+[ext_resource type="FontFile" uid="uid://bh8kpdc46m6i8" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="3_hn13w"]
 
 [node name="EnemySpawner" type="Node2D"]
 script = ExtResource("1_w1txr")

@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://cdkgaiv2pscev"]
 
-[ext_resource type="Script" path="res://scenes/fase1/highlight_tile/highlight_tile.gd" id="1_fowp3"]
-[ext_resource type="Texture2D" path="res://assets/tiles/HighlightTile.png" id="2_p84gw"]
+[ext_resource type="Script" uid="uid://cmfv48xctqvis" path="res://scenes/fase1/highlight_tile/highlight_tile.gd" id="1_fowp3"]
+[ext_resource type="Texture2D" uid="uid://vvw4wp2q2c4i" path="res://assets/tiles/HighlightTile.png" id="2_p84gw"]
 
 [node name="HighlightTile" type="Node2D"]
 script = ExtResource("1_fowp3")

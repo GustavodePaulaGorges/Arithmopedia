@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://bdefeatmodal"]
 
-[ext_resource type="Script" path="res://scenes/fase1/modals/defeat_modal.gd" id="1"]
-[ext_resource type="FontFile" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="2_pxkdm"]
+[ext_resource type="Script" uid="uid://n2my7c6pi1vo" path="res://scenes/fase1/modals/defeat_modal.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://bh8kpdc46m6i8" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="2_pxkdm"]
 
 [node name="DefeatModal" type="Control"]
 process_mode = 3

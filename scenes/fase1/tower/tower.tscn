@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://c4yo87akx7jhi"]
 
-[ext_resource type="Script" path="res://scenes/fase1/tower/tower.gd" id="1_5u4p8"]
+[ext_resource type="Script" uid="uid://cixsmdntxro1b" path="res://scenes/fase1/tower/tower.gd" id="1_5u4p8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vbt5a"]
 

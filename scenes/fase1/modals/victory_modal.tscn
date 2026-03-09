@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://bvictorymodal"]
 
-[ext_resource type="Script" path="res://scenes/fase1/modals/victory_modal.gd" id="1"]
-[ext_resource type="FontFile" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="2_swph3"]
+[ext_resource type="Script" uid="uid://bhytrqt0f5kt2" path="res://scenes/fase1/modals/victory_modal.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://bh8kpdc46m6i8" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="2_swph3"]
 
 [node name="VictoryModal" type="Control"]
 process_mode = 3

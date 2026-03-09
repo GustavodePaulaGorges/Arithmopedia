@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=5 format=3 uid="uid://bvn8x7qkl2r3h"]
 
-[ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_main_menu"]
-[ext_resource type="Texture2D" path="res://assets/sprites/MainMenu.png" id="2_0ebjn"]
-[ext_resource type="FontFile" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="2_ob46e"]
-[ext_resource type="Texture2D" path="res://assets/sprites/MainMenuLabel.svg" id="3_main_menu_label"]
+[ext_resource type="Script" uid="uid://dpy1w6n2xfbsk" path="res://scenes/main_menu/main_menu.gd" id="1_main_menu"]
+[ext_resource type="Texture2D" uid="uid://dbeyc2sy5xpe4" path="res://assets/sprites/MainMenu.png" id="2_0ebjn"]
+[ext_resource type="FontFile" uid="uid://bh8kpdc46m6i8" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="2_ob46e"]
+[ext_resource type="Texture2D" uid="uid://bpenpun4nmug6" path="res://assets/sprites/MainMenuLabel.svg" id="3_main_menu_label"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
