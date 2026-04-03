@@ -5,12 +5,24 @@ extends Node
 @export var level_manager: LevelManager
 @export var addition_tower_scene: PackedScene
 @export var subtraction_tower_scene: PackedScene
+@export var tower_count: Dictionary
+
+signal tower_count_updated(tower_count: Dictionary)
 
 const IS_BUILDABLE_STR : String = "buildable"
 const TOWER_GROUP : String = "TOWER_GROUP"
 const GRID_SIZE : int = 16
 
 var used_tiles : Array[Vector2i] = []
+
+func _ready():
+	add_to_group("building_manager")
+
+func validate_tower_count(towerType: TowerTypes.TowerType) -> bool:
+	if tower_count[towerType] > 0:
+		return true
+	else:
+		return false
 
 func place_tower(cell_position : Vector2i, tower_type: TowerTypes.TowerType) -> void:
 	if check_valid_tower_placement(cell_position) == false:
@@ -24,15 +36,22 @@ func place_tower(cell_position : Vector2i, tower_type: TowerTypes.TowerType) -> 
 			tower_scene = subtraction_tower_scene
 		_:
 			return
+
+	if !validate_tower_count(tower_type):
+		return
+
 	var new_tower : Node2D = tower_scene.instantiate()
 	add_child(new_tower)
 	
 	new_tower.position = cell_position * GRID_SIZE
 	new_tower.level_manager = level_manager
+	new_tower.tower_type = tower_type
 	new_tower.add_to_group(TOWER_GROUP)
 
 	connect_tower_to_spawner(new_tower)
 
+	tower_count[tower_type] -= 1
+	tower_count_updated.emit(tower_count)
 	used_tiles.append(cell_position)
 
 func connect_tower_to_spawner(tower: Node2D) -> void:
@@ -65,9 +84,12 @@ func remove_tower(cell_position : Vector2i) -> void:
 	
 	var tower_to_remove = get_tower_at_position(cell_position)
 	if tower_to_remove:
+		var tower_type = tower_to_remove.tower_type
 		disconnect_tower_from_spawner(tower_to_remove)
 		tower_to_remove.remove_from_group(TOWER_GROUP)
 		tower_to_remove.queue_free()
+		tower_count[tower_type] += 1
+		tower_count_updated.emit(tower_count)
 		used_tiles.erase(cell_position)
 
 func check_valid_tower_removal(cell_position : Vector2i) -> bool:

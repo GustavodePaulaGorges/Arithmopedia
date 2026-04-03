@@ -2,6 +2,7 @@ class_name TowerEntity
 extends Node2D
 
 @export var level_manager: LevelManager
+@export var tower_type: TowerTypes.TowerType
 
 signal request_spawn_enemy(ratio: float, value: int, creator_tower: TowerEntity)
 

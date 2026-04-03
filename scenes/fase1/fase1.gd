@@ -12,11 +12,16 @@ extends Node2D
 @onready var tower_selector: TowerSelector = $UI/TowerSelector
 @onready var horde_button: Button = $UI/HordeButton
 
+## Variaveis da fase
 var selected_tower_type: TowerTypes.TowerType = TowerTypes.TowerType.ADDITION
+var tower_count = {
+	TowerTypes.TowerType.ADDITION: 1,
+	TowerTypes.TowerType.SUBTRACTION: 1
+}
+var enemy_array : Array[int] = [10, 8, 3, 2]
 
 func _ready():
 	if level_manager and enemy_spawner:
-		var enemy_array: Array[int] = [10, 8, 3, 2]
 		var victory_condition = LevelManager.VictoryCondition.new(
 			LevelManager.VictoryType.ALL_GREATER_THAN, 
 			10
@@ -34,6 +39,7 @@ func _ready():
 		building_manager.towers_path = towers_path
 		building_manager.addition_tower_scene = addition_tower_scene
 		building_manager.subtraction_tower_scene = subtraction_tower_scene
+		building_manager.tower_count = tower_count
 	else:
 		print("ERRO: Building manager ou towers_path não encontrados")
 		if not building_manager:

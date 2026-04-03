@@ -548,10 +548,10 @@ grow_vertical = 2
 
 [node name="TowerSelector" parent="UI" instance=ExtResource("11_tower_selector")]
 layout_mode = 1
-offset_left = 212.0
-offset_top = 165.0
-offset_right = 372.0
-offset_bottom = 225.0
+offset_left = 242.0
+offset_top = 170.0
+offset_right = 299.0
+offset_bottom = 220.0
 
 [node name="HordeButton" type="Button" parent="UI"]
 layout_mode = 1
