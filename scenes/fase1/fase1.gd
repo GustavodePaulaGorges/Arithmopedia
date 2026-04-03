@@ -65,6 +65,18 @@ func _unhandled_input(event: InputEvent) -> void:
 			return
 			
 		building_manager.place_tower(cell_position, selected_tower_type)
+		
+	if event.is_action_pressed("right_mouse"):
+		if not towers_path:
+			print("ERRO: towers_path não encontrado")
+			return
+			
+		var cell_position : Vector2i = towers_path.local_to_map(towers_path.get_local_mouse_position())
+	
+		if not building_manager:
+			return
+			
+		building_manager.remove_tower(cell_position)
 
 func _on_tower_selected(tower_type: TowerTypes.TowerType):
 	selected_tower_type = tower_type
