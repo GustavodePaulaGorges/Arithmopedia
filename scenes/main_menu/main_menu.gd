@@ -16,7 +16,7 @@ func _process(delta):
 	main_menu_label.rotation = rotation_rad
 
 func _on_start_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/fase1/fase1.tscn")
+	get_tree().change_scene_to_file("res://scenes/stage_selector/stage_selector.tscn")
 
 func _on_quit_button_pressed():
 	get_tree().quit()

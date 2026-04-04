@@ -2,6 +2,7 @@ class_name EnemySpawner
 extends Node2D
 
 signal spawning_phase_complete
+signal wave_updated(wave_data_array: Array[int], current_data_index: int)
 
 @export var wave_data_array : Array[int] = []
 @export var path2D : Path2D
@@ -9,7 +10,6 @@ signal spawning_phase_complete
 @export var level_manager: LevelManager
 
 @onready var enemy_spawn_timer: Timer = $EnemySpawnTimer
-@onready var wave_label: RichTextLabel = $WaveLabel
 
 const DEFAULT_SPAWN_DELAY : float = 1.0
 
@@ -20,7 +20,7 @@ func _ready() -> void:
 
 	enemy_spawn_timer.wait_time = DEFAULT_SPAWN_DELAY
 	
-	update_wave_label()
+	wave_updated.emit(wave_data_array, current_data_index)
 
 
 func start_spawning() -> void:
@@ -65,24 +65,4 @@ func spawn_enemy_near_position(ratio: float, value: int, creator_tower: TowerEnt
 func _on_enemy_spawn_timer_timeout() -> void:
 	spawn_entity()
 	current_data_index += 1
-	update_wave_label()
-
-
-func update_wave_label() -> void:
-	if wave_data_array.is_empty():
-		wave_label.text = "horda:\n[]"
-		return
-	
-	var formatted_text = "horda:\n["
-	for i in range(wave_data_array.size()):
-		var enemy_value = wave_data_array[i]
-		if i == current_data_index and i < wave_data_array.size():
-			formatted_text += "[color=red]" + str(enemy_value) + "[/color]"
-		else:
-			formatted_text += str(enemy_value)
-		
-		if i < wave_data_array.size() - 1:
-			formatted_text += ", "
-	
-	formatted_text += "]"
-	wave_label.text = formatted_text
+	wave_updated.emit(wave_data_array, current_data_index)

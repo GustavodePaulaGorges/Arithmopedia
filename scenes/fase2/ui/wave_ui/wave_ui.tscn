@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvn7x8k7m4oap"]
+
+[ext_resource type="Script" uid="uid://bxgyt3qbn0vvn" path="res://scenes/fase2/ui/wave_ui/wave_ui.gd" id="1_wave_ui"]
+[ext_resource type="FontFile" uid="uid://bh8kpdc46m6i8" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="2_font"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_moa4t"]
+bg_color = Color(0, 0, 0, 0.4117647)
+
+[node name="WaveUI" type="Control"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.57100004
+anchor_right = 0.5
+anchor_bottom = 0.57100004
+offset_left = -152.0
+offset_top = -127.90401
+offset_right = -59.0
+offset_bottom = -71.90401
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wave_ui")
+
+[node name="WaveLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_right = 93.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_font")
+theme_override_font_sizes/normal_font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_moa4t")
+bbcode_enabled = true
+text = "horda:"
+autowrap_mode = 1

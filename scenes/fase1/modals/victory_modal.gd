@@ -5,7 +5,8 @@ func _ready():
 
 func _on_ok_button_pressed():
 	get_tree().paused = false
-	get_tree().reload_current_scene()
+	ProgressManager.complete_stage(1)
+	get_tree().change_scene_to_file("res://scenes/stage_selector/stage_selector.tscn")
 
 func show_modal():
 	visible = true

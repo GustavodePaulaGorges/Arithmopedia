@@ -1,4 +1,4 @@
-class_name BuildingManager
+class_name BuildingManager1
 extends Node
 
 @export var towers_path : TileMapLayer = null
