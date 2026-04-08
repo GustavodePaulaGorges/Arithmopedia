@@ -1,5 +1,7 @@
 extends Control
 
+@onready var prize_label: Label = $CenterContainer/Panel/VBoxContainer/PrizeLabel
+
 func _ready():
 	$CenterContainer/Panel/VBoxContainer/OKButton.pressed.connect(_on_ok_button_pressed)
 
@@ -15,3 +17,6 @@ func show_modal():
 func hide_modal():
 	visible = false
 	get_tree().paused = false
+
+func set_prize_text(text: String):
+	prize_label.text = text

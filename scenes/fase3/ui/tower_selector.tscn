@@ -1,0 +1,88 @@
+[gd_scene load_steps=3 format=3 uid="uid://fqn8x8k7m4oap"]
+
+[ext_resource type="Script" uid="uid://fqloyescahmf6" path="res://scenes/fase3/ui/tower_selector.gd" id="1_tower_selector"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dark"]
+bg_color = Color(0.2, 0.2, 0.2, 0.8)
+
+[node name="TowerSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_tower_selector")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.017
+anchor_top = -0.020000001
+anchor_right = -0.017
+anchor_bottom = -0.020000001
+offset_left = -0.013999879
+offset_top = 0.0200001
+offset_right = 60.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dark")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.017
+anchor_top = -0.020000001
+anchor_right = -0.017
+anchor_bottom = -0.020000001
+offset_left = -0.013999879
+offset_top = 0.0200001
+offset_right = 60.0
+offset_bottom = 53.0
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="Tower1Container" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(16, 32)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Tower1Container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.986
+offset_top = -0.0200001
+offset_right = 2.014
+offset_bottom = 0.9599991
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="HBoxContainer/Tower1Container/MarginContainer"]
+layout_mode = 2
+ratio = 0.5
+
+[node name="Tower2Container" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(16, 32)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Tower2Container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.98600006
+offset_right = 12.014
+offset_bottom = 0.97999954
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="HBoxContainer/Tower2Container/MarginContainer"]
+layout_mode = 2
+ratio = 0.5

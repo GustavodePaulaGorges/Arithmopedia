@@ -27,9 +27,11 @@ var victory_condition = LevelManager2.VictoryCondition.new(
 )
 var stage_title: String = "Fase 2 (A arte de fazer menos)"
 var stage_criteria: String = "Fazer um número menor que 10"
+var stage_history: String = "A trilha adiante leva Pitáclides a um vale onde os números ecoam como montanhas: grandes demais, pesados demais, desbalanceados demais. O Khaos distorceu suas proporções, e agora eles não cabem mais no caminho estreito que leva ao próximo capítulo da Arithmopedia."
+var prize_text: String = "A subtração não segue as mesmas propriedades da adição: ela não é comutativa (a − b ≠ b − a na maior parte dos casos) e também não é associativa, isto é, (a − b) − c geralmente produz algo diferente de a − (b − c). É por isso que, em situações onde operações aparecem em sequência, a ordem altera profundamente o resultado. Essa é uma das primeiras lições sobre operações mistas, é exatamente o tipo de princípio que Pitáclides domina melhor do que qualquer outro mago de Mathemas."
 
 func _ready():
-	stage_info_modal.set_stage_info(stage_title, stage_criteria)
+	stage_info_modal.set_stage_info(stage_title, stage_criteria, stage_history)
 	stage_info_modal.show_modal()
 	
 	if level_manager and enemy_spawner:
@@ -61,12 +63,13 @@ func _ready():
 	
 	if tower_selector:
 		tower_selector.tower_selected.connect(_on_tower_selected)
-	
+
 	if horde_button:
 		horde_button.pressed.connect(_on_horde_button_pressed)
 
 func _on_level_completed():
 	print("=== FASE 2 COMPLETADA ===")
+	victory_modal.set_prize_text(prize_text)
 	victory_modal.show_modal()
 	ProgressManager.complete_stage(2)
 

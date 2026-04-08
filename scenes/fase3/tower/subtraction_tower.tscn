@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://fqn14x8k7m4oap"]
+
+[ext_resource type="Script" path="res://scenes/fase3/tower/subtraction_tower.gd" id="1_subtraction"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_subtraction"]
+
+[node name="SubtractionTower" type="Node2D"]
+z_index = 10
+script = ExtResource("1_subtraction")
+
+[node name="Range" type="Area2D" parent="."]
+position = Vector2(8, 0)
+scale = Vector2(4, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_subtraction")
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]

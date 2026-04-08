@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://fdkgaiv2pscev"]
+
+[ext_resource type="Script" uid="uid://fqmf48xctqvis" path="res://scenes/fase3/highlight_tile/highlight_tile.gd" id="1_fowp3"]
+[ext_resource type="Texture2D" uid="uid://vvw4wp2q2c4i" path="res://assets/tiles/HighlightTile.png" id="2_p84gw"]
+
+[node name="HighlightTile" type="Node2D"]
+script = ExtResource("1_fowp3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+texture = ExtResource("2_p84gw")
+centered = false

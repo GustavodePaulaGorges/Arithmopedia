@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvn8x8k7m4oap"]
 
-[ext_resource type="Script" uid="uid://0loyescahmf6" path="res://scenes/fase2/ui/tower_selector.gd" id="1_tower_selector"]
+[ext_resource type="Script" uid="uid://cx7w8k9m4oap" path="res://scenes/fase2/ui/tower_selector.gd" id="1_tower_selector"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dark"]
 bg_color = Color(0.2, 0.2, 0.2, 0.8)

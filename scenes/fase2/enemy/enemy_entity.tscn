@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bkcupgpoqbfn0"]
 
 [ext_resource type="Texture2D" uid="uid://dqrv4l01d5pnu" path="res://assets/sprites/TorreDup.png" id="1_e1dtm"]
-[ext_resource type="Script" uid="uid://c6e5kbqox6xkt" path="res://scenes/fase2/enemy/enemy_entity.gd" id="1_pn256"]
+[ext_resource type="Script" uid="uid://nco6lurp7ylu" path="res://scenes/fase2/enemy/enemy_entity.gd" id="1_pn256"]
 [ext_resource type="FontFile" uid="uid://bh8kpdc46m6i8" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="3_mloq0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fyono"]

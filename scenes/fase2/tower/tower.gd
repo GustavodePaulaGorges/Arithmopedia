@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 	pass
 
 func _on_range_body_entered(body: Node2D) -> void:
-	if body and body.creator_tower != self:
+	if body is EnemyEntity2 and body.creator_tower != self:
 		enemy_array.append(body)
 
 func _on_range_body_exited(body: Node2D) -> void:

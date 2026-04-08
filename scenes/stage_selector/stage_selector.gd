@@ -14,6 +14,11 @@ var stages = [
 		"id": 2,
 		"name": "Fase 2", 
 		"scene_path": "res://scenes/fase2/fase2.tscn"
+	},
+	{
+		"id": 3,
+		"name": "Fase 3", 
+		"scene_path": "res://scenes/fase3/fase3.tscn"
 	}
 ]
 
@@ -40,7 +45,7 @@ func _create_stage_buttons():
 	# Cria botões para cada fase
 	for stage_data in stages:
 		var stage_button = Button.new()
-		stage_button.custom_minimum_size = Vector2(120, 120)
+		stage_button.custom_minimum_size = Vector2(80, 80)
 		stage_button.text = stage_data.name
 		stage_button.add_theme_font_size_override("font_size", 24)
 		

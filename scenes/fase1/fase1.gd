@@ -26,9 +26,11 @@ var victory_condition = LevelManager.VictoryCondition.new(
 )
 var stage_title: String = "Tutorial/Fase 1 (Começando a aventura)"
 var stage_criteria: String = "Fazer números maiores que 6"
+var stage_history: String = "Após o roubo da Arithmopedia, os primeiros números fugitivos escaparam pela ponte de Mathemas. Eles são pequenos e inofensivos, mas ainda seguem uma lógica, por enquanto.\nPitáclides, o único mago imune ao Khaos, precisa começar a organizar esses números.\nDe repente, ele se lembra da torre somatória, uma de suas antigas magias que reage à harmonia dos pares."
+var prize_text: String = "A soma é comutativa e associativa, isto é, a ordem dos termos não altera o resultado final nem a forma como você os agrupa. Num sentido prático para esta fase: somar 3+4 ou 4+3 dá o mesmo 7; mas como as torres consomem pares sequenciais, a posição importa para a jogabilidade mesmo quando a operação matemática em si é indiferente à ordem."
 
 func _ready():
-	stage_info_modal.set_stage_info(stage_title, stage_criteria)
+	stage_info_modal.set_stage_info(stage_title, stage_criteria, stage_history)
 	stage_info_modal.show_modal()
 	
 	if level_manager and enemy_spawner:
@@ -65,6 +67,8 @@ func _ready():
 		horde_button.pressed.connect(_on_horde_button_pressed)
 
 func _on_level_completed():
+	print("=== FASE 1 COMPLETADA ===")
+	victory_modal.set_prize_text(prize_text)
 	victory_modal.show_modal()
 	ProgressManager.complete_stage(1) 
 

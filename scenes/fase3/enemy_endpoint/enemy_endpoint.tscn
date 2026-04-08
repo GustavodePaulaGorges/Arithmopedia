@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://fqn12x8k7m4oap"]
+
+[ext_resource type="Texture2D" uid="uid://dw863rqeic8lo" path="res://assets/sprites/PortalEntrada.png" id="1_iikx5"]
+[ext_resource type="Script" uid="uid://fq7uohv7s83r4g" path="res://scenes/fase3/enemy_endpoint/enemy_endpoint.gd" id="1_nlqal"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iikx5"]
+
+[node name="enemy_endpoint" type="Node2D"]
+script = ExtResource("1_nlqal")
+
+[node name="PortalEntrada" type="Sprite2D" parent="."]
+texture = ExtResource("1_iikx5")
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_iikx5")
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]

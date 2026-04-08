@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ipxycq540ak7"]
 
-[ext_resource type="Script" uid="uid://jn6sxucy1xab" path="res://scenes/stage_selector/stage_selector.gd" id="1_stage_selector"]
+[ext_resource type="Script" uid="uid://dno6wg7w2dfn5" path="res://scenes/stage_selector/stage_selector.gd" id="1_stage_selector"]
 [ext_resource type="FontFile" uid="uid://bh8kpdc46m6i8" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="2_font"]
 
 [node name="StageSelector" type="Control"]
