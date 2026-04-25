@@ -6,7 +6,7 @@ extends Node2D
 @export var building_manager : BuildingManager2 = null
 @export var level_manager: LevelManager2 = null
 @export var enemy_spawner: EnemySpawner2 = null
-@onready var towers_path: TileMapLayer = $TowersPath
+@onready var towers_path: TileMapLayer = $Towers
 @onready var victory_modal: Control = $VictoryModal
 @onready var defeat_modal: Control = $DefeatModal
 @onready var stage_info_modal: Control = $StageInfoModal

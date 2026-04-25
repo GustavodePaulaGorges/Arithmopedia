@@ -4,10 +4,16 @@ extends Control
 var rotation_speed = 2.0
 var max_rotation = 3
 var time = 0.0
+var cursor = load("res://assets/light_cursor_1.png")
+var point = load("res://assets/light_cursor_point.png")
 
 func _ready():
 	$VBoxContainer/StartButton.pressed.connect(_on_start_button_pressed)
 	$VBoxContainer/QuitButton.pressed.connect(_on_quit_button_pressed)
+	
+	## define os sprite do cursor
+	Input.set_custom_mouse_cursor(cursor)
+	Input.set_custom_mouse_cursor(point, Input.CURSOR_POINTING_HAND)
 
 func _process(delta):
 	time += delta

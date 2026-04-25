@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bvn8x7qkl2r3h"]
 
-[ext_resource type="Script" uid="uid://dpy1w6n2xfbsk" path="res://scenes/main_menu/main_menu.gd" id="1_main_menu"]
+[ext_resource type="Script" uid="uid://bikxdsm75yauw" path="res://scenes/main_menu/main_menu.gd" id="1_main_menu"]
 [ext_resource type="Texture2D" uid="uid://dbeyc2sy5xpe4" path="res://assets/sprites/MainMenu.png" id="2_0ebjn"]
 [ext_resource type="FontFile" uid="uid://bh8kpdc46m6i8" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="2_ob46e"]
 [ext_resource type="Texture2D" uid="uid://bpenpun4nmug6" path="res://assets/sprites/MainMenuLabel.svg" id="3_main_menu_label"]
@@ -32,6 +32,7 @@ grow_vertical = 2
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(80, 20)
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("2_ob46e")
 theme_override_font_sizes/font_size = 16
 text = "Jogar"
@@ -39,6 +40,7 @@ text = "Jogar"
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(80, 20)
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("2_ob46e")
 theme_override_font_sizes/font_size = 16
 text = "Fechar"
