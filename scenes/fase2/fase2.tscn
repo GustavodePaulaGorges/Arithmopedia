@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://yphe15cwxshu" path="res://assets/tiles/ground_rocks.png" id="10_vr5qd"]
 [ext_resource type="Texture2D" uid="uid://codka704o4edk" path="res://assets/tiles/BridgeWaterAnimation/Water_animation.png" id="10_ykae6"]
 [ext_resource type="Texture2D" uid="uid://b1msfjtte8qbi" path="res://assets/tiles/BridgeWaterAnimation/Water_animation10.png" id="11_52hph"]
-[ext_resource type="PackedScene" uid="uid://d246asdq0lfp4" path="res://scenes/fase1/modals/stage_info_modal.tscn" id="11_stage_info_modal"]
+[ext_resource type="PackedScene" uid="uid://d246asdq0lfp4" path="res://scenes/fase2/modals/stage_info_modal.tscn" id="11_stage_info_modal"]
 [ext_resource type="PackedScene" uid="uid://bvn8x8k7m4oap" path="res://scenes/fase2/ui/tower_selector.tscn" id="12_tower_selector"]
 [ext_resource type="Texture2D" uid="uid://dyk0a6p7dg53v" path="res://assets/tiles/rocky_objects.png" id="13_7t0gh"]
 [ext_resource type="PackedScene" uid="uid://bvn7x8k7m4oap" path="res://scenes/fase2/ui/wave_ui/wave_ui.tscn" id="13_wave_ui"]
