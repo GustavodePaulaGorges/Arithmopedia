@@ -3,7 +3,6 @@ extends Control
 @onready var stages_grid = $VBoxContainer/CenterContainer/StagesGrid
 @onready var back_button = $VBoxContainer/BackButton
 
-# Configuração das fases - facilmente escalável para novas fases
 var stages = [
 	{
 		"id": 1,
@@ -34,7 +33,6 @@ func _ready():
 			progress_manager.stage_unlocked.connect(_on_stage_unlocked)
 
 func _create_stage_buttons():
-	# Limpa botões existentes
 	for child in stages_grid.get_children():
 		child.queue_free()
 	
@@ -48,6 +46,7 @@ func _create_stage_buttons():
 		stage_button.custom_minimum_size = Vector2(80, 80)
 		stage_button.text = stage_data.name
 		stage_button.add_theme_font_size_override("font_size", 24)
+		stage_button.mouse_default_cursor_shape = CursorShape.CURSOR_POINTING_HAND
 		
 		# Aplica a fonte PixelifySans
 		var font = load("res://assets/fonts/PixelifySans-VariableFont_wght.ttf")
