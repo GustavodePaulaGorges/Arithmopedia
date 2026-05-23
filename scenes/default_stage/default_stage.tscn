@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://clqgj3kjqgkk4"]
+
+[ext_resource type="Script" uid="uid://bdslik0i7vtbu" path="res://scenes/default_stage/default_stage.gd" id="1_default_stage"]
+[ext_resource type="Script" uid="uid://d2u8jt5kinn38" path="res://scenes/default_stage/managers/enemy_manager.gd" id="2_enemy_manager"]
+[ext_resource type="Script" uid="uid://ckkfjcqc8d42l" path="res://scenes/default_stage/managers/building_manager.gd" id="3_building_manager"]
+[ext_resource type="PackedScene" uid="uid://e3tnrqc5oh20" path="res://scenes/default_stage/enemy/enemy_entity.tscn" id="4_enemy_scene"]
+[ext_resource type="PackedScene" uid="uid://bvn6x8k7m4oap" path="res://scenes/default_stage/towers/addition_tower/addition_tower.tscn" id="5_addition"]
+[ext_resource type="PackedScene" uid="uid://fi2xut3mrtgr" path="res://scenes/default_stage/towers/subtraction_tower/subtraction_tower.tscn" id="6_subtraction"]
+[ext_resource type="PackedScene" uid="uid://cdkgaiv2pscev" path="res://scenes/default_stage/highlight_tile/highlight_tile.tscn" id="7_highlight"]
+[ext_resource type="PackedScene" uid="uid://bvictorymodal" path="res://scenes/default_stage/modals/victory_modal.tscn" id="8_victory"]
+[ext_resource type="PackedScene" uid="uid://bdefeatmodal" path="res://scenes/default_stage/modals/defeat_modal.tscn" id="9_defeat"]
+[ext_resource type="PackedScene" uid="uid://d246asdq0lfp4" path="res://scenes/default_stage/modals/stage_info_modal.tscn" id="10_stage_info"]
+[ext_resource type="PackedScene" uid="uid://dgl232gb1pgtt" path="res://scenes/default_stage/ui/tower_selector.tscn" id="11_tower_selector"]
+[ext_resource type="PackedScene" uid="uid://bvn2x8k7m4oap" path="res://scenes/default_stage/ui/wave_ui/wave_ui.tscn" id="12_wave_ui"]
+[ext_resource type="FontFile" uid="uid://bh8kpdc46m6i8" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="13_font"]
+
+[node name="DefaultStage" type="Node2D" unique_id=612317291]
+script = ExtResource("1_default_stage")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2033795529]
+position = Vector2(152, 112)
+
+[node name="EnemyManager" type="Node" parent="." unique_id=408193877]
+script = ExtResource("2_enemy_manager")
+enemy_scene = ExtResource("4_enemy_scene")
+
+[node name="BuildingManager" type="Node" parent="." unique_id=1999301952]
+script = ExtResource("3_building_manager")
+addition_tower_scene = ExtResource("5_addition")
+subtraction_tower_scene = ExtResource("6_subtraction")
+
+[node name="HighlightTile" parent="." unique_id=1595803021 instance=ExtResource("7_highlight")]
+
+[node name="Modals" type="Node" parent="." unique_id=725875345]
+
+[node name="VictoryModal" parent="Modals" unique_id=1325034141 instance=ExtResource("8_victory")]
+visible = false
+z_index = 100
+
+[node name="DefeatModal" parent="Modals" unique_id=1733409355 instance=ExtResource("9_defeat")]
+visible = false
+z_index = 100
+
+[node name="StageInfoModal" parent="Modals" unique_id=664178854 instance=ExtResource("10_stage_info")]
+visible = false
+z_index = 1000
+
+[node name="UI" type="Control" parent="." unique_id=789384871]
+z_index = 999
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TowerSelector" parent="UI" unique_id=324640385 instance=ExtResource("11_tower_selector")]
+layout_mode = 1
+offset_left = 242.0
+offset_top = 170.0
+offset_right = 299.0
+offset_bottom = 220.0
+
+[node name="WaveUI" parent="UI" unique_id=719908361 instance=ExtResource("12_wave_ui")]
+layout_mode = 1
+offset_left = 4.0
+offset_top = 164.0
+offset_right = 97.0
+offset_bottom = 220.0
+
+[node name="HordeButton" type="Button" parent="UI" unique_id=1726171253]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 88.0
+offset_bottom = 27.0
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("13_font")
+theme_override_font_sizes/font_size = 12
+text = "Iniciar horda"

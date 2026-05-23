@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d36v5y8k6osia"]
+
+[ext_resource type="Script" path="res://scenes/default_stage/enemy_spawner/enemy_spawner.gd" id="1_w1txr"]
+[ext_resource type="Texture2D" uid="uid://cj0kmco813epu" path="res://assets/sprites/PortalSaida.png" id="2_amm7g"]
+
+[node name="EnemySpawner" type="Node2D"]
+script = ExtResource("1_w1txr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_amm7g")
