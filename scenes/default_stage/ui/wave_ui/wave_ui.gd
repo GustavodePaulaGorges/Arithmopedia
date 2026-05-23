@@ -1,7 +1,7 @@
 class_name WaveUI
 extends Control
 
-@onready var wave_label: RichTextLabel = $WaveLabel
+@onready var wave_label: RichTextLabel = $MarginContainer/WaveLabel
 
 func update_wave_display(wave_data_array: Array[int], current_data_index: int) -> void:
 	if wave_data_array.is_empty():
