@@ -1,12 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://d246asdq0lfp4"]
+[gd_scene format=3 uid="uid://d246asdq0lfp4"]
 
-[ext_resource type="Script" path="res://scenes/default_stage/modals/stage_info_modal.gd" id="1"]
+[ext_resource type="Script" uid="uid://jntnf1i1cyas" path="res://scenes/default_stage/modals/stage_info_modal.gd" id="1"]
 [ext_resource type="FontFile" uid="uid://bh8kpdc46m6i8" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="2_pxkdm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i48k6"]
 bg_color = Color(0, 0, 0, 0.8235294)
 
-[node name="StageInfoModal" type="Control"]
+[node name="StageInfoModal" type="Control" unique_id=1935333695]
 process_mode = 3
 z_index = 999
 layout_mode = 3
@@ -18,7 +18,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=383706922]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,9 +26,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0.7058824)
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2059142466]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,12 +36,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="CenterContainer"]
+[node name="Panel" type="Panel" parent="CenterContainer" unique_id=2100645014]
 custom_minimum_size = Vector2(400, 250)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_i48k6")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel" unique_id=1731635746]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -55,7 +55,7 @@ grow_vertical = 2
 theme_override_constants/separation = 8
 alignment = 1
 
-[node name="TitleLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer"]
+[node name="TitleLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer" unique_id=271289417]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_pxkdm")
@@ -65,10 +65,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="HSeparator" type="HSeparator" parent="CenterContainer/Panel/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/Panel/VBoxContainer" unique_id=319034849]
 layout_mode = 2
 
-[node name="CriteriaLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer"]
+[node name="CriteriaLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer" unique_id=1117918912]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_pxkdm")
@@ -76,7 +76,7 @@ theme_override_font_sizes/font_size = 14
 text = "Critério da Fase"
 horizontal_alignment = 1
 
-[node name="HistoryLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer"]
+[node name="HistoryLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer" unique_id=362411771]
 custom_minimum_size = Vector2(300, 80)
 layout_mode = 2
 theme_override_font_sizes/font_size = 9
@@ -84,7 +84,7 @@ text = "Historinha da fase"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="StartButton" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
+[node name="StartButton" type="Button" parent="CenterContainer/Panel/VBoxContainer" unique_id=975524540]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("2_pxkdm")
