@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="StageData" format=3 uid="uid://dlf2lqx63sl23"]
+
+[ext_resource type="Script" uid="uid://dijrnfbdcnq6t" path="res://scenes/default_stage/stage_data/stage_data.gd" id="1_l8jkj"]
+
+[resource]
+script = ExtResource("1_l8jkj")
+stage_id = 3
+stage_title = "Fase 3 (Sete é a Chave)"
+stage_criteria = "Fazer exatamente o número 7"
+stage_history = "Na vastidão do Vale das Três Montanhas, Pitáclides encontra inscrições antigas talhadas na pedra:\\n“Quando tudo parecer perdido, lembre-se: sete é a chave.”\\nDizem que este trecho da Arithmopedia guarda um enigma criado pelos próprios Magos Primevos, um teste para provar se a mente do viajante realmente enxerga além da aritmética comum."
+prize_text = "Quando várias operações acontecem em sequência, elas formam uma “árvore de operações”. Se um número não tem par em uma etapa, ele segue sozinho para a próxima, sendo combinado depois. Isso é comum tanto em matemática quanto em estruturas de computação. Em resumo, números solitários também são importantes e podem ser essenciais para alcançar o resultado final."
+enemy_array = Array[int]([14, 7, 9, 4, 5, 2, 6, 4])
+victory_type = 2
+victory_target = 7
+tower_count = {
+0: 1,
+1: 2
+}
+metadata/_custom_type_script = "uid://dijrnfbdcnq6t"

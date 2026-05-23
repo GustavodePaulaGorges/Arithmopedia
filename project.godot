@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="Arithmopedia"
 run/main_scene="uid://bvn8x7qkl2r3h"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -30,6 +30,11 @@ window/size/viewport_height=224
 window/size/window_width_override=1216
 window/size/window_height_override=896
 window/stretch/mode="viewport"
+
+[global_group]
+
+enemy_path=""
+towers_tilemap=""
 
 [input]
 
