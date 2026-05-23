@@ -2,9 +2,6 @@ class_name StageData
 extends Resource
 
 enum VictoryType {
-	GREATER_THAN,
-	LESS_THAN,
-	EQUAL_TO,
 	ALL_GREATER_THAN,
 	ALL_LESS_THAN,
 	ALL_EQUAL_TO
@@ -41,10 +38,4 @@ func check_victory(enemies: Array[int]) -> bool:
 				if enemy != victory_target:
 					return false
 			return true
-		VictoryType.GREATER_THAN:
-			return enemies.any(func(x): return x > victory_target)
-		VictoryType.LESS_THAN:
-			return enemies.any(func(x): return x < victory_target)
-		VictoryType.EQUAL_TO:
-			return enemies.any(func(x): return x == victory_target)
 	return false

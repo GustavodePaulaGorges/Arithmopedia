@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dn8gymaumj1tc"]
+
+[ext_resource type="PackedScene" uid="uid://clqgj3kjqgkk4" path="res://scenes/default_stage/default_stage.tscn" id="1_os6ec"]
+[ext_resource type="Resource" uid="uid://dlf2lqx63sl23" path="res://scenes/fase3/stage3.tres" id="2_ffdiy"]
+[ext_resource type="PackedScene" uid="uid://d36v5y8k6osia" path="res://scenes/default_stage/enemy_spawner/enemy_spawner.tscn" id="2_nkwym"]
+[ext_resource type="PackedScene" uid="uid://3lmh178myu3h" path="res://scenes/default_stage/enemy_endpoint/enemy_endpoint.tscn" id="3_ffdiy"]
+[ext_resource type="PackedScene" uid="uid://cyq6spatvnhh6" path="res://scenes/fase3/tilemap.tscn" id="4_igrqa"]
+
+[sub_resource type="Curve2D" id="Curve2D_os6ec"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 9, 116, 0, 0, 0, 0, 293, 116)
+}
+point_count = 2
+
+[node name="Fase3" type="Node2D" unique_id=1814138363]
+
+[node name="DefaultStage" parent="." unique_id=612317291 instance=ExtResource("1_os6ec")]
+stage_data = ExtResource("2_ffdiy")
+
+[node name="EnemySpawner" parent="." unique_id=306537887 instance=ExtResource("2_nkwym")]
+z_index = 99
+position = Vector2(9, 110)
+
+[node name="EnemyEndpoint" parent="." unique_id=362023144 instance=ExtResource("3_ffdiy")]
+z_index = 99
+position = Vector2(293, 110)
+
+[node name="Tilemap" parent="." unique_id=1874299496 instance=ExtResource("4_igrqa")]
+
+[node name="EnemyPath" type="Path2D" parent="." unique_id=711654625 groups=["enemy_path"]]
+z_index = 99
+curve = SubResource("Curve2D_os6ec")

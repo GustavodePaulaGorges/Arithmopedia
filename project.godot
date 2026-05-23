@@ -31,6 +31,11 @@ window/size/window_width_override=1216
 window/size/window_height_override=896
 window/stretch/mode="viewport"
 
+[global_group]
+
+enemy_path=""
+towers_tilemap=""
+
 [input]
 
 left_mouse={

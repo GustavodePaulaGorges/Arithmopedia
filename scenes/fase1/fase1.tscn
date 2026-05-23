@@ -1,33 +1,32 @@
-[gd_scene load_steps=7 format=3 uid="uid://mn568pawd17v"]
+[gd_scene format=3 uid="uid://mn568pawd17v"]
 
-[ext_resource type="PackedScene" uid="uid://bdefaultstage0" path="res://scenes/default_stage/default_stage.tscn" id="1_default_stage"]
+[ext_resource type="PackedScene" uid="uid://clqgj3kjqgkk4" path="res://scenes/default_stage/default_stage.tscn" id="1_default_stage"]
 [ext_resource type="PackedScene" uid="uid://btilemapfase1" path="res://scenes/fase1/tilemap.tscn" id="2_tilemap"]
 [ext_resource type="PackedScene" uid="uid://d36v5y8k6osia" path="res://scenes/default_stage/enemy_spawner/enemy_spawner.tscn" id="3_spawner"]
 [ext_resource type="PackedScene" uid="uid://3lmh178myu3h" path="res://scenes/default_stage/enemy_endpoint/enemy_endpoint.tscn" id="4_endpoint"]
-[ext_resource type="PackedScene" uid="uid://b0enemypath0fz" path="res://scenes/default_stage/enemy_path/enemy_path.tscn" id="5_path"]
 [ext_resource type="Resource" uid="uid://bstage1data" path="res://scenes/fase1/stage1.tres" id="6_stage_data"]
 
-[sub_resource type="Curve2D" id="Curve2D_yyfjg"]
+[sub_resource type="Curve2D" id="Curve2D_wj37f"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 18, -121, 0, 0, 0, 0, 291, -121)
+"points": PackedVector2Array(0, 0, 0, 0, 16, 103, 0, 0, 0, 0, 289, 103)
 }
 point_count = 2
 
-[node name="Fase1" type="Node2D"]
+[node name="Fase1" type="Node2D" unique_id=881757328]
 
-[node name="Tilemap" parent="." instance=ExtResource("2_tilemap")]
+[node name="Tilemap" parent="." unique_id=897223492 instance=ExtResource("2_tilemap")]
 
-[node name="DefaultStage" parent="." instance=ExtResource("1_default_stage")]
+[node name="DefaultStage" parent="." unique_id=1743323164 instance=ExtResource("1_default_stage")]
 stage_data = ExtResource("6_stage_data")
 
-[node name="EnemyPath" parent="." instance=ExtResource("5_path")]
-position = Vector2(-2, 223)
-curve = SubResource("Curve2D_yyfjg")
-
-[node name="EnemySpawner" parent="." instance=ExtResource("3_spawner")]
+[node name="EnemySpawner" parent="." unique_id=46383128 instance=ExtResource("3_spawner")]
 z_index = 3
 position = Vector2(16, 92)
 
-[node name="EnemyEndpoint" parent="." instance=ExtResource("4_endpoint")]
+[node name="EnemyEndpoint" parent="." unique_id=2035142698 instance=ExtResource("4_endpoint")]
 z_index = 3
 position = Vector2(289, 92)
+
+[node name="EnemyPath" type="Path2D" parent="." unique_id=1439909699 groups=["enemy_path"]]
+z_index = 99
+curve = SubResource("Curve2D_wj37f")

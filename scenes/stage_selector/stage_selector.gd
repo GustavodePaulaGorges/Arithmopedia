@@ -8,6 +8,16 @@ var stages = [
 		"id": 1,
 		"name": "Fase 1",
 		"scene_path": "res://scenes/fase1/fase1.tscn"
+	},
+	{
+		"id": 2,
+		"name": "Fase 2",
+		"scene_path": "res://scenes/fase2/fase2.tscn"
+	},
+	{
+		"id": 3,
+		"name": "Fase 3",
+		"scene_path": "res://scenes/fase3/fase3.tscn"
 	}
 ]
 

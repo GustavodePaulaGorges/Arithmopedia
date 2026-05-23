@@ -1,10 +1,9 @@
 [gd_resource type="Resource" script_class="StageData" format=3 uid="uid://bstage1data"]
 
-[ext_resource type="Script" path="res://scenes/default_stage/stage_data/stage_data.gd" id="1_stage_data"]
+[ext_resource type="Script" uid="uid://dijrnfbdcnq6t" path="res://scenes/default_stage/stage_data/stage_data.gd" id="1_stage_data"]
 
 [resource]
 script = ExtResource("1_stage_data")
-stage_id = 1
 stage_title = "Tutorial/Fase 1 (Começando a aventura)"
 stage_criteria = "Fazer números maiores que 6"
 stage_history = "Após o roubo da Arithmopedia, os primeiros números fugitivos escaparam pela ponte de Mathemas. Eles são pequenos e inofensivos, mas ainda seguem uma lógica, por enquanto.
@@ -12,7 +11,6 @@ Pitáclides, o único mago imune ao Khaos, precisa começar a organizar esses n�
 De repente, ele se lembra da torre somatória, uma de suas antigas magias que reage à harmonia dos pares."
 prize_text = "A soma é comutativa e associativa, isto é, a ordem dos termos não altera o resultado final nem a forma como você os agrupa. Num sentido prático para esta fase: somar 3+4 ou 4+3 dá o mesmo 7; mas como as torres consomem pares sequenciais, a posição importa para a jogabilidade mesmo quando a operação matemática em si é indiferente à ordem."
 enemy_array = Array[int]([3, 4, 5, 6, 7, 8])
-victory_type = 3
 victory_target = 6
 tower_count = {
 0: 1

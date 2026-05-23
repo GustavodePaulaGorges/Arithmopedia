@@ -34,10 +34,10 @@ func _initialize() -> void:
 
 	towers_tilemap = get_tree().get_first_node_in_group("towers_tilemap")
 
-	enemy_manager.setup(stage_data)
 	enemy_manager.level_completed.connect(_on_level_completed)
 	enemy_manager.level_failed.connect(_on_level_failed)
 	enemy_manager.wave_updated.connect(wave_ui.update_wave_display)
+	enemy_manager.setup(stage_data)
 
 	building_manager.setup(stage_data.tower_count)
 

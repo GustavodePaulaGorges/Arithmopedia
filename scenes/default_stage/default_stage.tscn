@@ -30,6 +30,7 @@ addition_tower_scene = ExtResource("5_addition")
 subtraction_tower_scene = ExtResource("6_subtraction")
 
 [node name="HighlightTile" parent="." unique_id=1595803021 instance=ExtResource("7_highlight")]
+z_index = 99
 
 [node name="Modals" type="Node" parent="." unique_id=725875345]
 

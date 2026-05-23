@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="StageData" format=3 uid="uid://d2e8xnrgex74m"]
+
+[ext_resource type="Script" uid="uid://dijrnfbdcnq6t" path="res://scenes/default_stage/stage_data/stage_data.gd" id="1_177ni"]
+
+[resource]
+script = ExtResource("1_177ni")
+stage_id = 2
+stage_title = "Fase 2 (A arte de fazer menos)"
+stage_criteria = "Fazer um número menor que 10"
+stage_history = "A trilha adiante leva Pitáclides a um vale onde os números ecoam como montanhas: grandes demais, pesados demais, desbalanceados demais. O Khaos distorceu suas proporções, e agora eles não cabem mais no caminho estreito que leva ao próximo capítulo da Arithmopedia."
+prize_text = "A subtração não segue as mesmas propriedades da adição: ela não é comutativa (a − b ≠ b − a na maior parte dos casos) e também não é associativa, isto é, (a − b) − c geralmente produz algo diferente de a − (b − c). É por isso que, em situações onde operações aparecem em sequência, a ordem altera profundamente o resultado. Essa é uma das primeiras lições sobre operações mistas, é exatamente o tipo de princípio que Pitáclides domina melhor do que qualquer outro mago de Mathemas."
+enemy_array = Array[int]([10, 8, 3, 2])
+victory_type = 1
+victory_target = 10
+tower_count = {
+0: 1,
+1: 1
+}
+metadata/_custom_type_script = "uid://dijrnfbdcnq6t"
