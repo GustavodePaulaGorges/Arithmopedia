@@ -13,6 +13,12 @@ var tower_configs: Dictionary = {
 	},
 	TowerTypes.TowerType.SUBTRACTION: {
 		"texture": preload("res://assets/sprites/TorreSub.png")
+	},
+	TowerTypes.TowerType.MULTIPLICATION: {
+		"texture": preload("res://assets/sprites/TorreMult.png")
+	},
+	TowerTypes.TowerType.DIVISION: {
+		"texture": preload("res://assets/sprites/TorreDiv.png")
 	}
 }
 

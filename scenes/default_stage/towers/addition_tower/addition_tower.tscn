@@ -1,18 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvn6x8k7m4oap"]
+[gd_scene format=3 uid="uid://bvn6x8k7m4oap"]
 
-[ext_resource type="Script" path="res://scenes/default_stage/towers/addition_tower/addition_tower.gd" id="1_addition"]
+[ext_resource type="Script" uid="uid://da8exyh8hr7gm" path="res://scenes/default_stage/towers/addition_tower/addition_tower.gd" id="1_addition"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vbt5a"]
 
-[node name="AdditionTower" type="Node2D"]
+[node name="AdditionTower" type="Node2D" unique_id=2088936058]
 z_index = 10
 script = ExtResource("1_addition")
 
-[node name="Range" type="Area2D" parent="."]
-position = Vector2(8, 0)
+[node name="Range" type="Area2D" parent="." unique_id=542340912]
 scale = Vector2(4, 4)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range" unique_id=804170438]
 shape = SubResource("CircleShape2D_vbt5a")
 
 [connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]

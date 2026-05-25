@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dflyxw72ybna7"]
+
+[ext_resource type="Script" uid="uid://duwrg1vn3o0u6" path="res://scenes/default_stage/towers/multiplication_tower/multiplication_tower.gd" id="1_058pu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vbrbf"]
+
+[node name="MultiplicationTower" type="Node2D" unique_id=639549782]
+z_index = 10
+script = ExtResource("1_058pu")
+
+[node name="Range" type="Area2D" parent="." unique_id=1317476608]
+scale = Vector2(4, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range" unique_id=1872556532]
+shape = SubResource("CircleShape2D_vbrbf")
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]

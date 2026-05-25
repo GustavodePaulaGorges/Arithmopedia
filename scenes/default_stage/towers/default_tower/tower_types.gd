@@ -3,5 +3,7 @@ extends Resource
 
 enum TowerType {
 	ADDITION,
-	SUBTRACTION
+	SUBTRACTION,
+	MULTIPLICATION,
+	DIVISION
 }
