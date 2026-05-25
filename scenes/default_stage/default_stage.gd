@@ -2,6 +2,7 @@ class_name DefaultStage
 extends Node2D
 
 @export var stage_data: StageData
+@export var stage_path_data: StagePathData
 
 @onready var enemy_manager: EnemyManager = $EnemyManager
 @onready var building_manager: BuildingManager = $BuildingManager
@@ -37,7 +38,12 @@ func _initialize() -> void:
 	enemy_manager.level_completed.connect(_on_level_completed)
 	enemy_manager.level_failed.connect(_on_level_failed)
 	enemy_manager.wave_updated.connect(wave_ui.update_wave_display)
-	enemy_manager.setup(stage_data)
+	if stage_path_data == null:
+		push_error("DefaultStage: stage_path_data não foi atribuído")
+		return
+
+	var stage_root: Node = get_parent()
+	enemy_manager.setup(stage_data, stage_path_data, stage_root)
 
 	building_manager.setup(stage_data.tower_count)
 

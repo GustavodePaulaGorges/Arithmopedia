@@ -22,8 +22,10 @@ func select_enemy() -> void:
 		var ratio1 = enemy1.get_parent().progress_ratio
 		var ratio2 = enemy2.get_parent().progress_ratio
 		var ratio = (ratio1 + ratio2) / 2.0
+		var segment_index: int = enemy1.segment_index
+		var branch: int = enemy1.branch
 
 		remove_enemy(enemy1)
 		remove_enemy(enemy2)
 
-		request_spawn_enemy.emit(ratio, sum_value, self)
+		request_spawn_enemy.emit(ratio, sum_value, self, segment_index, branch)

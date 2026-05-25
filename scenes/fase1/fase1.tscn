@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d36v5y8k6osia" path="res://scenes/default_stage/enemy_spawner/enemy_spawner.tscn" id="3_spawner"]
 [ext_resource type="PackedScene" uid="uid://3lmh178myu3h" path="res://scenes/default_stage/enemy_endpoint/enemy_endpoint.tscn" id="4_endpoint"]
 [ext_resource type="Resource" uid="uid://bstage1data" path="res://scenes/fase1/stage1.tres" id="6_stage_data"]
+[ext_resource type="Resource" uid="uid://bstage1pathdata" path="res://scenes/fase1/stage1_path.tres" id="7_stage_path"]
 
 [sub_resource type="Curve2D" id="Curve2D_wj37f"]
 _data = {
@@ -18,6 +19,7 @@ point_count = 2
 
 [node name="DefaultStage" parent="." unique_id=1743323164 instance=ExtResource("1_default_stage")]
 stage_data = ExtResource("6_stage_data")
+stage_path_data = ExtResource("7_stage_path")
 
 [node name="EnemySpawner" parent="." unique_id=46383128 instance=ExtResource("3_spawner")]
 z_index = 3

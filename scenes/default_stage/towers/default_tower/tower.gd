@@ -3,7 +3,7 @@ extends Node2D
 
 @export var tower_type: TowerTypes.TowerType
 
-signal request_spawn_enemy(ratio: float, value: int, creator_tower: TowerEntity)
+signal request_spawn_enemy(ratio: float, value: int, creator_tower: TowerEntity, segment_index: int, branch: int)
 signal enemy_consumed(enemy: EnemyEntity)
 
 var enemy_array : Array[EnemyEntity] = []
