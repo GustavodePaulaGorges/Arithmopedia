@@ -13,6 +13,7 @@ const GRID_SIZE : int = 16
 var tower_count: Dictionary = {}
 var towers_path: TileMapLayer = null
 var used_tiles : Array[Vector2i] = []
+var locked: bool = false
 
 func _ready():
 	add_to_group("building_manager")
@@ -26,6 +27,8 @@ func validate_tower_count(tower_type: TowerTypes.TowerType) -> bool:
 	return tower_count.get(tower_type, 0) > 0
 
 func place_tower(cell_position : Vector2i, tower_type: TowerTypes.TowerType) -> void:
+	if locked:
+		return
 	if not check_valid_tower_placement(cell_position):
 		return
 
@@ -77,6 +80,8 @@ func check_valid_tower_placement(cell_position : Vector2i) -> bool :
 	return bool(cell_data.get_custom_data(IS_BUILDABLE_STR))
 
 func remove_tower(cell_position : Vector2i) -> void:
+	if locked:
+		return
 	if not check_valid_tower_removal(cell_position):
 		return
 

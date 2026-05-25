@@ -1,6 +1,11 @@
 extends TileMapLayer
 
 func _process(_delta):
+	var bm: Node = get_tree().get_first_node_in_group("building_manager")
+	if bm and bm.locked:
+		Input.set_default_cursor_shape(Input.CURSOR_ARROW)
+		return
+
 	var mouse_pos = get_local_mouse_position()
 	var tile_coords = local_to_map(mouse_pos)
 

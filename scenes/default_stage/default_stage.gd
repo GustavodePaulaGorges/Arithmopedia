@@ -2,6 +2,7 @@ class_name DefaultStage
 extends Node2D
 
 @export var stage_data: StageData
+@export var stage_path_data: StagePathData
 
 @onready var enemy_manager: EnemyManager = $EnemyManager
 @onready var building_manager: BuildingManager = $BuildingManager
@@ -37,7 +38,12 @@ func _initialize() -> void:
 	enemy_manager.level_completed.connect(_on_level_completed)
 	enemy_manager.level_failed.connect(_on_level_failed)
 	enemy_manager.wave_updated.connect(wave_ui.update_wave_display)
-	enemy_manager.setup(stage_data)
+	if stage_path_data == null:
+		push_error("DefaultStage: stage_path_data não foi atribuído")
+		return
+
+	var stage_root: Node = get_parent()
+	enemy_manager.setup(stage_data, stage_path_data, stage_root)
 
 	building_manager.setup(stage_data.tower_count)
 
@@ -47,12 +53,22 @@ func _initialize() -> void:
 func _on_level_completed() -> void:
 	victory_modal.set_prize_text(stage_data.prize_text)
 	victory_modal.show_modal()
+	_restore_cursor()
 	var pm := get_node_or_null("/root/ProgressManager")
 	if pm:
 		pm.complete_stage(stage_data.stage_id)
 
 func _on_level_failed() -> void:
 	defeat_modal.show_modal()
+	_restore_cursor()
+
+func _restore_cursor() -> void:
+	var arrow: Texture2D = load("res://assets/light_cursor_1.png")
+	var point: Texture2D = load("res://assets/light_cursor_point.png")
+	if arrow:
+		Input.set_custom_mouse_cursor(arrow, Input.CURSOR_ARROW)
+	if point:
+		Input.set_custom_mouse_cursor(point, Input.CURSOR_POINTING_HAND)
 
 func _on_tower_selected(tower_type: TowerTypes.TowerType) -> void:
 	selected_tower_type = tower_type
@@ -61,6 +77,16 @@ func _on_horde_button_pressed() -> void:
 	enemy_manager.start_wave()
 	horde_button.disabled = true
 	horde_button.text = "Horda iniciada!"
+	building_manager.locked = true
+	_apply_grey_cursor()
+
+func _apply_grey_cursor() -> void:
+	var arrow_disabled: Texture2D = load("res://assets/light_cursor_1_disabled.png")
+	var point_disabled: Texture2D = load("res://assets/light_cursor_point_disabled.png")
+	if arrow_disabled:
+		Input.set_custom_mouse_cursor(arrow_disabled, Input.CURSOR_ARROW)
+	if point_disabled:
+		Input.set_custom_mouse_cursor(point_disabled, Input.CURSOR_POINTING_HAND)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if towers_tilemap == null:

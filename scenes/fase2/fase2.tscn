@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://clqgj3kjqgkk4" path="res://scenes/default_stage/default_stage.tscn" id="1_xc77g"]
 [ext_resource type="PackedScene" uid="uid://3lmh178myu3h" path="res://scenes/default_stage/enemy_endpoint/enemy_endpoint.tscn" id="2_of271"]
 [ext_resource type="Resource" uid="uid://d2e8xnrgex74m" path="res://scenes/fase2/stage2.tres" id="2_tno5y"]
+[ext_resource type="Resource" uid="uid://bstage2pathdata" path="res://scenes/fase2/stage2_path.tres" id="5_stage_path"]
 [ext_resource type="PackedScene" uid="uid://d36v5y8k6osia" path="res://scenes/default_stage/enemy_spawner/enemy_spawner.tscn" id="3_7cvnh"]
 [ext_resource type="PackedScene" uid="uid://bt150ytiejyam" path="res://scenes/fase2/tilemap.tscn" id="4_7cvnh"]
 
@@ -16,6 +17,7 @@ point_count = 2
 
 [node name="DefaultStage" parent="." unique_id=612317291 instance=ExtResource("1_xc77g")]
 stage_data = ExtResource("2_tno5y")
+stage_path_data = ExtResource("5_stage_path")
 
 [node name="EnemyEndpoint" parent="." unique_id=1095995544 instance=ExtResource("2_of271")]
 z_index = 99
