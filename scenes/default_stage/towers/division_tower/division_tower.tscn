@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ddp2h07ro1cl8"]
+
+[ext_resource type="Script" uid="uid://dv2lsv8gbu0xe" path="res://scenes/default_stage/towers/division_tower/division_tower.gd" id="1_2k8nd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jywcc"]
+
+[node name="DivisionTower" type="Node2D" unique_id=524821121]
+z_index = 10
+script = ExtResource("1_2k8nd")
+
+[node name="Range" type="Area2D" parent="." unique_id=1753688221]
+scale = Vector2(4, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range" unique_id=453377771]
+shape = SubResource("CircleShape2D_jywcc")
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]

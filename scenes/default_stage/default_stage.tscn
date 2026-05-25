@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://e3tnrqc5oh20" path="res://scenes/default_stage/enemy/enemy_entity.tscn" id="4_enemy_scene"]
 [ext_resource type="PackedScene" uid="uid://bvn6x8k7m4oap" path="res://scenes/default_stage/towers/addition_tower/addition_tower.tscn" id="5_addition"]
 [ext_resource type="PackedScene" uid="uid://fi2xut3mrtgr" path="res://scenes/default_stage/towers/subtraction_tower/subtraction_tower.tscn" id="6_subtraction"]
+[ext_resource type="PackedScene" uid="uid://dflyxw72ybna7" path="res://scenes/default_stage/towers/multiplication_tower/multiplication_tower.tscn" id="7_f56uo"]
 [ext_resource type="PackedScene" uid="uid://cdkgaiv2pscev" path="res://scenes/default_stage/highlight_tile/highlight_tile.tscn" id="7_highlight"]
+[ext_resource type="PackedScene" uid="uid://ddp2h07ro1cl8" path="res://scenes/default_stage/towers/division_tower/division_tower.tscn" id="8_ccv54"]
 [ext_resource type="PackedScene" uid="uid://bvictorymodal" path="res://scenes/default_stage/modals/victory_modal.tscn" id="8_victory"]
 [ext_resource type="PackedScene" uid="uid://bdefeatmodal" path="res://scenes/default_stage/modals/defeat_modal.tscn" id="9_defeat"]
 [ext_resource type="PackedScene" uid="uid://d246asdq0lfp4" path="res://scenes/default_stage/modals/stage_info_modal.tscn" id="10_stage_info"]
@@ -28,6 +30,8 @@ enemy_scene = ExtResource("4_enemy_scene")
 script = ExtResource("3_building_manager")
 addition_tower_scene = ExtResource("5_addition")
 subtraction_tower_scene = ExtResource("6_subtraction")
+multiplication_tower_scene = ExtResource("7_f56uo")
+division_tower_scene = ExtResource("8_ccv54")
 
 [node name="HighlightTile" parent="." unique_id=1595803021 instance=ExtResource("7_highlight")]
 z_index = 99
