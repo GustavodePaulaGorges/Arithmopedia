@@ -2,9 +2,13 @@ class_name StageData
 extends Resource
 
 enum VictoryType {
+	GREATER_THAN,
+	LESS_THAN,
+	EQUAL_TO,
 	ALL_GREATER_THAN,
 	ALL_LESS_THAN,
-	ALL_EQUAL_TO
+	ALL_EQUAL_TO,
+	OPPOSITE_PAIRS
 }
 
 @export var stage_id: int = 1
@@ -38,4 +42,19 @@ func check_victory(enemies: Array[int]) -> bool:
 				if enemy != victory_target:
 					return false
 			return true
+		VictoryType.GREATER_THAN:
+			return enemies.any(func(x): return x > victory_target)
+		VictoryType.LESS_THAN:
+			return enemies.any(func(x): return x < victory_target)
+		VictoryType.EQUAL_TO:
+			return enemies.any(func(x): return x == victory_target)
+		VictoryType.OPPOSITE_PAIRS:
+			# Verifica se existem pelo menos 2 números com mesmo valor absoluto mas sinais opostos
+			if enemies.size() < 2:
+				return false
+			for i in range(enemies.size()):
+				for j in range(i + 1, enemies.size()):
+					if enemies[i] == -enemies[j]:
+						return true
+			return false
 	return false
