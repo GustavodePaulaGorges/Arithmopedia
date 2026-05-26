@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://cyq6spatvnhh6"]
 
 [ext_resource type="Texture2D" uid="uid://yvdaegs733ac" path="res://assets/tiles/exterior_ajustado.png" id="1_hyk8p"]
+[ext_resource type="Script" uid="uid://derm7pc2rgph3" path="res://scenes/fase3/towers.gd" id="8_mcfbp"]
 [ext_resource type="Texture2D" uid="uid://dtliaw5a5vhmv" path="res://assets/tiles/Bridges.png" id="9_i1kd3"]
 [ext_resource type="Texture2D" uid="uid://yphe15cwxshu" path="res://assets/tiles/ground_rocks.png" id="10_vr5qd"]
 [ext_resource type="Texture2D" uid="uid://codka704o4edk" path="res://assets/tiles/BridgeWaterAnimation/Water_animation.png" id="10_ykae6"]
@@ -7065,6 +7066,7 @@ z_index = 3
 tile_map_data = PackedByteArray("AAAAAAAAAAABAAgAAAABAAAAAAABAAgAAAACAAAAAAABAAgAAAAFAAAAAAABAAgAAAAGAAAAAAABAAgAAAAHAAAAAAABAAgAAAAIAAAAAAABAAgAAAAJAAAAAAABAAgAAAAKAAAAAAABAAgAAAAMAAAAAAABAAgAAAANAAAAAAABAAgAAAAOAAAAAAABAAgAAAAPAAAAAAABAAgAAAAQAAAAAAABAAgAAAARAAAAAAABAAgAAAASAAAAAAABAAgAAAASAAEAAAABAAgAAAARAAEAAAABAAgAAAAQAAEAAAABAAgAAAAPAAEAAAABAAgAAAAOAAEAAAABAAgAAAANAAEAAAABAAgAAAAMAAEAAAABAAgAAAAKAAEAAAABAAgAAAABAAEAAAABAAgAAAAQAA0AAAABAAgAAAARAA0AAAABAAgAAAASAA0AAAABAAgAAAAQAAIAAAABAAgAAAARAAkAAAABAAgAAAASAAkAAAABAAgAAAAEAAUAAAAAAAoAAAAOAAUAAAAAAAoAAAAJAAUAAAAAAAoAAAA=")
 tile_set = SubResource("TileSet_k2fmo")
 navigation_enabled = false
+script = ExtResource("8_mcfbp")
 
 [node name="Path" type="TileMapLayer" parent="." unique_id=1737086636]
 z_index = 3

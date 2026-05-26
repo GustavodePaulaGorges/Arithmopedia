@@ -18,7 +18,7 @@ func select_enemy() -> void:
 	if enemy_array.size() >= 2:
 		var enemy2 = enemy_array[1]
 
-		var sub_value = abs(enemy1.value - enemy2.value)
+		var sub_value = enemy1.value - enemy2.value
 		var ratio1 = enemy1.get_parent().progress_ratio
 		var ratio2 = enemy2.get_parent().progress_ratio
 		var ratio = (ratio1 + ratio2) / 2.0

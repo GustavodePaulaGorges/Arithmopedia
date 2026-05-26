@@ -4,7 +4,8 @@ extends Resource
 enum VictoryType {
 	ALL_GREATER_THAN,
 	ALL_LESS_THAN,
-	ALL_EQUAL_TO
+	ALL_EQUAL_TO,
+	ALTERNATING_SIGNALS
 }
 
 @export var stage_id: int = 1
@@ -18,7 +19,6 @@ enum VictoryType {
 @export var victory_type: VictoryType = VictoryType.ALL_GREATER_THAN
 @export var victory_target: int = 0
 
-## Mapeamento TowerTypes.TowerType (int) -> quantidade disponível.
 @export var tower_count: Dictionary = {}
 
 func check_victory(enemies: Array[int]) -> bool:
@@ -38,4 +38,15 @@ func check_victory(enemies: Array[int]) -> bool:
 				if enemy != victory_target:
 					return false
 			return true
+		VictoryType.ALTERNATING_SIGNALS:
+				var should_be_positive = true
+				for enemy in enemies:
+					if should_be_positive:
+						if enemy < 0:
+							return false
+					else:
+						if enemy > 0:
+							return false
+					should_be_positive = !should_be_positive	
+				return true
 	return false
