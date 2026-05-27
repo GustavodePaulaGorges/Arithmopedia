@@ -49,7 +49,6 @@ func check_victory(enemies: Array[int]) -> bool:
 		VictoryType.EQUAL_TO:
 			return enemies.any(func(x): return x == victory_target)
 		VictoryType.OPPOSITE_PAIRS:
-			# Verifica se existem pelo menos 2 números com mesmo valor absoluto mas sinais opostos
 			if enemies.size() < 2:
 				return false
 			for i in range(enemies.size()):
