@@ -23,6 +23,16 @@ var stages = [
 		"id": 4,
 		"name": "Fase 4",
 		"scene_path": "res://scenes/fase4/fase4.tscn"
+	},
+	{
+		"id": 5,
+		"name": "Fase 5",
+		"scene_path": "res://scenes/fase5/fase5.tscn"
+	},
+	{
+		"id": 6,
+		"name": "Fase 6",
+		"scene_path": "res://scenes/fase6/fase6.tscn"
 	}
 ]
 
@@ -42,13 +52,13 @@ func _create_stage_buttons():
 		child.queue_free()
 	
 	# Configura o StagesGrid para centralizar os filhos
-	stages_grid.add_theme_constant_override("h_separation", 20)
-	stages_grid.add_theme_constant_override("v_separation", 20)
+	stages_grid.add_theme_constant_override("h_separation", 10)
+	stages_grid.add_theme_constant_override("v_separation", 10)
 	
 	# Cria botões para cada fase
 	for stage_data in stages:
 		var stage_button = Button.new()
-		stage_button.custom_minimum_size = Vector2(80, 80)
+		stage_button.custom_minimum_size = Vector2(40, 40)
 		stage_button.text = stage_data.name
 		stage_button.add_theme_font_size_override("font_size", 24)
 		stage_button.mouse_default_cursor_shape = CursorShape.CURSOR_POINTING_HAND

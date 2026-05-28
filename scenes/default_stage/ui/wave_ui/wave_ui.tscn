@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvn2x8k7m4oap"]
+[gd_scene format=3 uid="uid://bvn2x8k7m4oap"]
 
-[ext_resource type="Script" path="res://scenes/default_stage/ui/wave_ui/wave_ui.gd" id="1_wave_ui"]
+[ext_resource type="Script" uid="uid://c5uk3ptf0fj8e" path="res://scenes/default_stage/ui/wave_ui/wave_ui.gd" id="1_wave_ui"]
 [ext_resource type="FontFile" uid="uid://bh8kpdc46m6i8" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="2_font"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
@@ -10,14 +10,14 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[node name="WaveUI" type="Control"]
+[node name="WaveUI" type="Control" unique_id=1497065270]
 custom_minimum_size = Vector2(80, 40)
 layout_mode = 3
 anchors_preset = 0
 mouse_filter = 2
 script = ExtResource("1_wave_ui")
 
-[node name="Background" type="Panel" parent="."]
+[node name="Background" type="Panel" parent="." unique_id=471409536]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,7 +27,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bg")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1602512115]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,11 +40,11 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="WaveLabel" type="RichTextLabel" parent="MarginContainer"]
+[node name="WaveLabel" type="RichTextLabel" parent="MarginContainer" unique_id=516488270]
 layout_mode = 2
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("2_font")
-theme_override_font_sizes/normal_font_size = 14
+theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "horda:"
 fit_content = true

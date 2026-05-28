@@ -12,7 +12,10 @@ script = ExtResource("1_2k8nd")
 scale = Vector2(4, 4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range" unique_id=453377771]
+position = Vector2(2, 2)
+scale = Vector2(0.8, 0.8)
 shape = SubResource("CircleShape2D_jywcc")
+debug_color = Color(0.4, 0.7, 1, 0.25)
 
 [connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
 [connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]

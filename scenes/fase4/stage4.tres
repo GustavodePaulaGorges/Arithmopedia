@@ -9,9 +9,8 @@ stage_title = "Fase 4 (Balança numérica)"
 stage_criteria = "Fazer 2 números com o mesmo valor absoluto, mas sinais opostos"
 stage_history = "A trilha se divide diante do mago Pitáclides como uma grande balança antiga, cada lado recebendo números que parecem pesar o ar ao redor. À esquerda, os valores sobem como se fossem mais leves; à direita, afundam como pesos de ferro. A balança busca o perfeito equilíbrio: dois resultados opostos, mas igualmente fortes, como se fossem reflexos invertidos um do outro."
 prize_text = "Em matemática, pares como (+a, –a) são chamados de opostos aditivos, e são fundamentais em conceitos como equilíbrio, simetria e vetores. Na prática, eles representam forças que anulam uma à outra, exatamente como pesos iguais em lados diferentes de uma balança."
-enemy_array = Array[int]([9, 10, 8, 6, 3, 4])
-victory_type = 6
-victory_target = 0
+enemy_array = Array[int]([9, 7, 4, 5, 2, 6, 6, 3])
+victory_type = 5
 tower_count = {
 0: 2,
 1: 2

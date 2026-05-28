@@ -1,18 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4yo87akx7jhi"]
+[gd_scene format=3 uid="uid://c4yo87akx7jhi"]
 
-[ext_resource type="Script" path="res://scenes/default_stage/towers/default_tower/tower.gd" id="1_5u4p8"]
+[ext_resource type="Script" uid="uid://cp0j0xl8beq5s" path="res://scenes/default_stage/towers/default_tower/tower.gd" id="1_5u4p8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vbt5a"]
 
-[node name="Tower" type="Node2D"]
+[node name="Tower" type="Node2D" unique_id=2035387899]
 z_index = 10
 script = ExtResource("1_5u4p8")
 
-[node name="Range" type="Area2D" parent="."]
+[node name="Range" type="Area2D" parent="." unique_id=23617672]
 scale = Vector2(4, 4)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range" unique_id=1939378755]
+position = Vector2(2, 2)
+scale = Vector2(0.8, 0.8)
 shape = SubResource("CircleShape2D_vbt5a")
+debug_color = Color(0.4, 0.7, 1, 0.25)
 
 [connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
 [connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]

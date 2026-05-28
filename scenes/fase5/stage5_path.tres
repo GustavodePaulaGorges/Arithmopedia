@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="StagePathData" format=3 uid="uid://dhyyyqobgtnrd"]
+
+[ext_resource type="Script" uid="uid://bytobj443uk3v" path="res://scenes/default_stage/stage_path/stage_path_data.gd" id="1_hd5jw"]
+[ext_resource type="Script" uid="uid://d150jnengjbh8" path="res://scenes/default_stage/stage_path/stage_path_segment.gd" id="2_vulyl"]
+
+[sub_resource type="Resource" id="seg_start"]
+script = ExtResource("2_vulyl")
+path = NodePath("StartPath")
+
+[sub_resource type="Resource" id="seg_bif"]
+script = ExtResource("2_vulyl")
+kind = 1
+top_path = NodePath("UpperPath")
+bottom_path = NodePath("LowerPath")
+
+[sub_resource type="Resource" id="seg_end"]
+script = ExtResource("2_vulyl")
+path = NodePath("EndPath")
+
+[resource]
+script = ExtResource("1_hd5jw")
+segments = Array[ExtResource("2_vulyl")]([SubResource("seg_start"), SubResource("seg_bif"), SubResource("seg_end")])
+metadata/_custom_type_script = "uid://bytobj443uk3v"

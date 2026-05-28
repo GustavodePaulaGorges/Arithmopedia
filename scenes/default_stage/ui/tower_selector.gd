@@ -5,6 +5,10 @@ signal tower_selected(type)
 
 @onready var hbox: HBoxContainer = $MarginContainer/HBoxContainer
 
+const ITEM_WIDTH: int = 32
+const ITEM_HEIGHT: int = 64
+const ITEM_SEPARATION: int = 4
+
 var item_scene: PackedScene = preload("res://scenes/default_stage/ui/tower_selector_item.tscn")
 
 var tower_configs: Dictionary = {
@@ -29,6 +33,8 @@ func update_ui(tower_count: Dictionary) -> void:
 	for child in hbox.get_children():
 		child.queue_free()
 
+	var visible_count: int = 0
+
 	for tower_type in tower_count.keys():
 		var count: int = tower_count[tower_type]
 
@@ -49,6 +55,9 @@ func update_ui(tower_count: Dictionary) -> void:
 		)
 
 		item.tower_pressed.connect(_on_item_pressed)
+		visible_count += 1
+
+	_resize_to_items(visible_count)
 
 	if selected_tower == null or tower_count.get(selected_tower, 0) <= 0:
 		for tower_type in tower_count.keys():
@@ -69,3 +78,12 @@ func _on_item_pressed(type) -> void:
 func _update_selection() -> void:
 	for item in hbox.get_children():
 		item.set_selected(item.tower_type == selected_tower)
+
+
+func _resize_to_items(visible_count: int) -> void:
+	var width: int = 0
+	if visible_count > 0:
+		width = visible_count * ITEM_WIDTH + (visible_count - 1) * ITEM_SEPARATION
+	custom_minimum_size = Vector2(width, ITEM_HEIGHT)
+	offset_left = offset_right - width
+	offset_top = offset_bottom - ITEM_HEIGHT

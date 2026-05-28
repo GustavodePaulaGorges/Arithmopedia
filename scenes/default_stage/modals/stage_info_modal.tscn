@@ -59,7 +59,7 @@ alignment = 1
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_pxkdm")
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 12
 text = "Título da Fase"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -72,14 +72,15 @@ layout_mode = 2
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_pxkdm")
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 12
 text = "Critério da Fase"
 horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="HistoryLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer" unique_id=362411771]
 custom_minimum_size = Vector2(300, 80)
 layout_mode = 2
-theme_override_font_sizes/font_size = 9
+theme_override_font_sizes/font_size = 8
 text = "Historinha da fase"
 horizontal_alignment = 1
 autowrap_mode = 2

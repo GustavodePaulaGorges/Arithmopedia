@@ -2,12 +2,11 @@ class_name StageData
 extends Resource
 
 enum VictoryType {
-	GREATER_THAN,
-	LESS_THAN,
-	EQUAL_TO,
 	ALL_GREATER_THAN,
 	ALL_LESS_THAN,
 	ALL_EQUAL_TO,
+	ALTERNATING_SIGNALS,
+	POTENCY_PROGRESSION,
 	OPPOSITE_PAIRS
 }
 
@@ -22,7 +21,6 @@ enum VictoryType {
 @export var victory_type: VictoryType = VictoryType.ALL_GREATER_THAN
 @export var victory_target: int = 0
 
-## Mapeamento TowerTypes.TowerType (int) -> quantidade disponível.
 @export var tower_count: Dictionary = {}
 
 func check_victory(enemies: Array[int]) -> bool:
@@ -42,12 +40,6 @@ func check_victory(enemies: Array[int]) -> bool:
 				if enemy != victory_target:
 					return false
 			return true
-		VictoryType.GREATER_THAN:
-			return enemies.any(func(x): return x > victory_target)
-		VictoryType.LESS_THAN:
-			return enemies.any(func(x): return x < victory_target)
-		VictoryType.EQUAL_TO:
-			return enemies.any(func(x): return x == victory_target)
 		VictoryType.OPPOSITE_PAIRS:
 			if enemies.size() < 2:
 				return false
@@ -56,4 +48,22 @@ func check_victory(enemies: Array[int]) -> bool:
 					if enemies[i] == -enemies[j]:
 						return true
 			return false
+		VictoryType.ALTERNATING_SIGNALS:
+				var should_be_positive = true
+				for enemy in enemies:
+					if should_be_positive:
+						if enemy < 0:
+							return false
+					else:
+						if enemy > 0:
+							return false
+					should_be_positive = !should_be_positive	
+				return true
+		VictoryType.POTENCY_PROGRESSION:
+			if enemies.size() != 4:
+				return false
+			for i in range(1, enemies.size()):
+				if enemies[i] * 2 != enemies[i - 1]:
+					return false
+			return true
 	return false

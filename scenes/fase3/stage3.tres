@@ -13,7 +13,7 @@ enemy_array = Array[int]([14, 7, 9, 4, 5, 2, 6, 4])
 victory_type = 2
 victory_target = 7
 tower_count = {
-0: 1,
+0: 2,
 1: 2
 }
 metadata/_custom_type_script = "uid://dijrnfbdcnq6t"

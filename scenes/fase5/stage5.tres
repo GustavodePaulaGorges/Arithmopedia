@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="StageData" format=3 uid="uid://0ljregxpgs4g"]
+
+[ext_resource type="Script" uid="uid://dijrnfbdcnq6t" path="res://scenes/default_stage/stage_data/stage_data.gd" id="1_umuh5"]
+
+[resource]
+script = ExtResource("1_umuh5")
+stage_id = 5
+stage_title = "Fase 5 (Corrente alternada)"
+stage_criteria = "Fazer números com sinais alternantes (+, -, +, -)"
+stage_history = "Ao seguir em sua caminhada, o velho matemágico se depara com uma terrível tempestade. O ar carrega um zumbido ensurdecedor de eletricidade que parece percorrer seu corpo todo. Ele então percebe que está nas Cordilheiras da Corrente Alternada, um local onde os números se atraem e repelem de forma agora caótica, onde anteriormente seguiam um ritmo belo e constante."
+prize_text = "Sequências que alternam sinais aparecem em vários ramos da matemática, especialmente nas chamadas séries alternadas. Em muitas delas, cada termo muda de sinal em relação ao anterior, criando padrões que podem convergir rapidamente ou revelar comportamentos sutis em cálculos infinitos. Esse tipo de alternância também tem paralelos em fenômenos físicos, como oscilações, vibrações e variações periódicas de energia."
+enemy_array = Array[int]([50, 20, 18, 10, 40, 15, 30, 10, 32, 10, 20, 10, 28, 10, 25, 10])
+victory_type = 3
+tower_count = {
+0: 2,
+1: 2
+}
+metadata/_custom_type_script = "uid://dijrnfbdcnq6t"
