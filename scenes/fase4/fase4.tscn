@@ -4,11 +4,30 @@
 [ext_resource type="Resource" uid="uid://b4stage4data0" path="res://scenes/fase4/stage4.tres" id="2_stage_data"]
 [ext_resource type="PackedScene" uid="uid://d36v5y8k6osia" path="res://scenes/default_stage/enemy_spawner/enemy_spawner.tscn" id="3_spawner"]
 [ext_resource type="PackedScene" uid="uid://3lmh178myu3h" path="res://scenes/default_stage/enemy_endpoint/enemy_endpoint.tscn" id="4_endpoint"]
-[ext_resource type="PackedScene" uid="uid://b4tilemap4sc0" path="res://scenes/fase4/tilemap.tscn" id="5_tilemap"]
+[ext_resource type="PackedScene" uid="uid://btilemapfase4" path="res://scenes/fase4/tilemap.tscn" id="5_tilemap"]
+[ext_resource type="Resource" uid="uid://dbfueddy4opk3" path="res://scenes/fase4/stage4_path.tres" id="6_stage_path"]
 
-[sub_resource type="Curve2D" id="Curve2D_4fase"]
+[sub_resource type="Curve2D" id="Curve2D_7voh4"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 92, 0, 0, 0, 0, 289, 92)
+"points": PackedVector2Array(0, 0, 0, 0, 18, 102, 0, 0, 0, 0, 104, 102)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_88sy4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 104, 102, 0, 0, 0, 0, 104, 54, 0, 0, 0, 0, 201, 53, 0, 0, 0, 0, 201, 102)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_3ehto"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 104, 102, 0, 0, 0, 0, 104, 153, 0, 0, 0, 0, 201, 153, 0, 0, 0, 0, 201, 102)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_fmj3c"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 201, 102, 0, 0, 0, 0, 303, 102)
 }
 point_count = 2
 
@@ -16,17 +35,34 @@ point_count = 2
 
 [node name="DefaultStage" parent="." unique_id=612317291 instance=ExtResource("1_default_stage")]
 stage_data = ExtResource("2_stage_data")
+stage_path_data = ExtResource("6_stage_path")
 
 [node name="EnemySpawner" parent="." unique_id=306537887 instance=ExtResource("3_spawner")]
 z_index = 99
-position = Vector2(0, 92)
+position = Vector2(12, 116)
 
 [node name="EnemyEndpoint" parent="." unique_id=362023144 instance=ExtResource("4_endpoint")]
 z_index = 99
-position = Vector2(289, 92)
+position = Vector2(298, 117)
 
 [node name="Tilemap" parent="." unique_id=1874299496 instance=ExtResource("5_tilemap")]
 
-[node name="EnemyPath" type="Path2D" parent="." unique_id=711654625 groups=["enemy_path"]]
+[node name="StartPath" type="Path2D" parent="." unique_id=1764090809]
 z_index = 99
-curve = SubResource("Curve2D_4fase")
+position = Vector2(-1, 16)
+curve = SubResource("Curve2D_7voh4")
+
+[node name="UpperPath" type="Path2D" parent="." unique_id=342355822]
+z_index = 99
+position = Vector2(-1, 16)
+curve = SubResource("Curve2D_88sy4")
+
+[node name="LowerPath" type="Path2D" parent="." unique_id=1199186625]
+z_index = 99
+position = Vector2(-1, 16)
+curve = SubResource("Curve2D_3ehto")
+
+[node name="EndPath" type="Path2D" parent="." unique_id=2046301462]
+z_index = 99
+position = Vector2(-1, 16)
+curve = SubResource("Curve2D_fmj3c")
