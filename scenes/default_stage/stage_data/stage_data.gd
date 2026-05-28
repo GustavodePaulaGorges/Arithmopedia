@@ -6,7 +6,8 @@ enum VictoryType {
 	ALL_LESS_THAN,
 	ALL_EQUAL_TO,
 	ALTERNATING_SIGNALS,
-	POTENCY_PROGRESSION
+	POTENCY_PROGRESSION,
+	OPPOSITE_PAIRS
 }
 
 @export var stage_id: int = 1
@@ -39,6 +40,14 @@ func check_victory(enemies: Array[int]) -> bool:
 				if enemy != victory_target:
 					return false
 			return true
+		VictoryType.OPPOSITE_PAIRS:
+			if enemies.size() < 2:
+				return false
+			for i in range(enemies.size()):
+				for j in range(i + 1, enemies.size()):
+					if enemies[i] == -enemies[j]:
+						return true
+			return false
 		VictoryType.ALTERNATING_SIGNALS:
 				var should_be_positive = true
 				for enemy in enemies:
