@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="StagePathData" format=3 uid="uid://bnycjmmgjwwpy"]
+
+[ext_resource type="Script" uid="uid://bytobj443uk3v" path="res://scenes/default_stage/stage_path/stage_path_data.gd" id="1_data"]
+[ext_resource type="Script" uid="uid://d150jnengjbh8" path="res://scenes/default_stage/stage_path/stage_path_segment.gd" id="2_seg"]
+
+[sub_resource type="Resource" id="seg_main"]
+script = ExtResource("2_seg")
+path = NodePath("EnemyPath")
+
+[resource]
+script = ExtResource("1_data")
+segments = Array[ExtResource("2_seg")]([SubResource("seg_main")])

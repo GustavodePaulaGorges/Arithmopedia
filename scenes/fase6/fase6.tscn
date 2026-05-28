@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://d1aiuvf4ja2vl"]
+
+[ext_resource type="PackedScene" uid="uid://clqgj3kjqgkk4" path="res://scenes/default_stage/default_stage.tscn" id="1_rxf4l"]
+[ext_resource type="Resource" uid="uid://j513hl6hhhrp" path="res://scenes/fase6/stage6.tres" id="2_5i847"]
+[ext_resource type="Resource" uid="uid://xh6v6va7g45u" path="res://scenes/fase6/stage6_path.tres" id="3_7y5xv"]
+[ext_resource type="PackedScene" uid="uid://3lmh178myu3h" path="res://scenes/default_stage/enemy_endpoint/enemy_endpoint.tscn" id="4_ynkfe"]
+[ext_resource type="PackedScene" uid="uid://d36v5y8k6osia" path="res://scenes/default_stage/enemy_spawner/enemy_spawner.tscn" id="5_w5ein"]
+[ext_resource type="PackedScene" uid="uid://ehmtxqfkc3jg" path="res://scenes/fase6/tilemap.tscn" id="6_kmahf"]
+
+[sub_resource type="Curve2D" id="Curve2D_hv36b"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 8, 102, 0, 0, 0, 0, 52, 102)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_uklgt"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 52, 102, 0, 0, 0, 0, 71, 88, 0, 0, 0, 0, 71, 53, 0, 0, 0, 0, 233, 53, 0, 0, 0, 0, 242, 102)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_iuyce"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 52, 102, 0, 0, 0, 0, 71, 119, 0, 0, 0, 0, 71, 154, 0, 0, 0, 0, 233, 154, 0, 0, 0, 0, 242, 102)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_h17t1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 242, 102, 0, 0, 0, 0, 303, 102)
+}
+point_count = 2
+
+[node name="Fase6" type="Node2D" unique_id=1556133570]
+
+[node name="DefaultStage" parent="." unique_id=612317291 instance=ExtResource("1_rxf4l")]
+stage_data = ExtResource("2_5i847")
+stage_path_data = ExtResource("3_7y5xv")
+
+[node name="EnemyEndpoint" parent="." unique_id=894755795 instance=ExtResource("4_ynkfe")]
+z_index = 99
+position = Vector2(297, 101)
+
+[node name="EnemySpawner" parent="." unique_id=1535741087 instance=ExtResource("5_w5ein")]
+z_index = 99
+position = Vector2(8, 101)
+
+[node name="Tilemap" parent="." unique_id=1723928756 instance=ExtResource("6_kmahf")]
+
+[node name="StartPath" type="Path2D" parent="." unique_id=1354952398]
+z_index = 99
+position = Vector2(2, 1)
+curve = SubResource("Curve2D_hv36b")
+
+[node name="UpperPath" type="Path2D" parent="." unique_id=711991608]
+z_index = 99
+position = Vector2(2, 1)
+curve = SubResource("Curve2D_uklgt")
+
+[node name="LowerPath" type="Path2D" parent="." unique_id=1841533904]
+z_index = 99
+position = Vector2(2, 1)
+curve = SubResource("Curve2D_iuyce")
+
+[node name="EndPath" type="Path2D" parent="." unique_id=82456266]
+z_index = 99
+position = Vector2(2, 1)
+curve = SubResource("Curve2D_h17t1")

@@ -36,20 +36,6 @@ division_tower_scene = ExtResource("8_ccv54")
 [node name="HighlightTile" parent="." unique_id=1595803021 instance=ExtResource("7_highlight")]
 z_index = 99
 
-[node name="Modals" type="Node" parent="." unique_id=725875345]
-
-[node name="VictoryModal" parent="Modals" unique_id=1325034141 instance=ExtResource("8_victory")]
-visible = false
-z_index = 1000
-
-[node name="DefeatModal" parent="Modals" unique_id=1733409355 instance=ExtResource("9_defeat")]
-visible = false
-z_index = 1000
-
-[node name="StageInfoModal" parent="Modals" unique_id=664178854 instance=ExtResource("10_stage_info")]
-visible = false
-z_index = 1000
-
 [node name="UI" type="Control" parent="." unique_id=789384871]
 z_index = 999
 layout_mode = 3
@@ -67,8 +53,8 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 220.0
-offset_top = 156.0
+offset_left = 225.0
+offset_top = 158.0
 offset_right = 300.0
 offset_bottom = 220.0
 grow_horizontal = 0
@@ -104,5 +90,19 @@ mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("13_font")
 theme_override_font_sizes/font_size = 12
 text = "Iniciar horda"
+
+[node name="Modals" type="Node" parent="." unique_id=725875345]
+
+[node name="VictoryModal" parent="Modals" unique_id=1325034141 instance=ExtResource("8_victory")]
+visible = false
+z_index = 1000
+
+[node name="DefeatModal" parent="Modals" unique_id=1733409355 instance=ExtResource("9_defeat")]
+visible = false
+z_index = 1000
+
+[node name="StageInfoModal" parent="Modals" unique_id=664178854 instance=ExtResource("10_stage_info")]
+visible = false
+z_index = 1000
 
 [connection signal="tower_count_updated" from="BuildingManager" to="UI/TowerSelector" method="update_ui"]

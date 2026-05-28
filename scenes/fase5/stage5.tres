@@ -12,7 +12,7 @@ prize_text = "Sequências que alternam sinais aparecem em vários ramos da matem
 enemy_array = Array[int]([50, 20, 18, 10, 40, 15, 30, 10, 32, 10, 20, 10, 28, 10, 25, 10])
 victory_type = 3
 tower_count = {
-0: 1,
+0: 2,
 1: 2
 }
 metadata/_custom_type_script = "uid://dijrnfbdcnq6t"
