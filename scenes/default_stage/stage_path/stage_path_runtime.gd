@@ -43,7 +43,7 @@ func setup(p_stage_root: Node, p_data: StagePathData) -> bool:
 				if p == null:
 					return false
 				seg.paths = [p]
-			StagePathSegment.Kind.BIFURCATION:
+			StagePathSegment.Kind.BIFURCATION, StagePathSegment.Kind.TWO_WAY_START:
 				var pt := _resolve_path(seg_def.top_path)
 				var pb := _resolve_path(seg_def.bottom_path)
 				if pt == null or pb == null:
@@ -89,6 +89,18 @@ func _choose_initial_branch(segment_index: int) -> int:
 	# 1º (ímpar) → top, 2º (par) → bottom, ...
 	return BRANCH_TOP if (seg.bif_counter % 2) == 1 else BRANCH_BOTTOM
 
+func is_two_way_start_first() -> bool:
+	return not segments.is_empty() and segments[0].kind == StagePathSegment.Kind.TWO_WAY_START
+
+func place_initial_on_branch(enemy: EnemyEntity, branch: int) -> void:
+	if segments.is_empty():
+		return
+	branch = clamp(branch, 0, 1)
+	_attach_to_segment(enemy, 0, branch, 0.0)
+
+static func _is_branching_kind(kind: int) -> bool:
+	return kind == StagePathSegment.Kind.BIFURCATION or kind == StagePathSegment.Kind.TWO_WAY_START
+
 func _attach_to_segment(enemy: EnemyEntity, segment_index: int, branch: int, ratio: float) -> void:
 	var seg := segments[segment_index]
 	var p2d: Path2D = seg.paths[branch] if branch < seg.paths.size() else seg.paths[0]
@@ -112,7 +124,7 @@ func _attach_to_segment(enemy: EnemyEntity, segment_index: int, branch: int, rat
 	enemy.path_follow = path_follow
 	enemy.reset_segment_finished_flag()
 
-	if seg.kind == StagePathSegment.Kind.BIFURCATION:
+	if _is_branching_kind(seg.kind):
 		seg.pending[branch] += 1
 
 ## Chamado pelo EnemyEntity quando atinge progress_ratio >= 1.0 em seu segmento.
@@ -130,7 +142,7 @@ func on_enemy_finished_segment(enemy: EnemyEntity) -> void:
 			enemy.path_follow.progress_ratio = 1.0
 		return
 
-	if seg.kind == StagePathSegment.Kind.BIFURCATION:
+	if _is_branching_kind(seg.kind):
 		# Decrementa pending e enfileira no merge.
 		seg.pending[enemy.branch] = max(seg.pending[enemy.branch] - 1, 0)
 		enemy.is_moving = false
@@ -154,7 +166,7 @@ func on_enemy_consumed(enemy: EnemyEntity) -> void:
 	if seg_index < 0 or seg_index >= segments.size():
 		return
 	var seg := segments[seg_index]
-	if seg.kind == StagePathSegment.Kind.BIFURCATION:
+	if _is_branching_kind(seg.kind):
 		seg.pending[enemy.branch] = max(seg.pending[enemy.branch] - 1, 0)
 		# Pode ser que com a remoção, o merge fique destravado.
 		_flush_merge(seg_index)
@@ -166,7 +178,7 @@ func _advance_to_next(enemy: EnemyEntity, current_seg_index: int) -> void:
 		return
 	var next_seg := segments[next_index]
 	var branch := SINGLE_BRANCH
-	if next_seg.kind == StagePathSegment.Kind.BIFURCATION:
+	if _is_branching_kind(next_seg.kind):
 		branch = _choose_initial_branch(next_index)
 	_attach_to_segment(enemy, next_index, branch, 0.0)
 	enemy.is_moving = true
@@ -207,7 +219,7 @@ func _flush_merge(bif_seg_index: int) -> void:
 ## para drenar qualquer merge que tenha ficado esperando o par.
 func drain_all_merges() -> void:
 	for i in range(segments.size()):
-		if segments[i].kind == StagePathSegment.Kind.BIFURCATION:
+		if _is_branching_kind(segments[i].kind):
 			_drain_segment(i)
 
 func _drain_segment(bif_seg_index: int) -> void:

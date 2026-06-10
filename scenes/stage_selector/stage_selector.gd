@@ -33,6 +33,11 @@ var stages = [
 		"id": 6,
 		"name": "Fase 6",
 		"scene_path": "res://scenes/fase6/fase6.tscn"
+	},
+	{
+		"id": 7,
+		"name": "Fase 7",
+		"scene_path": "res://scenes/fase7/fase7.tscn"
 	}
 ]
 

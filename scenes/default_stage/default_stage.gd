@@ -38,6 +38,7 @@ func _initialize() -> void:
 	enemy_manager.level_completed.connect(_on_level_completed)
 	enemy_manager.level_failed.connect(_on_level_failed)
 	enemy_manager.wave_updated.connect(wave_ui.update_wave_display)
+	enemy_manager.wave_updated_dual.connect(wave_ui.update_wave_display_dual)
 	if stage_path_data == null:
 		push_error("DefaultStage: stage_path_data não foi atribuído")
 		return

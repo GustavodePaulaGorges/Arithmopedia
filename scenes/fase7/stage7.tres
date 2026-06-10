@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="StageData" format=3 uid="uid://bcw6el76x4y8j"]
+
+[ext_resource type="Script" uid="uid://dijrnfbdcnq6t" path="res://scenes/default_stage/stage_data/stage_data.gd" id="1_sa7e2"]
+
+[resource]
+script = ExtResource("1_sa7e2")
+stage_id = 7
+stage_title = "Fase 7 (Equilíbrio de Equações)"
+stage_criteria = "Fazer 4 números idênticos"
+stage_history = "Cada vez mais próximo de seu destino final, porém armado com o conhecimento dos monges, Pitáclides se encontra na Floresta do Equilíbrio, onde os elfos equilibristas habitam, porém, com o khaos, o que antes era uma vila que esbanjava o equilíbrio com casas postas em cima de pequenos pilares, balanceando de forma harmoniosa, agora mostra seus habitantes aos tombos, caindo e tropeçando em suas estruturas que seguem sendo derrubadas. O ritual do Equilíbrio das equações era o que mantinha tudo em sua devida posição, porém agora ele está completamente desfigurado."
+prize_text = "Equilibrar equações é um conceito fundamental da álgebra: os dois lados devem sempre representar o mesmo valor para que a igualdade seja verdadeira. Esse princípio aparece em tudo, desde resolver sistemas até criar gráficos simétricos. Em termos simples, uma equação só existe porque dois processos diferentes conseguem produzir exatamente o mesmo resultado. Progressões desse tipo aparecem em fenômenos naturais (como decaimento radioativo), compressão de sinais, escalas harmônicas e até na computação, quando estruturas são divididas repetidamente para otimizar processos. "
+enemy_array_upper = Array[int]([6, 5, 7, 5, 7, 4, 8, 4])
+enemy_array_lower = Array[int]([20, 2, 30, 2, 16, 2, 36, 3])
+victory_type = 6
+tower_count = {
+0: 2,
+1: 2,
+2: 2,
+3: 2
+}
+metadata/_custom_type_script = "uid://dijrnfbdcnq6t"
