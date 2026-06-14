@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="StageData" format=3 uid="uid://ep5ecr2cdbb4"]
+
+[ext_resource type="Script" uid="uid://dijrnfbdcnq6t" path="res://scenes/default_stage/stage_data/stage_data.gd" id="1_jhtww"]
+
+[resource]
+script = ExtResource("1_jhtww")
+stage_id = 9
+stage_title = "Fase 9 — Quadrados Perfeitos"
+stage_criteria = "Fazer 4 quadrados perfeitos"
+stage_history = "Agora, adentrando a caverna dos anões da Ordem de Potenradi, Pitáclides chega à Arqui-Câmara, um vasto laboratório geométrico onde os anões-cientistas estudam números e formas com precisão absoluta. Há séculos, eles lapidam combinações matemáticas e analisam cada valor com extremo rigor. Para avançar, Pitáclides deve seguir essa tradição, reorganizando e combinando os números para revelar sua verdadeira natureza e formar um conjunto perfeitamente equilibrado."
+prize_text = "A radiciação e a potenciação são operações inversas, como abrir e fechar uma mesma porta. Números chamados de quadrados perfeitos podem ser “desempacotados” por uma raiz para revelar sua forma essencial. Essa relação aparece em várias áreas: geometria, progressões, áreas de quadrados e até em otimização. Quando números que foram simplificados encontram valores compatíveis, eles podem gerar produtos idênticos, criando padrões simétricos que são muito usados em equações e em problemas de fatoração."
+enemy_array = Array[int]([16, 9, 9, 12, 36, 6, 4, 18])
+victory_type = 8
+tower_count = {
+2: 2,
+3: 2,
+4: 2,
+5: 2
+}
+metadata/_custom_type_script = "uid://dijrnfbdcnq6t"

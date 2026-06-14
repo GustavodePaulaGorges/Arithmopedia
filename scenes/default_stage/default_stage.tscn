@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dflyxw72ybna7" path="res://scenes/default_stage/towers/multiplication_tower/multiplication_tower.tscn" id="7_f56uo"]
 [ext_resource type="PackedScene" uid="uid://cdkgaiv2pscev" path="res://scenes/default_stage/highlight_tile/highlight_tile.tscn" id="7_highlight"]
 [ext_resource type="PackedScene" uid="uid://ddp2h07ro1cl8" path="res://scenes/default_stage/towers/division_tower/division_tower.tscn" id="8_ccv54"]
+[ext_resource type="PackedScene" uid="uid://cpotpw7scene01" path="res://scenes/default_stage/towers/potentiation_tower/potentiation_tower.tscn" id="9_potent"]
+[ext_resource type="PackedScene" uid="uid://cradpw7scene01" path="res://scenes/default_stage/towers/radication_tower/radication_tower.tscn" id="10_radic"]
 [ext_resource type="PackedScene" uid="uid://bvictorymodal" path="res://scenes/default_stage/modals/victory_modal.tscn" id="8_victory"]
 [ext_resource type="PackedScene" uid="uid://bdefeatmodal" path="res://scenes/default_stage/modals/defeat_modal.tscn" id="9_defeat"]
 [ext_resource type="PackedScene" uid="uid://d246asdq0lfp4" path="res://scenes/default_stage/modals/stage_info_modal.tscn" id="10_stage_info"]
@@ -32,6 +34,8 @@ addition_tower_scene = ExtResource("5_addition")
 subtraction_tower_scene = ExtResource("6_subtraction")
 multiplication_tower_scene = ExtResource("7_f56uo")
 division_tower_scene = ExtResource("8_ccv54")
+potentiation_tower_scene = ExtResource("9_potent")
+radication_tower_scene = ExtResource("10_radic")
 
 [node name="HighlightTile" parent="." unique_id=1595803021 instance=ExtResource("7_highlight")]
 z_index = 99

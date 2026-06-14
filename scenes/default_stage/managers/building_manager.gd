@@ -7,6 +7,8 @@ signal tower_count_updated(tower_count: Dictionary)
 @export var subtraction_tower_scene: PackedScene
 @export var multiplication_tower_scene: PackedScene
 @export var division_tower_scene: PackedScene
+@export var potentiation_tower_scene: PackedScene
+@export var radication_tower_scene: PackedScene
 
 const IS_BUILDABLE_STR : String = "buildable"
 const TOWER_GROUP : String = "TOWER_GROUP"
@@ -44,6 +46,10 @@ func place_tower(cell_position : Vector2i, tower_type: TowerTypes.TowerType) -> 
 			tower_scene = multiplication_tower_scene
 		TowerTypes.TowerType.DIVISION:
 			tower_scene = division_tower_scene
+		TowerTypes.TowerType.POTENTIATION:
+			tower_scene = potentiation_tower_scene
+		TowerTypes.TowerType.RADICATION:
+			tower_scene = radication_tower_scene
 		_:
 			return
 

@@ -5,7 +5,6 @@
 [ext_resource type="Resource" uid="uid://0ljregxpgs4g" path="res://scenes/fase5/stage5.tres" id="2_xuim1"]
 [ext_resource type="Resource" uid="uid://dhyyyqobgtnrd" path="res://scenes/fase5/stage5_path.tres" id="3_f0msl"]
 [ext_resource type="PackedScene" uid="uid://3lmh178myu3h" path="res://scenes/default_stage/enemy_endpoint/enemy_endpoint.tscn" id="3_qv82r"]
-[ext_resource type="PackedScene" uid="uid://cwflky54huuo3" path="res://scenes/fase5/tilemap.tscn" id="4_uig1u"]
 
 [sub_resource type="Curve2D" id="Curve2D_xuim1"]
 _data = {
@@ -44,8 +43,6 @@ position = Vector2(9, 100)
 [node name="EnemyEndpoint" parent="." unique_id=1770926010 instance=ExtResource("3_qv82r")]
 z_index = 99
 position = Vector2(295, 100)
-
-[node name="Tilemap" parent="." unique_id=1749979078 instance=ExtResource("4_uig1u")]
 
 [node name="StartPath" type="Path2D" parent="." unique_id=38166380]
 z_index = 99
