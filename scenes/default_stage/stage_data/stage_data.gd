@@ -10,7 +10,8 @@ enum VictoryType {
 	OPPOSITE_PAIRS,
 	ALL_EQUAL_BETWEEN,
 	EVEN_ODD,
-	SQUARE_PERFECT
+	SQUARE_PERFECT,
+	SEVEN_DIFFERENCE,
 }
 
 @export var stage_id: int = 1
@@ -100,5 +101,11 @@ func check_victory(enemies: Array[int]) -> bool:
 					return false
 				if sqrt(enemy) != int(sqrt(enemy)):
 					return false
+			return true
+		VictoryType.SEVEN_DIFFERENCE:
+			if enemies.size() != 2:
+				return false
+			if (abs(enemies[0] - enemies[1]) != 7):
+				return false
 			return true
 	return false
