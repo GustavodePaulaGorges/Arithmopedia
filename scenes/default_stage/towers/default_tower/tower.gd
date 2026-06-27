@@ -5,6 +5,7 @@ extends Node2D
 
 signal request_spawn_enemy(ratio: float, value: int, creator_tower: TowerEntity, segment_index: int, branch: int)
 signal enemy_consumed(enemy: EnemyEntity)
+signal enemy_paused(enemy: EnemyEntity)
 
 const RANGE_COLOR := Color(0.4, 0.7, 1, 0.25)
 
@@ -49,3 +50,13 @@ func remove_enemy(enemy: EnemyEntity) -> void:
 	enemy_array.erase(enemy)
 	enemy_consumed.emit(enemy)
 	enemy.get_parent().queue_free()
+
+func pause_enemy(enemy: EnemyEntity) -> void:
+	if enemy == null:
+		return
+
+	if not enemy.is_moving:
+		return
+
+	enemy.is_moving = false
+	enemy_paused.emit(enemy)

@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="StagePathData" format=3 uid="uid://bstgfinalpath"]
+
+[ext_resource type="Script" uid="uid://bytobj443uk3v" path="res://scenes/default_stage/stage_path/stage_path_data.gd" id="1_data"]
+[ext_resource type="Script" uid="uid://d150jnengjbh8" path="res://scenes/default_stage/stage_path/stage_path_segment.gd" id="2_seg"]
+
+[sub_resource type="Resource" id="seg_main"]
+script = ExtResource("2_seg")
+path = NodePath("MainPath")
+
+[sub_resource type="Resource" id="seg_bif"]
+script = ExtResource("2_seg")
+kind = 1
+top_path = NodePath("TopPath")
+bottom_path = NodePath("BottomPath")
+
+[sub_resource type="Resource" id="Resource_d6pul"]
+script = ExtResource("2_seg")
+kind = 1
+top_path = NodePath("Top-MainPath")
+bottom_path = NodePath("Top-BottomPath")
+metadata/_custom_type_script = "uid://d150jnengjbh8"
+
+[resource]
+script = ExtResource("1_data")
+segments = Array[ExtResource("2_seg")]([SubResource("seg_main"), SubResource("seg_bif"), SubResource("Resource_d6pul")])
+loop = true
+sort_bifurcation_by_value = true
+paused_enemies_do_not_block_merge = true
+bottom_branch_returns_to_start = true
+reset_creator_tower_on_return_to_start = true
+reset_duplicated_on_return_to_start = true

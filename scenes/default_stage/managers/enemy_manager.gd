@@ -129,14 +129,22 @@ func request_spawn(ratio: float, value: int, creator_tower: TowerEntity = null, 
 func register_tower(tower: TowerEntity) -> void:
 	if not tower.request_spawn_enemy.is_connected(request_spawn):
 		tower.request_spawn_enemy.connect(request_spawn)
+
 	if not tower.enemy_consumed.is_connected(_on_enemy_consumed):
 		tower.enemy_consumed.connect(_on_enemy_consumed)
+
+	if not tower.enemy_paused.is_connected(_on_enemy_paused):
+		tower.enemy_paused.connect(_on_enemy_paused)
 
 func unregister_tower(tower: TowerEntity) -> void:
 	if tower.request_spawn_enemy.is_connected(request_spawn):
 		tower.request_spawn_enemy.disconnect(request_spawn)
+
 	if tower.enemy_consumed.is_connected(_on_enemy_consumed):
 		tower.enemy_consumed.disconnect(_on_enemy_consumed)
+
+	if tower.enemy_paused.is_connected(_on_enemy_paused):
+		tower.enemy_paused.disconnect(_on_enemy_paused)
 
 func _on_spawn_timer_timeout() -> void:
 	if current_data_index >= wave_data_array.size():
@@ -239,3 +247,7 @@ func _check_victory() -> void:
 		level_completed.emit()
 	else:
 		level_failed.emit()
+
+func _on_enemy_paused(enemy: EnemyEntity) -> void:
+	if _path_runtime:
+		_path_runtime.on_enemy_paused_by_tower(enemy)

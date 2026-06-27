@@ -9,6 +9,7 @@ extends CharacterBody2D
 var path_follow: PathFollow2D
 var is_moving : bool = true
 var creator_tower: TowerEntity
+var duplicated: bool = false
 
 var segment_index: int = 0
 var branch: int = 0

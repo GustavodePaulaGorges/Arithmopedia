@@ -35,6 +35,7 @@ window/stretch/mode="viewport"
 
 enemy_path=""
 towers_tilemap=""
+boss_enemy=""
 
 [input]
 

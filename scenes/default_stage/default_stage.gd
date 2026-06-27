@@ -15,6 +15,7 @@ extends Node2D
 
 var selected_tower_type: TowerTypes.TowerType = TowerTypes.TowerType.ADDITION
 var towers_tilemap: TileMapLayer
+var stage_ended := false
 
 func _ready() -> void:
 	# Aguarda 1 frame para garantir que os nós da fase irmã (tilemap, spawner,
@@ -44,6 +45,9 @@ func _initialize() -> void:
 		return
 
 	var stage_root: Node = get_parent()
+	
+	_connect_boss_enemy(stage_root)
+	
 	enemy_manager.setup(stage_data, stage_path_data, stage_root)
 
 	building_manager.setup(stage_data.tower_count)
@@ -52,16 +56,46 @@ func _initialize() -> void:
 	horde_button.pressed.connect(_on_horde_button_pressed)
 
 func _on_level_completed() -> void:
+	if stage_ended:
+		return
+
+	stage_ended = true
+
 	victory_modal.set_prize_text(stage_data.prize_text)
 	victory_modal.show_modal()
 	_restore_cursor()
+
 	var pm := get_node_or_null("/root/ProgressManager")
 	if pm:
 		pm.complete_stage(stage_data.stage_id)
 
+
 func _on_level_failed() -> void:
+	if stage_ended:
+		return
+
+	stage_ended = true
+
 	defeat_modal.show_modal()
 	_restore_cursor()
+	
+func _connect_boss_enemy(stage_root: Node) -> void:
+	for node in get_tree().get_nodes_in_group("boss_enemy"):
+		var boss := node as BossEnemy
+
+		if boss == null:
+			continue
+
+		if not stage_root.is_ancestor_of(boss) and boss != stage_root:
+			continue
+
+		if not boss.boss_defeated.is_connected(_on_boss_defeated):
+			boss.boss_defeated.connect(_on_boss_defeated)
+
+		return
+		
+func _on_boss_defeated() -> void:
+	_on_level_completed()
 
 func _restore_cursor() -> void:
 	var arrow: Texture2D = load("res://assets/light_cursor_1.png")

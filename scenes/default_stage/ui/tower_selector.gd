@@ -29,6 +29,9 @@ var tower_configs: Dictionary = {
 	},
 	TowerTypes.TowerType.RADICATION: {
 		"texture": preload("res://assets/sprites/TorreRad.png")
+	},
+	TowerTypes.TowerType.DOUBLING: {
+		"texture": preload("res://assets/sprites/TorreDup.png")
 	}
 }
 

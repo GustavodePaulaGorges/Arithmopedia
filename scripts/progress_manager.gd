@@ -64,9 +64,9 @@ func reset_progress():
 	save_progress()
 
 func unlock_all_stages():
-	# Desbloqueia todas as fases (assumindo que temos 10 fases no total)
+	# Desbloqueia todas as fases (assumindo que temos 11 fases no total)
 	unlocked_stages.clear()
-	for i in range(1, 11):  # Fases 1 a 10
+	for i in range(1, 12):  # Fases 1 a 11
 		unlocked_stages.append(i)
 	save_progress()
 
