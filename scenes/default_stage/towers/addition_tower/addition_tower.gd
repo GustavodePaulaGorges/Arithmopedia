@@ -10,13 +10,15 @@ func _physics_process(_delta: float) -> void:
 		select_enemy()
 
 func select_enemy() -> void:
+	enemy_array.sort_custom(func(a: EnemyEntity, b: EnemyEntity) -> bool: return a.value < b.value)
+
 	var enemy1 = enemy_array[0]
 
 	if enemy1.creator_tower != self:
-		enemy1.is_moving = false
+		pause_enemy(enemy1)
 
 	if enemy_array.size() >= 2:
-		var enemy2 = enemy_array[1]
+		var enemy2 = enemy_array[enemy_array.size() - 1]
 
 		var sum_value = enemy1.value + enemy2.value
 		var ratio1 = enemy1.get_parent().progress_ratio

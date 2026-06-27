@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="StageData" format=3 uid="uid://du1c41xl0ipwi"]
+
+[ext_resource type="Script" uid="uid://dijrnfbdcnq6t" path="res://scenes/default_stage/stage_data/stage_data.gd" id="1_w0n2a"]
+
+[resource]
+script = ExtResource("1_w0n2a")
+stage_id = 10
+stage_title = "Fase 10 - Sete Léguas"
+stage_criteria = "Fazer 2 números com uma diferença de 7 unidades"
+stage_history = "Com os Espelhos Gêmeos selados, Pitáclides segue por uma trilha estreita até despencar a vista sobre um abismo sem fundo: o Desfiladeiro das Sete Léguas. Dois guardiões numéricos sustentam, cada um de seu penhasco, as pontas de uma velha ponte levadiça, mas ela treme, mal encaixada, larga demais num ponto e curta demais noutro. Para cruzar com segurança, Pitáclides precisa ajustar a distância entre os dois lados da ponte até o vão exato das lendárias Botas de Sete Léguas: nem mais, nem menos que 7 léguas. E há pressa no ar, este é o último desafio antes do covil de Numeron."
+prize_text = "A légua secreta dos quadrados: a diferença entre dois quadrados perfeitos consecutivos é sempre igual à soma das suas raízes, e, portanto, sempre ímpar. Veja: 4² − 3² = 16 − 9 = 7 = 4 + 3. No geral, a² − b² = (a + b)(a − b); como os vizinhos distam 1, sobra apenas a + b. Foi assim que a ponte mediu suas sete léguas!"
+enemy_array = Array[int]([6, 2, 3, 1, 9, 2, 3, 2])
+victory_type = 9
+tower_count = {
+2: 1,
+3: 1,
+4: 1,
+5: 1
+}
+metadata/_custom_type_script = "uid://dijrnfbdcnq6t"

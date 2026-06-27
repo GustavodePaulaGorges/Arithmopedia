@@ -49,3 +49,19 @@ bbcode_enabled = true
 text = "horda:"
 fit_content = true
 autowrap_mode = 1
+
+[node name="ToggleButton" type="Button" parent="." unique_id=842710001]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -18.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = 18.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 12
+toggle_mode = true
+text = "-"

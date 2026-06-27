@@ -7,7 +7,11 @@ enum VictoryType {
 	ALL_EQUAL_TO,
 	ALTERNATING_SIGNALS,
 	POTENCY_PROGRESSION,
-	OPPOSITE_PAIRS
+	OPPOSITE_PAIRS,
+	ALL_EQUAL_BETWEEN,
+	EVEN_ODD,
+	SQUARE_PERFECT,
+	SEVEN_DIFFERENCE,
 }
 
 @export var stage_id: int = 1
@@ -17,6 +21,8 @@ enum VictoryType {
 @export_multiline var prize_text: String = ""
 
 @export var enemy_array: Array[int] = []
+@export var enemy_array_upper: Array[int] = []
+@export var enemy_array_lower: Array[int] = []
 
 @export var victory_type: VictoryType = VictoryType.ALL_GREATER_THAN
 @export var victory_target: int = 0
@@ -65,5 +71,41 @@ func check_victory(enemies: Array[int]) -> bool:
 			for i in range(1, enemies.size()):
 				if enemies[i] * 2 != enemies[i - 1]:
 					return false
+			return true
+		VictoryType.ALL_EQUAL_BETWEEN:
+			if enemies.size() != 4:
+				return false
+			var first = enemies[0]
+			for enemy in enemies:
+				if enemy != first:
+					return false
+			return true
+		VictoryType.EVEN_ODD:
+			if enemies.size() != 4:
+				return false
+			var should_be_even = true
+			for enemy in enemies:
+				if should_be_even:
+					if enemy % 2 != 0:
+						return false
+				else:
+					if enemy % 2 == 0:
+						return false
+				should_be_even = !should_be_even	
+			return true
+		VictoryType.SQUARE_PERFECT:
+			if enemies.size() != 4:
+				return false
+			for enemy in enemies:
+				if enemy < 0:
+					return false
+				if sqrt(enemy) != int(sqrt(enemy)):
+					return false
+			return true
+		VictoryType.SEVEN_DIFFERENCE:
+			if enemies.size() != 2:
+				return false
+			if (abs(enemies[0] - enemies[1]) != 7):
+				return false
 			return true
 	return false

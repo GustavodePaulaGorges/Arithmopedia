@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cprr5haf33lea"]
+
+[ext_resource type="PackedScene" uid="uid://clqgj3kjqgkk4" path="res://scenes/default_stage/default_stage.tscn" id="1_apmbg"]
+[ext_resource type="Resource" uid="uid://bcw6el76x4y8j" path="res://scenes/fase7/stage7.tres" id="2_5l17t"]
+[ext_resource type="Resource" uid="uid://c2jxpmuy2i5mk" path="res://scenes/fase7/stage7_path.tres" id="3_i0uhy"]
+[ext_resource type="PackedScene" uid="uid://3lmh178myu3h" path="res://scenes/default_stage/enemy_endpoint/enemy_endpoint.tscn" id="4_nkiro"]
+[ext_resource type="PackedScene" uid="uid://d36v5y8k6osia" path="res://scenes/default_stage/enemy_spawner/enemy_spawner.tscn" id="5_sykwh"]
+[ext_resource type="PackedScene" uid="uid://w8wecuhve0nn" path="res://scenes/fase7/tilemap.tscn" id="6_icq2q"]
+
+[sub_resource type="Curve2D" id="Curve2D_u4ro5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 2, 53, 0, 0, 0, 0, 134, 53, 0, 0, 0, 0, 134, 103)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_lpxj5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 3, 147, 0, 0, 0, 0, 134, 147, 0, 0, 0, 0, 134, 103)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_8qbva"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 134, 103, 0, 0, 0, 0, 293, 103)
+}
+point_count = 2
+
+[node name="Fase7" type="Node2D" unique_id=557606150]
+
+[node name="DefaultStage" parent="." unique_id=612317291 instance=ExtResource("1_apmbg")]
+stage_data = ExtResource("2_5l17t")
+stage_path_data = ExtResource("3_i0uhy")
+
+[node name="EnemyEndpoint" parent="." unique_id=2120786336 instance=ExtResource("4_nkiro")]
+z_index = 99
+position = Vector2(297, 101)
+
+[node name="UpperEnemySpawner" parent="." unique_id=416384709 instance=ExtResource("5_sykwh")]
+z_index = 99
+position = Vector2(4, 49)
+role = 1
+
+[node name="LowerEnemySpawner" parent="." unique_id=1858499127 instance=ExtResource("5_sykwh")]
+z_index = 99
+position = Vector2(4, 144)
+role = 2
+
+[node name="Tilemap" parent="." unique_id=90968929 instance=ExtResource("6_icq2q")]
+
+[node name="UpperPath" type="Path2D" parent="." unique_id=576311838]
+z_index = 99
+position = Vector2(2, 1)
+curve = SubResource("Curve2D_u4ro5")
+
+[node name="LowerPath" type="Path2D" parent="." unique_id=1293898777]
+z_index = 99
+position = Vector2(2, 1)
+curve = SubResource("Curve2D_lpxj5")
+
+[node name="EndPath" type="Path2D" parent="." unique_id=38715348]
+z_index = 99
+position = Vector2(2, 1)
+curve = SubResource("Curve2D_8qbva")

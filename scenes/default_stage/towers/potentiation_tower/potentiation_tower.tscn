@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cpotpw7scene01"]
+
+[ext_resource type="Script" uid="uid://cpotpw7tower01" path="res://scenes/default_stage/towers/potentiation_tower/potentiation_tower.gd" id="1_potpw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_potpw"]
+
+[node name="PotentiationTower" type="Node2D" unique_id=1842993301]
+z_index = 10
+script = ExtResource("1_potpw")
+
+[node name="Range" type="Area2D" parent="." unique_id=1842993302]
+scale = Vector2(4, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range" unique_id=1842993303]
+position = Vector2(2, 2)
+scale = Vector2(0.8, 0.8)
+shape = SubResource("CircleShape2D_potpw")
+debug_color = Color(0.4, 0.7, 1, 0.25)
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]

@@ -33,6 +33,31 @@ var stages = [
 		"id": 6,
 		"name": "Fase 6",
 		"scene_path": "res://scenes/fase6/fase6.tscn"
+	},
+	{
+		"id": 7,
+		"name": "Fase 7",
+		"scene_path": "res://scenes/fase7/fase7.tscn"
+	},
+	{
+		"id": 8,
+		"name": "Fase 8",
+		"scene_path": "res://scenes/fase8/fase8.tscn"
+	},
+	{
+		"id": 9,
+		"name": "Fase 9",
+		"scene_path": "res://scenes/fase9/fase9.tscn"
+	},
+	{
+		"id": 10,
+		"name": "Fase 10",
+		"scene_path": "res://scenes/fase10/fase10.tscn"
+	},
+	{
+		"id": 11,
+		"name": "Fase Final",
+		"scene_path": "res://scenes/faseFinal/faseFinal.tscn"
 	}
 ]
 
@@ -52,15 +77,15 @@ func _create_stage_buttons():
 		child.queue_free()
 	
 	# Configura o StagesGrid para centralizar os filhos
-	stages_grid.add_theme_constant_override("h_separation", 10)
-	stages_grid.add_theme_constant_override("v_separation", 10)
+	stages_grid.add_theme_constant_override("h_separation", 8)
+	stages_grid.add_theme_constant_override("v_separation", 8)
 	
 	# Cria botões para cada fase
 	for stage_data in stages:
 		var stage_button = Button.new()
-		stage_button.custom_minimum_size = Vector2(40, 40)
+		stage_button.custom_minimum_size = Vector2(40, 16)
 		stage_button.text = stage_data.name
-		stage_button.add_theme_font_size_override("font_size", 24)
+		stage_button.add_theme_font_size_override("font_size", 18)
 		stage_button.mouse_default_cursor_shape = CursorShape.CURSOR_POINTING_HAND
 		
 		# Aplica a fonte PixelifySans

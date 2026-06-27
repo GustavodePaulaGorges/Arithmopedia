@@ -23,6 +23,15 @@ var tower_configs: Dictionary = {
 	},
 	TowerTypes.TowerType.DIVISION: {
 		"texture": preload("res://assets/sprites/TorreDiv.png")
+	},
+	TowerTypes.TowerType.POTENTIATION: {
+		"texture": preload("res://assets/sprites/TorrePot.png")
+	},
+	TowerTypes.TowerType.RADICATION: {
+		"texture": preload("res://assets/sprites/TorreRad.png")
+	},
+	TowerTypes.TowerType.DOUBLING: {
+		"texture": preload("res://assets/sprites/TorreDup.png")
 	}
 }
 
