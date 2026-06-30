@@ -1,6 +1,8 @@
 extends Control
 
 @onready var main_menu_label = $MainMenuLabel
+@onready var stage_info_modal: Control = $HistoryModal
+
 var rotation_speed = 2.0
 var max_rotation = 3
 var time = 0.0
@@ -11,9 +13,14 @@ func _ready():
 	$VBoxContainer/StartButton.pressed.connect(_on_start_button_pressed)
 	$VBoxContainer/QuitButton.pressed.connect(_on_quit_button_pressed)
 	
-	## define os sprite do cursor
 	Input.set_custom_mouse_cursor(cursor)
 	Input.set_custom_mouse_cursor(point, Input.CURSOR_POINTING_HAND)
+	
+	if has_node("/root/ProgressManager"):
+		var progress_manager = get_node("/root/ProgressManager")
+		
+		if (progress_manager.return_completed_stages() == []):
+			show_history_modal()
 
 func _process(delta):
 	time += delta
@@ -26,3 +33,6 @@ func _on_start_button_pressed():
 
 func _on_quit_button_pressed():
 	get_tree().quit()
+	
+func show_history_modal():
+	stage_info_modal.show_modal()

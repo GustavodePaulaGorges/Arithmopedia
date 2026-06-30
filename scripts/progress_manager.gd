@@ -63,6 +63,9 @@ func reset_progress():
 	current_stage = 1
 	save_progress()
 
+func return_completed_stages() -> Array[int]:
+	return completed_stages
+
 func unlock_all_stages():
 	# Desbloqueia todas as fases (assumindo que temos 11 fases no total)
 	unlocked_stages.clear()
