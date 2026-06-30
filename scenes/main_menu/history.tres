@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="HistoryData" format=3 uid="uid://3mctrw4d20v4"]
+
+[ext_resource type="Script" uid="uid://bf3ejhp4irts5" path="res://scenes/main_menu/history_page_data.gd" id="1_wslc0"]
+[ext_resource type="Texture2D" uid="uid://dydwbio8mj8v1" path="res://assets/sprites/Pitaclides.png" id="2_fxunx"]
+[ext_resource type="Script" uid="uid://dekxlp360kxpb" path="res://scenes/main_menu/history_data.gd" id="2_qio5b"]
+[ext_resource type="Texture2D" uid="uid://ccpariehy838g" path="res://assets/sprites/Numeron.png" id="3_yugdq"]
+[ext_resource type="Texture2D" uid="uid://bj86dijkuyyg0" path="res://assets/sprites/Arithmopedia.png" id="4_km634"]
+
+[sub_resource type="Resource" id="Resource_wslc0"]
+script = ExtResource("1_wslc0")
+title = "Pitáclides"
+history = "Você é Pitáclides, o grande mago guardião da Arithmopedia, o livro supremo que contém todos os números já concebidos no reino de Mathemas. Durante milênios você estudou, catalogou e protegeu cada capítulo desse grimório, garantindo que a ordem matemática permanecesse intacta. Porém, em um raro momento de descuido, o dragão Numeron  tomou o livro e libertou seus  números, espalhando-os pelo mundo para cumprir a antiga profecia do Khaos."
+texture = ExtResource("2_fxunx")
+metadata/_custom_type_script = "uid://bf3ejhp4irts5"
+
+[sub_resource type="Resource" id="Resource_ecq86"]
+script = ExtResource("1_wslc0")
+title = "Numeron"
+history = "Com isso, o Khaos começou a se espalhar. As operações perderam sua lógica, as unidades de medida se tornaram vazias e até mesmo 1+1 deixou de ser 2. A própria realidade tremeluzia como se tivesse esquecido como deveria funcionar. Mas Numeron não sabia de um detalhe crucial da profecia: aquele que passasse eras estudando a lógica, dominando cada operação e preservando o equilíbrio seria imune ao Khaos. Esse herói é você."
+texture = ExtResource("3_yugdq")
+metadata/_custom_type_script = "uid://bf3ejhp4irts5"
+
+[sub_resource type="Resource" id="Resource_vg3pk"]
+script = ExtResource("1_wslc0")
+title = "Arithmopedia"
+history = "Agora, armado apenas com seu conhecimento e sua dedicação eterna à matemática, cabe a você restaurar cada número ao seu capítulo original e reconstruir a Arithmopedia. Enquanto o mundo se desfaz em absurdo e incerteza, sua mente permanece firme, e seu domínio das operações será a chave para devolver a ordem a Mathemas. O destino do reino está literalmente em suas mãos, e em seus cálculos."
+texture = ExtResource("4_km634")
+metadata/_custom_type_script = "uid://bf3ejhp4irts5"
+
+[resource]
+script = ExtResource("2_qio5b")
+pages = Array[ExtResource("1_wslc0")]([SubResource("Resource_wslc0"), SubResource("Resource_ecq86"), SubResource("Resource_vg3pk")])
+metadata/_custom_type_script = "uid://dekxlp360kxpb"

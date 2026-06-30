@@ -4,7 +4,6 @@ extends Control
 @onready var ok_button: Button = $CenterContainer/Panel/VBoxContainer/OKButton
 
 func _ready():
-	get_tree().root.print_tree_pretty()
 	ok_button.pressed.connect(_on_ok_button_pressed)
 
 func _on_ok_button_pressed():
