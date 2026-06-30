@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://duidompdfakg0"]
+
+[ext_resource type="FontFile" uid="uid://bh8kpdc46m6i8" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="1_grxnk"]
+[ext_resource type="Script" uid="uid://c41fh0pt1ntim" path="res://scenes/default_stage/modals/hint_modal.gd" id="1_p2jp0"]
+
+[node name="HintModal" type="Control" unique_id=801582160]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p2jp0")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1934837331]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7058824)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1844818655]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer" unique_id=888813966]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel" unique_id=1766335656]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = -50.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="CenterContainer/Panel/VBoxContainer" unique_id=1053966039]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_grxnk")
+theme_override_font_sizes/font_size = 20
+text = "Dica:"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HintText" type="Label" parent="CenterContainer/Panel/VBoxContainer" unique_id=2002952388]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_grxnk")
+theme_override_font_sizes/font_size = 12
+text = "???"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="OKButton" type="Button" parent="CenterContainer/Panel/VBoxContainer" unique_id=250690750]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("1_grxnk")
+text = "OK"

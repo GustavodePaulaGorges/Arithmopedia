@@ -5,9 +5,10 @@
 [resource]
 script = ExtResource("1_stage_data")
 stage_id = 11
-stage_title = "Fase Final - Espiral Dourada"
-stage_criteria = "Cresça infinitamente seguindo a sequência de Fibonacci"
+stage_title = "Fase Final (Espiral Dourada)"
+stage_criteria = "Utilize a sequência de Fibonacci para acabar com o dragão Numeron."
 stage_history = "A sequência de Fibonacci desdobra-se como uma espiral dourada: cada número nasce da soma dos dois anteriores. Aqui, apenas dois números iniciais entram. A torre de duplicação preserva o número anterior para ser somado ao próximo, gerando infinitamente 1, 1, 2, 3, 5, 8, 13... Use isso a seu favor para derrotar Numeron !!"
+stage_hint = "Lembre-se: para fazer a espiral dourada girar, você precisa sempre guardar um número do passado para uso futuro. A sequência de Fibonacci só nasce quando o presente se soma ao passado."
 prize_text = "A sequência de Fibonacci foi apresentada na Europa por Leonardo de Pisa, conhecido como Fibonacci, no livro Liber Abaci, de 1202. Ela aparecia em um problema sobre a reprodução de coelhos, no qual cada termo surgia da soma dos dois anteriores: 1, 1, 2, 3, 5, 8, 13, 21... A sequência também já era estudada anteriormente na matemática indiana em padrões de contagem. Nesta fase, duplicar um número permite manter uma referência dele para somá-lo ao termo anterior e gerar o próximo valor da sequência."
 enemy_array = Array[int]([1, 1])
 victory_target = 1000000

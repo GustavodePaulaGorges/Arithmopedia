@@ -9,18 +9,21 @@
 [ext_resource type="PackedScene" uid="uid://dflyxw72ybna7" path="res://scenes/default_stage/towers/multiplication_tower/multiplication_tower.tscn" id="7_f56uo"]
 [ext_resource type="PackedScene" uid="uid://cdkgaiv2pscev" path="res://scenes/default_stage/highlight_tile/highlight_tile.tscn" id="7_highlight"]
 [ext_resource type="PackedScene" uid="uid://ddp2h07ro1cl8" path="res://scenes/default_stage/towers/division_tower/division_tower.tscn" id="8_ccv54"]
-[ext_resource type="PackedScene" uid="uid://cpotpw7scene01" path="res://scenes/default_stage/towers/potentiation_tower/potentiation_tower.tscn" id="9_potent"]
-[ext_resource type="PackedScene" uid="uid://cradpw7scene01" path="res://scenes/default_stage/towers/radication_tower/radication_tower.tscn" id="10_radic"]
-[ext_resource type="PackedScene" uid="uid://bdoublingtower" path="res://scenes/default_stage/towers/doubling_tower/doubling_tower.tscn" id="11_doubling"]
 [ext_resource type="PackedScene" uid="uid://bvictorymodal" path="res://scenes/default_stage/modals/victory_modal.tscn" id="8_victory"]
 [ext_resource type="PackedScene" uid="uid://bdefeatmodal" path="res://scenes/default_stage/modals/defeat_modal.tscn" id="9_defeat"]
+[ext_resource type="PackedScene" uid="uid://cjagj1h1je03y" path="res://scenes/default_stage/towers/potentiation_tower/potentiation_tower.tscn" id="9_potent"]
+[ext_resource type="PackedScene" uid="uid://d3sgj1h1je03y" path="res://scenes/default_stage/towers/radication_tower/radication_tower.tscn" id="10_radic"]
 [ext_resource type="PackedScene" uid="uid://d246asdq0lfp4" path="res://scenes/default_stage/modals/stage_info_modal.tscn" id="10_stage_info"]
+[ext_resource type="PackedScene" uid="uid://cv6ha0d6qu1kv" path="res://scenes/default_stage/towers/doubling_tower/doubling_tower.tscn" id="11_doubling"]
 [ext_resource type="PackedScene" uid="uid://dgl232gb1pgtt" path="res://scenes/default_stage/ui/tower_selector.tscn" id="11_tower_selector"]
 [ext_resource type="PackedScene" uid="uid://bvn2x8k7m4oap" path="res://scenes/default_stage/ui/wave_ui/wave_ui.tscn" id="12_wave_ui"]
 [ext_resource type="FontFile" uid="uid://bh8kpdc46m6i8" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="13_font"]
+[ext_resource type="PackedScene" uid="uid://duidompdfakg0" path="res://scenes/default_stage/modals/hint_modal.tscn" id="19_q4vjq"]
 
 [node name="DefaultStage" type="Node2D" unique_id=612317291]
 script = ExtResource("1_default_stage")
+metadata/_edit_horizontal_guides_ = [4.0, 220.0]
+metadata/_edit_vertical_guides_ = [4.0, 300.0]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2033795529]
 position = Vector2(152, 112)
@@ -86,15 +89,25 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 88.0
-offset_bottom = 27.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 89.0
+offset_bottom = 28.0
 grow_vertical = 0
 mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("13_font")
 theme_override_font_sizes/font_size = 12
 text = "Iniciar horda"
+
+[node name="HintButton" type="Button" parent="UI" unique_id=1199210181]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 4.0
+offset_right = 300.0
+offset_bottom = 28.0
+theme_override_fonts/font = ExtResource("13_font")
+theme_override_font_sizes/font_size = 12
+text = "?"
 
 [node name="Modals" type="Node" parent="." unique_id=725875345]
 
@@ -109,5 +122,9 @@ z_index = 1000
 [node name="StageInfoModal" parent="Modals" unique_id=664178854 instance=ExtResource("10_stage_info")]
 visible = false
 z_index = 1000
+
+[node name="HintModal" parent="Modals" unique_id=801582160 instance=ExtResource("19_q4vjq")]
+visible = false
+z_index = 2000
 
 [connection signal="tower_count_updated" from="BuildingManager" to="UI/TowerSelector" method="update_ui"]
