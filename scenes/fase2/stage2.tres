@@ -8,6 +8,7 @@ stage_id = 2
 stage_title = "Fase 2 (A arte de fazer menos)"
 stage_criteria = "Fazer um número menor que 10"
 stage_history = "A trilha adiante leva Pitáclides a um vale onde os números ecoam como montanhas: grandes demais, pesados demais, desbalanceados demais. O Khaos distorceu suas proporções, e agora eles não cabem mais no caminho estreito que leva ao próximo capítulo da Arithmopedia."
+stage_hint = "Tente pensar em qual torre deve atuar antes da outra. Algumas operações funcionam melhor quando preparam o cenário para a próxima torre, especialmente quando o objetivo é diminuir o valor final."
 prize_text = "A subtração não segue as mesmas propriedades da adição: ela não é comutativa (a − b ≠ b − a na maior parte dos casos) e também não é associativa, isto é, (a − b) − c geralmente produz algo diferente de a − (b − c). É por isso que, em situações onde operações aparecem em sequência, a ordem altera profundamente o resultado. Essa é uma das primeiras lições sobre operações mistas, é exatamente o tipo de princípio que Pitáclides domina melhor do que qualquer outro mago de Mathemas."
 enemy_array = Array[int]([10, 8, 3, 2])
 victory_type = 1

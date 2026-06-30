@@ -18,6 +18,7 @@ enum VictoryType {
 @export_multiline var stage_title: String = ""
 @export_multiline var stage_criteria: String = ""
 @export_multiline var stage_history: String = ""
+@export_multiline var stage_hint: String = ""
 @export_multiline var prize_text: String = ""
 
 @export var enemy_array: Array[int] = []

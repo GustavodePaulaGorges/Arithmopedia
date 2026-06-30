@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://clqgj3kjqgkk4" path="res://scenes/default_stage/default_stage.tscn" id="1_os6ec"]
 [ext_resource type="Resource" uid="uid://dlf2lqx63sl23" path="res://scenes/fase3/stage3.tres" id="2_ffdiy"]
-[ext_resource type="Resource" uid="uid://bstage3pathdata" path="res://scenes/fase3/stage3_path.tres" id="5_stage_path"]
 [ext_resource type="PackedScene" uid="uid://d36v5y8k6osia" path="res://scenes/default_stage/enemy_spawner/enemy_spawner.tscn" id="2_nkwym"]
 [ext_resource type="PackedScene" uid="uid://3lmh178myu3h" path="res://scenes/default_stage/enemy_endpoint/enemy_endpoint.tscn" id="3_ffdiy"]
 [ext_resource type="PackedScene" uid="uid://cyq6spatvnhh6" path="res://scenes/fase3/tilemap.tscn" id="4_igrqa"]
+[ext_resource type="Resource" uid="uid://bnyckmmgjwwpy" path="res://scenes/fase3/stage3_path.tres" id="5_stage_path"]
 
 [sub_resource type="Curve2D" id="Curve2D_os6ec"]
 _data = {

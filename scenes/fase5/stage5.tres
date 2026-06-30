@@ -8,6 +8,7 @@ stage_id = 5
 stage_title = "Fase 5 (Corrente alternada)"
 stage_criteria = "Fazer números com sinais alternantes (+, -, +, -)"
 stage_history = "Ao seguir em sua caminhada, o velho matemágico se depara com uma terrível tempestade. O ar carrega um zumbido ensurdecedor de eletricidade que parece percorrer seu corpo todo. Ele então percebe que está nas Cordilheiras da Corrente Alternada, um local onde os números se atraem e repelem de forma agora caótica, onde anteriormente seguiam um ritmo belo e constante."
+stage_hint = "Observe quem vai para o caminho de cima e quem vai para o de baixo. Como os sinais finais dependem de duas torres diferentes agindo em grupos distintos, o truque é garantir que cada rota produza cargas homogêneas (todas positivas em cima, todas negativas embaixo). Depois, quando os caminhos se juntam, a intercalagem natural faz o padrão alternado surgir."
 prize_text = "Sequências que alternam sinais aparecem em vários ramos da matemática, especialmente nas chamadas séries alternadas. Em muitas delas, cada termo muda de sinal em relação ao anterior, criando padrões que podem convergir rapidamente ou revelar comportamentos sutis em cálculos infinitos. Esse tipo de alternância também tem paralelos em fenômenos físicos, como oscilações, vibrações e variações periódicas de energia."
 enemy_array = Array[int]([50, 20, 18, 10, 40, 15, 30, 10, 32, 10, 20, 10, 28, 10, 25, 10])
 victory_type = 3

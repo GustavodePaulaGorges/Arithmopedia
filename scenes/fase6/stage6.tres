@@ -8,8 +8,8 @@ stage_id = 6
 stage_title = "Fase 6 (Progressão de Potências)"
 stage_criteria = "Fazer uma sequência de 4 números, onde cada um é a metade do anterior"
 stage_history = "Enquanto avança rumo ao lar do nefasto dragão Numeron, Pitáclides encontra o antigo templo dos Monges Multidivisores e o Mecanismo de progressão das potências, uma maravilha ancestral antes usada para proteger partes do grimório com sequências de energia que cresciam em intensidade e depois se reduziam harmonicamente; agora, corrompido pelo Khaos, o mecanismo produz números aleatórios e sem nexo."
-prize_text = "Em matemática, sequências onde cada número é metade do anterior são exemplos clássicos de progressões geométricas, em que cada termo é obtido multiplicando o anterior por uma razão constante (nesse caso, 1/2).
-Progressões desse tipo aparecem em fenômenos naturais (como decaimento radioativo), compressão de sinais, escalas harmônicas e até na computação, quando estruturas são divididas repetidamente para otimizar processos."
+stage_hint = "Observe como os dois caminhos trabalham em paralelo: ambos geram pares semelhantes, mas apenas um deles reduz seus valores mais rapidamente. Quando os resultados convergem, surge naturalmente a sequência em que cada número é metade do anterior. O segredo está em reconhecer qual combinação de torres gera essa proporção perfeita."
+prize_text = "Em matemática, sequências onde cada número é metade do anterior são exemplos clássicos de progressões geométricas, em que cada termo é obtido multiplicando o anterior por uma razão constante (nesse caso, 1/2). Progressões desse tipo aparecem em fenômenos naturais (como decaimento radioativo), compressão de sinais, escalas harmônicas e até na computação, quando estruturas são divididas repetidamente para otimizar processos."
 enemy_array = Array[int]([16, 16, 10, 10, 1, 2, 1, 1, 8, 8, 5, 5, 1, 2, 1, 1])
 victory_type = 4
 tower_count = {

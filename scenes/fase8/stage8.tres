@@ -5,9 +5,10 @@
 [resource]
 script = ExtResource("1_jm8rw")
 stage_id = 8
-stage_title = "Fase 8 – Harmonia Par-Ímpar"
+stage_title = "Fase 8 (Harmonia Par-Ímpar)"
 stage_criteria = "Obter a sequência: Par, Impar, Par, ímpar."
 stage_history = "Passando pela floresta, lar dos faunos Parímpeos, Pitáclides escuta uma verdadeira balbúrdia, o que chama sua atenção, visto que os faunos eram conhecidos por sua música. Ao chegar mais perto descobrem que os números, antes harmônicos de sua partitura, agora se veem desorganizados. A música que adotava em seu ritmos agudos e graves, pares e ímpares de forma concisa, agora é uma verdadeira cacofonia."
+stage_hint = "Observe quais operações preservam paridade e quais a alteram. Multiplicações entre ímpares continuam ímpares; subtrações entre pares continuam pares. Use essa lógica para montar a alternância perfeita."
 prize_text = "Na aritmética, paridade se comporta de maneira previsível: multiplicar um número par por qualquer outro garante um resultado par, pois o fator 2 permanece presente. Já multiplicar dois números ímpares sempre produz um resultado ímpar, pois não há nenhum fator 2 envolvido na operação. Esses padrões ajudam a prever como transformações ao longo do caminho podem alterar, ou manter, a paridade dos números."
 enemy_array = Array[int]([12, 3, 8, 5, 14, 7, 10, 9])
 victory_type = 7

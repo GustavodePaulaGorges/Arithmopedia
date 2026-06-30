@@ -9,9 +9,11 @@ extends Node2D
 @onready var victory_modal: Control = $Modals/VictoryModal
 @onready var defeat_modal: Control = $Modals/DefeatModal
 @onready var stage_info_modal: Control = $Modals/StageInfoModal
+@onready var hint_modal: Control = $Modals/HintModal
 @onready var tower_selector: TowerSelector = $UI/TowerSelector
 @onready var wave_ui: WaveUI = $UI/WaveUI
 @onready var horde_button: Button = $UI/HordeButton
+@onready var hint_button: Button = $UI/HintButton
 
 var selected_tower_type: TowerTypes.TowerType = TowerTypes.TowerType.ADDITION
 var towers_tilemap: TileMapLayer
@@ -32,6 +34,9 @@ func _initialize() -> void:
 		stage_data.stage_criteria,
 		stage_data.stage_history
 	)
+	
+	hint_modal.set_stage_info(stage_data.stage_hint)
+	
 	stage_info_modal.show_modal()
 
 	towers_tilemap = get_tree().get_first_node_in_group("towers_tilemap")
@@ -54,6 +59,7 @@ func _initialize() -> void:
 
 	tower_selector.tower_selected.connect(_on_tower_selected)
 	horde_button.pressed.connect(_on_horde_button_pressed)
+	hint_button.pressed.connect(hint_modal.show_modal)
 
 func _on_level_completed() -> void:
 	if stage_ended:
