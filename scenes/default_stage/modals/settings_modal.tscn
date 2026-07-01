@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://bbsfrckapqjk"]
+
+[ext_resource type="Script" uid="uid://dysbcqiej06a1" path="res://scenes/default_stage/modals/settings_modal.gd" id="1_cbu4i"]
+[ext_resource type="AudioStream" uid="uid://cjvbj1e4d3q5s" path="res://assets/SFX/JDSherbert - Pixel UI SFX Pack (FREE)/Stereo/mp3/JDSherbert - Pixel UI SFX Pack - Cursor 3 (Sine).mp3" id="2_2u12j"]
+[ext_resource type="FontFile" uid="uid://bh8kpdc46m6i8" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="2_4vdxt"]
+[ext_resource type="AudioStream" uid="uid://djixt3bapedua" path="res://assets/SFX/JDSherbert - Pixel UI SFX Pack (FREE)/Stereo/mp3/JDSherbert - Pixel UI SFX Pack - Cursor 1 (Square).mp3" id="3_upre7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5nq27"]
+font = ExtResource("2_4vdxt")
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_2u12j"]
+font = ExtResource("2_4vdxt")
+font_size = 12
+
+[node name="SettingsModal" type="Control" unique_id=1744646833]
+z_index = 4096
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cbu4i")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="." unique_id=2105986374]
+stream = ExtResource("2_2u12j")
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="." unique_id=1554537348]
+stream = ExtResource("3_upre7")
+
+[node name="Background" type="ColorRect" parent="." unique_id=366620495]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7058824)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1108560259]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2022156162]
+layout_mode = 2
+alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer" unique_id=307029644]
+layout_mode = 2
+text = "Volume"
+label_settings = SubResource("LabelSettings_5nq27")
+
+[node name="Volume" type="HSlider" parent="MarginContainer/VBoxContainer" unique_id=1853200084]
+layout_mode = 2
+max_value = 10.0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=225311410]
+layout_mode = 2
+text = "Mutar"
+label_settings = SubResource("LabelSettings_2u12j")
+
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer" unique_id=1985294462]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1073730396]
+layout_mode = 2
+text = "Resolução"
+label_settings = SubResource("LabelSettings_2u12j")
+
+[node name="Resolutions" type="OptionButton" parent="MarginContainer/VBoxContainer" unique_id=1379912631]
+layout_mode = 2
+item_count = 6
+popup/item_0/text = "304 × 224"
+popup/item_0/id = 0
+popup/item_1/text = "608 × 448"
+popup/item_1/id = 1
+popup/item_2/text = "912 × 672"
+popup/item_2/id = 2
+popup/item_3/text = "1216 × 896"
+popup/item_3/id = 3
+popup/item_4/text = "1520 × 1120"
+popup/item_4/id = 4
+popup/item_5/text = "1824 × 1344"
+popup/item_5/id = 5
+
+[node name="CloseButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=376666982]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("2_4vdxt")
+text = "Fechar"
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="item_focused" from="MarginContainer/VBoxContainer/Resolutions" to="." method="_on_resolutions_item_focused"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/Resolutions" to="." method="_on_resolutions_item_selected"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

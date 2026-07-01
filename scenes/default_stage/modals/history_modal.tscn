@@ -2,6 +2,8 @@
 
 [ext_resource type="FontFile" uid="uid://bh8kpdc46m6i8" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="1_rfaut"]
 [ext_resource type="Script" uid="uid://dr4rvt4hyihkf" path="res://scenes/default_stage/modals/history_modal.gd" id="1_w8sfh"]
+[ext_resource type="AudioStream" uid="uid://cjvbj1e4d3q5s" path="res://assets/SFX/JDSherbert - Pixel UI SFX Pack (FREE)/Stereo/mp3/JDSherbert - Pixel UI SFX Pack - Cursor 3 (Sine).mp3" id="2_5bl3e"]
+[ext_resource type="AudioStream" uid="uid://djixt3bapedua" path="res://assets/SFX/JDSherbert - Pixel UI SFX Pack (FREE)/Stereo/mp3/JDSherbert - Pixel UI SFX Pack - Cursor 1 (Square).mp3" id="3_rtdwj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8sfh"]
 bg_color = Color(0.8627451, 0.7882353, 0.7137255, 1)
@@ -27,6 +29,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w8sfh")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="." unique_id=1248516634]
+stream = ExtResource("2_5bl3e")
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="." unique_id=144633442]
+stream = ExtResource("3_rtdwj")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1340398614]
 layout_mode = 1
@@ -103,3 +111,5 @@ theme_override_fonts/font = ExtResource("1_rfaut")
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_rfaut")
 text = "Proximo"
+
+[connection signal="mouse_entered" from="CenterContainer/Panel/VBoxContainer/NextButton" to="." method="_on_next_button_mouse_entered"]

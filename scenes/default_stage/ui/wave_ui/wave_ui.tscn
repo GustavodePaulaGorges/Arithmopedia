@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c5uk3ptf0fj8e" path="res://scenes/default_stage/ui/wave_ui/wave_ui.gd" id="1_wave_ui"]
 [ext_resource type="FontFile" uid="uid://bh8kpdc46m6i8" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="2_font"]
+[ext_resource type="AudioStream" uid="uid://cjvbj1e4d3q5s" path="res://assets/SFX/JDSherbert - Pixel UI SFX Pack (FREE)/Stereo/mp3/JDSherbert - Pixel UI SFX Pack - Cursor 3 (Sine).mp3" id="3_5bl3e"]
+[ext_resource type="AudioStream" uid="uid://djixt3bapedua" path="res://assets/SFX/JDSherbert - Pixel UI SFX Pack (FREE)/Stereo/mp3/JDSherbert - Pixel UI SFX Pack - Cursor 1 (Square).mp3" id="4_rtdwj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
 bg_color = Color(0, 0, 0, 0.5)
@@ -16,6 +18,12 @@ layout_mode = 3
 anchors_preset = 0
 mouse_filter = 2
 script = ExtResource("1_wave_ui")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="." unique_id=1248516634]
+stream = ExtResource("3_5bl3e")
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="." unique_id=144633442]
+stream = ExtResource("4_rtdwj")
 
 [node name="Background" type="Panel" parent="." unique_id=471409536]
 layout_mode = 1
@@ -65,3 +73,5 @@ theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 12
 toggle_mode = true
 text = "-"
+
+[connection signal="mouse_entered" from="ToggleButton" to="." method="_on_toggle_button_mouse_entered"]

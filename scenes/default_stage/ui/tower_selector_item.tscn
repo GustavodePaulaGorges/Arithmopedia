@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://b41kvxweccvfm" path="res://scenes/default_stage/ui/tower_selector_item.gd" id="1_item"]
 [ext_resource type="FontFile" uid="uid://bh8kpdc46m6i8" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="2_font"]
+[ext_resource type="AudioStream" uid="uid://cjvbj1e4d3q5s" path="res://assets/SFX/JDSherbert - Pixel UI SFX Pack (FREE)/Stereo/mp3/JDSherbert - Pixel UI SFX Pack - Cursor 3 (Sine).mp3" id="3_5bl3e"]
+[ext_resource type="AudioStream" uid="uid://djixt3bapedua" path="res://assets/SFX/JDSherbert - Pixel UI SFX Pack (FREE)/Stereo/mp3/JDSherbert - Pixel UI SFX Pack - Cursor 1 (Square).mp3" id="4_rtdwj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
 bg_color = Color(0, 0, 0, 0.5)
@@ -17,6 +19,12 @@ anchors_preset = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_item")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="." unique_id=1248516634]
+stream = ExtResource("3_5bl3e")
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="." unique_id=144633442]
+stream = ExtResource("4_rtdwj")
 
 [node name="Background" type="Panel" parent="." unique_id=430599000]
 layout_mode = 1
@@ -44,6 +52,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 ignore_texture_size = true
 stretch_mode = 4
+
+[connection signal="mouse_entered" from="AspectRatioContainer/TextureButton" to="." method="_on_texture_button_mouse_entered"]
 
 [node name="CountLabel" type="Label" parent="AspectRatioContainer/TextureButton" unique_id=1239177585]
 layout_mode = 1

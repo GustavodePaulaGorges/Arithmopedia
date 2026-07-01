@@ -14,6 +14,8 @@ signal level_failed
 const DEFAULT_SPAWN_DELAY : float = 1.0
 
 @export var enemy_scene: PackedScene
+@export var spawn_sound: AudioStream
+@export var tower_spawn_sound: AudioStream
 
 var stage_data: StageData
 var stage_path_data: StagePathData
@@ -40,6 +42,7 @@ var _spawn_timer_lower: Timer
 var _path_runtime: StagePathRuntime
 var _spawner_position: Vector2
 var _endpoint: EnemyEndpoint
+var _spawn_sound: AudioStreamPlayer
 
 func _ready() -> void:
 	add_to_group("enemy_manager")
@@ -61,6 +64,10 @@ func _ready() -> void:
 	_spawn_timer_lower.one_shot = false
 	_spawn_timer_lower.timeout.connect(_on_spawn_timer_lower_timeout)
 	add_child(_spawn_timer_lower)
+
+	_spawn_sound = AudioStreamPlayer.new()
+	_spawn_sound.stream = spawn_sound
+	add_child(_spawn_sound)
 
 func setup(p_stage_data: StageData, p_stage_path_data: StagePathData, p_stage_root: Node) -> void:
 	stage_data = p_stage_data
@@ -198,6 +205,9 @@ func _spawn_initial_enemy(value: int) -> void:
 	new_enemy.value = value
 	_path_runtime.place_initial(new_enemy)
 	active_enemies_count += 1
+	if spawn_sound:
+		_spawn_sound.stream = spawn_sound
+		_spawn_sound.play()
 
 func _spawn_initial_enemy_on_branch(value: int, branch: int) -> void:
 	if not _path_runtime or not enemy_scene:
@@ -207,6 +217,9 @@ func _spawn_initial_enemy_on_branch(value: int, branch: int) -> void:
 	new_enemy.value = value
 	_path_runtime.place_initial_on_branch(new_enemy, branch)
 	active_enemies_count += 1
+	if spawn_sound:
+		_spawn_sound.stream = spawn_sound
+		_spawn_sound.play()
 
 func _spawn_enemy_at(segment_index: int, branch: int, ratio: float, value: int, creator_tower: TowerEntity = null) -> void:
 	if not _path_runtime or not enemy_scene:
@@ -217,6 +230,9 @@ func _spawn_enemy_at(segment_index: int, branch: int, ratio: float, value: int, 
 	new_enemy.creator_tower = creator_tower
 	_path_runtime.place_at(new_enemy, segment_index, branch, ratio)
 	active_enemies_count += 1
+	if tower_spawn_sound:
+		_spawn_sound.stream = tower_spawn_sound
+		_spawn_sound.play()
 
 func _on_enemy_consumed(enemy: EnemyEntity) -> void:
 	active_enemies_count = max(active_enemies_count - 1, 0)

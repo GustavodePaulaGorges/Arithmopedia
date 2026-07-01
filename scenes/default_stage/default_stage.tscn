@@ -2,9 +2,14 @@
 
 [ext_resource type="Script" uid="uid://bdslik0i7vtbu" path="res://scenes/default_stage/default_stage.gd" id="1_default_stage"]
 [ext_resource type="Script" uid="uid://d2u8jt5kinn38" path="res://scenes/default_stage/managers/enemy_manager.gd" id="2_enemy_manager"]
+[ext_resource type="AudioStream" uid="uid://bgdnms0p8h8q5" path="res://assets/SFX/Rejoicing.mp3" id="2_wdejf"]
 [ext_resource type="Script" uid="uid://ckkfjcqc8d42l" path="res://scenes/default_stage/managers/building_manager.gd" id="3_building_manager"]
+[ext_resource type="AudioStream" uid="uid://cjvbj1e4d3q5s" path="res://assets/SFX/JDSherbert - Pixel UI SFX Pack (FREE)/Stereo/mp3/JDSherbert - Pixel UI SFX Pack - Cursor 3 (Sine).mp3" id="3_wb524"]
 [ext_resource type="PackedScene" uid="uid://e3tnrqc5oh20" path="res://scenes/default_stage/enemy/enemy_entity.tscn" id="4_enemy_scene"]
+[ext_resource type="AudioStream" uid="uid://djixt3bapedua" path="res://assets/SFX/JDSherbert - Pixel UI SFX Pack (FREE)/Stereo/mp3/JDSherbert - Pixel UI SFX Pack - Cursor 1 (Square).mp3" id="4_o5u1h"]
 [ext_resource type="PackedScene" uid="uid://bvn6x8k7m4oap" path="res://scenes/default_stage/towers/addition_tower/addition_tower.tscn" id="5_addition"]
+[ext_resource type="AudioStream" uid="uid://byrdvhk3l532i" path="res://assets/SFX/JDSherbert - Pixel UI SFX Pack (FREE)/Stereo/mp3/JDSherbert - Pixel UI SFX Pack - Cancel 2 (Square).mp3" id="5_ayovk"]
+[ext_resource type="AudioStream" uid="uid://c6xqyra7ax3tr" path="res://assets/SFX/JDSherbert - Pixel UI SFX Pack (FREE)/Stereo/mp3/JDSherbert - Pixel UI SFX Pack - Cursor 3 (Saw).mp3" id="6_4ifr5"]
 [ext_resource type="PackedScene" uid="uid://fi2xut3mrtgr" path="res://scenes/default_stage/towers/subtraction_tower/subtraction_tower.tscn" id="6_subtraction"]
 [ext_resource type="PackedScene" uid="uid://dflyxw72ybna7" path="res://scenes/default_stage/towers/multiplication_tower/multiplication_tower.tscn" id="7_f56uo"]
 [ext_resource type="PackedScene" uid="uid://cdkgaiv2pscev" path="res://scenes/default_stage/highlight_tile/highlight_tile.tscn" id="7_highlight"]
@@ -19,11 +24,23 @@
 [ext_resource type="PackedScene" uid="uid://bvn2x8k7m4oap" path="res://scenes/default_stage/ui/wave_ui/wave_ui.tscn" id="12_wave_ui"]
 [ext_resource type="FontFile" uid="uid://bh8kpdc46m6i8" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="13_font"]
 [ext_resource type="PackedScene" uid="uid://duidompdfakg0" path="res://scenes/default_stage/modals/hint_modal.tscn" id="19_q4vjq"]
+[ext_resource type="PackedScene" uid="uid://bbsfrckapqjk" path="res://scenes/default_stage/modals/settings_modal.tscn" id="23_00ft3"]
+[ext_resource type="Texture2D" uid="uid://cu1pi6wuqk4ib" path="res://assets/Menu.svg" id="24_crcxj"]
 
 [node name="DefaultStage" type="Node2D" unique_id=612317291]
 script = ExtResource("1_default_stage")
 metadata/_edit_horizontal_guides_ = [4.0, 220.0]
 metadata/_edit_vertical_guides_ = [4.0, 300.0]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1105864867]
+stream = ExtResource("2_wdejf")
+autoplay = true
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="." unique_id=2007724894]
+stream = ExtResource("3_wb524")
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="." unique_id=2005286435]
+stream = ExtResource("4_o5u1h")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2033795529]
 position = Vector2(152, 112)
@@ -31,6 +48,8 @@ position = Vector2(152, 112)
 [node name="EnemyManager" type="Node" parent="." unique_id=408193877]
 script = ExtResource("2_enemy_manager")
 enemy_scene = ExtResource("4_enemy_scene")
+spawn_sound = ExtResource("5_ayovk")
+tower_spawn_sound = ExtResource("6_4ifr5")
 
 [node name="BuildingManager" type="Node" parent="." unique_id=1999301952]
 script = ExtResource("3_building_manager")
@@ -99,17 +118,35 @@ theme_override_fonts/font = ExtResource("13_font")
 theme_override_font_sizes/font_size = 12
 text = "Iniciar horda"
 
+[connection signal="mouse_entered" from="UI/HordeButton" to="." method="_on_horde_button_mouse_entered"]
+
 [node name="HintButton" type="Button" parent="UI" unique_id=1199210181]
 layout_mode = 0
-offset_left = 276.0
+offset_left = 246.0
 offset_top = 4.0
-offset_right = 300.0
+offset_right = 270.0
 offset_bottom = 28.0
 theme_override_fonts/font = ExtResource("13_font")
 theme_override_font_sizes/font_size = 12
 text = "?"
 
+[connection signal="mouse_entered" from="UI/HintButton" to="." method="_on_hint_button_mouse_entered"]
+[connection signal="pressed" from="UI/HintButton" to="." method="_on_hint_button_pressed"]
+
+[node name="SettingsButton" type="Button" parent="UI" unique_id=1227259824]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 4.0
+offset_right = 300.0
+offset_bottom = 28.0
+theme_override_fonts/font = ExtResource("13_font")
+theme_override_font_sizes/font_size = 12
+icon = ExtResource("24_crcxj")
+
 [node name="Modals" type="Node" parent="." unique_id=725875345]
+
+[node name="SettingsModal" parent="Modals" unique_id=1744646833 instance=ExtResource("23_00ft3")]
+visible = false
 
 [node name="VictoryModal" parent="Modals" unique_id=1325034141 instance=ExtResource("8_victory")]
 visible = false
@@ -128,3 +165,5 @@ visible = false
 z_index = 2000
 
 [connection signal="tower_count_updated" from="BuildingManager" to="UI/TowerSelector" method="update_ui"]
+[connection signal="mouse_entered" from="UI/SettingsButton" to="." method="_on_settings_button_mouse_entered"]
+[connection signal="pressed" from="UI/SettingsButton" to="." method="_on_settings_button_pressed"]

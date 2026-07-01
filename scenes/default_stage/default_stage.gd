@@ -11,9 +11,12 @@ extends Node2D
 @onready var stage_info_modal: Control = $Modals/StageInfoModal
 @onready var hint_modal: Control = $Modals/HintModal
 @onready var tower_selector: TowerSelector = $UI/TowerSelector
+@onready var settings_modal = $Modals/SettingsModal
 @onready var wave_ui: WaveUI = $UI/WaveUI
 @onready var horde_button: Button = $UI/HordeButton
 @onready var hint_button: Button = $UI/HintButton
+@onready var button_click = $ButtonClick
+@onready var button_hover = $ButtonHover
 
 var selected_tower_type: TowerTypes.TowerType = TowerTypes.TowerType.ADDITION
 var towers_tilemap: TileMapLayer
@@ -115,11 +118,22 @@ func _on_tower_selected(tower_type: TowerTypes.TowerType) -> void:
 	selected_tower_type = tower_type
 
 func _on_horde_button_pressed() -> void:
+	button_click.play()
 	enemy_manager.start_wave()
 	horde_button.disabled = true
 	horde_button.text = "Horda iniciada!"
 	building_manager.locked = true
 	_apply_grey_cursor()
+
+func _on_horde_button_mouse_entered() -> void:
+	button_hover.play()
+
+func _on_hint_button_pressed() -> void:
+	button_click.play()
+	hint_modal.show_modal()
+
+func _on_hint_button_mouse_entered() -> void:
+	button_hover.play()
 
 func _apply_grey_cursor() -> void:
 	var arrow_disabled: Texture2D = load("res://assets/light_cursor_1_disabled.png")
@@ -140,3 +154,12 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("right_mouse"):
 		var cell_position : Vector2i = towers_tilemap.local_to_map(towers_tilemap.get_local_mouse_position())
 		building_manager.remove_tower(cell_position)
+
+
+func _on_settings_button_pressed() -> void:
+	button_click.play()
+	settings_modal.show_modal()
+
+
+func _on_settings_button_mouse_entered() -> void:
+	button_hover.play()

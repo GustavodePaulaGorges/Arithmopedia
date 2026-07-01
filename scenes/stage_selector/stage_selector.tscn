@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://ipxycq540ak7"]
 
 [ext_resource type="Script" uid="uid://dno6wg7w2dfn5" path="res://scenes/stage_selector/stage_selector.gd" id="1_stage_selector"]
+[ext_resource type="AudioStream" uid="uid://cjvbj1e4d3q5s" path="res://assets/SFX/JDSherbert - Pixel UI SFX Pack (FREE)/Stereo/mp3/JDSherbert - Pixel UI SFX Pack - Cursor 3 (Sine).mp3" id="2_2cjct"]
 [ext_resource type="FontFile" uid="uid://bh8kpdc46m6i8" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="2_font"]
+[ext_resource type="AudioStream" uid="uid://djixt3bapedua" path="res://assets/SFX/JDSherbert - Pixel UI SFX Pack (FREE)/Stereo/mp3/JDSherbert - Pixel UI SFX Pack - Cursor 1 (Square).mp3" id="3_ov7np"]
 
 [node name="StageSelector" type="Control" unique_id=137441179]
 layout_mode = 3
@@ -11,6 +13,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_stage_selector")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="." unique_id=1297833227]
+stream = ExtResource("2_2cjct")
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="." unique_id=1217801999]
+stream = ExtResource("3_ov7np")
 
 [node name="Background" type="ColorRect" parent="." unique_id=86589208]
 layout_mode = 1
@@ -62,3 +70,6 @@ mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 14
 text = "Voltar"
+
+[connection signal="mouse_entered" from="VBoxContainer/BackButton" to="." method="_on_back_button_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
