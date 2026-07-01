@@ -2,6 +2,8 @@ extends Control
 
 @onready var stages_grid = $VBoxContainer/CenterContainer/StagesGrid
 @onready var back_button = $VBoxContainer/BackButton
+@onready var button_click = $ButtonClick
+@onready var button_hover = $ButtonHover
 
 var stages = [
 	{
@@ -104,6 +106,7 @@ func _create_stage_buttons():
 			else:
 				stage_button.modulate = Color.WHITE
 			stage_button.pressed.connect(_on_stage_button_pressed.bind(stage_data))
+			stage_button.mouse_entered.connect(_on_stage_button_hover)
 		else:
 			stage_button.modulate = Color.GRAY
 			stage_button.disabled = true
@@ -112,13 +115,18 @@ func _create_stage_buttons():
 		stages_grid.add_child(stage_button)
 
 func _on_stage_button_pressed(stage_data):
+	button_click.play()
 	print("Iniciando: ", stage_data.name)
 	var progress_manager = get_node_or_null("/root/ProgressManager")
 	if progress_manager:
 		progress_manager.current_stage = stage_data.id
 	get_tree().change_scene_to_file(stage_data.scene_path)
 
+func _on_stage_button_hover():
+	button_hover.play()
+
 func _on_back_button_pressed():
+	button_click.play()
 	get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn")
 
 # Função para adicionar novas fases dinamicamente
@@ -138,3 +146,7 @@ func _on_stage_completed(stage_id: int):
 # Atualiza a UI quando uma fase é desbloqueada
 func _on_stage_unlocked(stage_id: int):
 	_create_stage_buttons()
+
+
+func _on_back_button_mouse_entered() -> void:
+	button_hover.play()

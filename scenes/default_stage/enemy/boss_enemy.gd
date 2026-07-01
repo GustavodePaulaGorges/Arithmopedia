@@ -8,6 +8,7 @@ var health: int = MAX_HEALTH
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var progress_bar: ProgressBar = $ProgressBar
+@onready var audio = $HitAudio
 
 var sprite_original_position: Vector2
 var sprite_original_scale: Vector2
@@ -66,6 +67,8 @@ func play_hit_effect() -> void:
 	shake_tween.tween_property(sprite, "position", sprite_original_position + Vector2(3, 0), 0.03)
 	shake_tween.tween_property(sprite, "position", sprite_original_position + Vector2(-3, 0), 0.03)
 	shake_tween.tween_property(sprite, "position", sprite_original_position, 0.03)
+
+	audio.play()
 
 	color_tween = create_tween()
 	color_tween.tween_property(sprite, "modulate", Color(1, 0.2, 0.2), 0.04)

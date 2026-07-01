@@ -5,16 +5,22 @@ extends Control
 @onready var background: Panel = $Background
 @onready var margin_container: MarginContainer = $MarginContainer
 @onready var toggle_button: Button = $ToggleButton
+@onready var button_click = $ButtonClick
+@onready var button_hover = $ButtonHover
 
 func _ready() -> void:
 	toggle_button.toggled.connect(_on_toggle_button_toggled)
 
 func _on_toggle_button_toggled(button_pressed: bool) -> void:
+	button_click.play()
 	var collapsed := button_pressed
 	background.visible = not collapsed
 	margin_container.visible = not collapsed
 	toggle_button.text = "+" if collapsed else "-"
 	mouse_filter = Control.MOUSE_FILTER_IGNORE if collapsed else Control.MOUSE_FILTER_STOP
+
+func _on_toggle_button_mouse_entered() -> void:
+	button_hover.play()
 
 func update_wave_display(wave_data_array: Array[int], current_data_index: int) -> void:
 	wave_label.text = _format_line("horda", wave_data_array, current_data_index)

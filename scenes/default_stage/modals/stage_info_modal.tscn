@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://jntnf1i1cyas" path="res://scenes/default_stage/modals/stage_info_modal.gd" id="1"]
 [ext_resource type="FontFile" uid="uid://bh8kpdc46m6i8" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="2_pxkdm"]
+[ext_resource type="AudioStream" uid="uid://cjvbj1e4d3q5s" path="res://assets/SFX/JDSherbert - Pixel UI SFX Pack (FREE)/Stereo/mp3/JDSherbert - Pixel UI SFX Pack - Cursor 3 (Sine).mp3" id="3_5bl3e"]
+[ext_resource type="AudioStream" uid="uid://djixt3bapedua" path="res://assets/SFX/JDSherbert - Pixel UI SFX Pack (FREE)/Stereo/mp3/JDSherbert - Pixel UI SFX Pack - Cursor 1 (Square).mp3" id="4_rtdwj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i48k6"]
 bg_color = Color(0, 0, 0, 0.8235294)
@@ -17,6 +19,12 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="." unique_id=1248516634]
+stream = ExtResource("3_5bl3e")
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="." unique_id=144633442]
+stream = ExtResource("4_rtdwj")
 
 [node name="Background" type="ColorRect" parent="." unique_id=383706922]
 layout_mode = 1
@@ -90,3 +98,5 @@ layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("2_pxkdm")
 text = "Iniciar Fase"
+
+[connection signal="mouse_entered" from="CenterContainer/Panel/VBoxContainer/StartButton" to="." method="_on_start_button_mouse_entered"]

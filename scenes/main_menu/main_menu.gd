@@ -2,6 +2,9 @@ extends Control
 
 @onready var main_menu_label = $MainMenuLabel
 @onready var stage_info_modal: Control = $HistoryModal
+@onready var button_click = $ButtonClick
+@onready var button_hover = $ButtonHover
+@onready var settings_modal = $SettingsModal
 
 var rotation_speed = 2.0
 var max_rotation = 3
@@ -29,10 +32,29 @@ func _process(delta):
 	main_menu_label.rotation = rotation_rad
 
 func _on_start_button_pressed():
+	button_click.play()
 	get_tree().change_scene_to_file("res://scenes/stage_selector/stage_selector.tscn")
 
 func _on_quit_button_pressed():
+	button_click.play()
 	get_tree().quit()
 	
 func show_history_modal():
 	stage_info_modal.show_modal()
+
+
+func _on_start_button_mouse_entered() -> void:
+	button_hover.play()
+
+
+func _on_quit_button_mouse_entered() -> void:
+	button_hover.play()
+
+
+func _on_settings_button_pressed() -> void:
+	button_click.play()
+	settings_modal.show_modal()
+
+
+func _on_settings_button_mouse_entered() -> void:
+	button_hover.play()
