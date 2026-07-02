@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://dgs0c5g45f5re"]
+
+[ext_resource type="Script" uid="uid://dn2hqy14g0lur" path="res://scenes/default_stage/dialogue/dialogue_popup.gd" id="1_0qjya"]
+[ext_resource type="Texture2D" uid="uid://dydwbio8mj8v1" path="res://assets/sprites/Pitaclides.png" id="1_5aw3x"]
+[ext_resource type="FontFile" uid="uid://bh8kpdc46m6i8" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="2_laxnk"]
+[ext_resource type="AudioStream" uid="uid://cjvbj1e4d3q5s" path="res://assets/SFX/JDSherbert - Pixel UI SFX Pack (FREE)/Stereo/mp3/JDSherbert - Pixel UI SFX Pack - Cursor 3 (Sine).mp3" id="2_u70r8"]
+[ext_resource type="AudioStream" uid="uid://djixt3bapedua" path="res://assets/SFX/JDSherbert - Pixel UI SFX Pack (FREE)/Stereo/mp3/JDSherbert - Pixel UI SFX Pack - Cursor 1 (Square).mp3" id="3_5443v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dialog"]
+bg_color = Color(0, 0, 0, 0.7058824)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_portrait"]
+bg_color = Color(0.8627451, 0.7882353, 0.7137255, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.42352942, 0.2901961, 0.16470589, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="DialoguePopup" type="Control" unique_id=111493891 groups=["dialogue_popup"]]
+z_index = 4096
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0qjya")
+
+[node name="DimBackground" type="ColorRect" parent="." unique_id=89755135]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.45)
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="." unique_id=1571403589]
+stream = ExtResource("2_u70r8")
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="." unique_id=359401120]
+stream = ExtResource("3_5443v")
+
+[node name="OuterMargin" type="MarginContainer" parent="." unique_id=461421017]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OuterMargin" unique_id=1387093909]
+layout_mode = 2
+
+[node name="TopSpacer" type="Control" parent="OuterMargin/VBoxContainer" unique_id=1768543045]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DialoguePanel" type="PanelContainer" parent="OuterMargin/VBoxContainer" unique_id=1191813478]
+custom_minimum_size = Vector2(280, 88)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_dialog")
+
+[node name="ContentMargin" type="MarginContainer" parent="OuterMargin/VBoxContainer/DialoguePanel" unique_id=346984029]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OuterMargin/VBoxContainer/DialoguePanel/ContentMargin" unique_id=1368238373]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PortraitFrame" type="PanelContainer" parent="OuterMargin/VBoxContainer/DialoguePanel/ContentMargin/HBoxContainer" unique_id=2005524071]
+custom_minimum_size = Vector2(68, 68)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_portrait")
+
+[node name="Image" type="TextureRect" parent="OuterMargin/VBoxContainer/DialoguePanel/ContentMargin/HBoxContainer/PortraitFrame" unique_id=1697507999]
+layout_mode = 2
+texture = ExtResource("1_5aw3x")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TextContainer" type="VBoxContainer" parent="OuterMargin/VBoxContainer/DialoguePanel/ContentMargin/HBoxContainer" unique_id=271646491]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 3
+
+[node name="CharacterName" type="Label" parent="OuterMargin/VBoxContainer/DialoguePanel/ContentMargin/HBoxContainer/TextContainer" unique_id=1447833403]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_laxnk")
+theme_override_font_sizes/font_size = 12
+text = "Pitáclides"
+
+[node name="History" type="Label" parent="OuterMargin/VBoxContainer/DialoguePanel/ContentMargin/HBoxContainer/TextContainer" unique_id=652994566]
+custom_minimum_size = Vector2(113, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 8
+text = "Texto da história"
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="OuterMargin/VBoxContainer/DialoguePanel/ContentMargin/HBoxContainer" unique_id=1876748352]
+z_index = 4096
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 9
+text = "Próximo"
+
+[connection signal="mouse_entered" from="OuterMargin/VBoxContainer/DialoguePanel/ContentMargin/HBoxContainer/Button" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="OuterMargin/VBoxContainer/DialoguePanel/ContentMargin/HBoxContainer/Button" to="." method="_on_button_pressed"]

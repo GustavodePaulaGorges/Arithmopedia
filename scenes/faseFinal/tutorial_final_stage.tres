@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://dkol0x3rj6ddb"]
+
+[ext_resource type="Script" uid="uid://b53h58t0u6r53" path="res://scenes/default_stage/dialogue/dialogue_item.gd" id="1_e4kvc"]
+[ext_resource type="Script" uid="uid://bkcphsf37cfk4" path="res://scenes/default_stage/dialogue/dialogue_data.gd" id="2_43p8s"]
+[ext_resource type="Texture2D" uid="uid://ccpariehy838g" path="res://assets/sprites/Numeron.png" id="2_yfmw1"]
+[ext_resource type="Texture2D" uid="uid://dydwbio8mj8v1" path="res://assets/sprites/Pitaclides.png" id="3_bf3up"]
+
+[sub_resource type="Resource" id="Resource_kbr3v"]
+script = ExtResource("1_e4kvc")
+char_name = "Numeron"
+text = "Vejo que conseguiram chegar até mim, mas há! Pouco importa..."
+texture = ExtResource("2_yfmw1")
+metadata/_custom_type_script = "uid://b53h58t0u6r53"
+
+[sub_resource type="Resource" id="Resource_v6rha"]
+script = ExtResource("1_e4kvc")
+char_name = "Numeron"
+text = "A profecia do khaos está cumprida, e meu poder é grande demais para 2 meros matemágicos como vocês me derrotarem, ainda mais que os números disponíveis aqui são baixos demais pra se fazer qualquer coisa!!! MUAHAHAHA"
+texture = ExtResource("2_yfmw1")
+metadata/_custom_type_script = "uid://b53h58t0u6r53"
+
+[sub_resource type="Resource" id="Resource_2svgw"]
+script = ExtResource("1_e4kvc")
+char_name = "Pitáclides"
+text = "*sussurando* Parece que o Numeron não leu direito a profecia, e não sabe da parte em que nós 2 o derrotamos!"
+texture = ExtResource("3_bf3up")
+metadata/_custom_type_script = "uid://b53h58t0u6r53"
+
+[sub_resource type="Resource" id="Resource_4sq6c"]
+script = ExtResource("1_e4kvc")
+char_name = "Pitáclides"
+text = "*sussurrando* bem.. essa parte eu inventei mesmo, mas eu tenho certeza que iremos derrotar ele! por isso, vou te disponibilizar minha última e mais interessante torre..."
+texture = ExtResource("3_bf3up")
+metadata/_custom_type_script = "uid://b53h58t0u6r53"
+
+[sub_resource type="Resource" id="Resource_h5xtg"]
+script = ExtResource("1_e4kvc")
+char_name = "Pitáclides"
+text = "*sussurrando* É a torre de duplicação! Ela pega um número e o duplica, assim poderemos aplicar a sequência de Fibonacci e então transformar esses números pequenos em valores grandes o suficientes pra derrotà-lo!!"
+texture = ExtResource("3_bf3up")
+metadata/_custom_type_script = "uid://b53h58t0u6r53"
+
+[sub_resource type="Resource" id="Resource_eufck"]
+script = ExtResource("1_e4kvc")
+char_name = "Numeron"
+text = "EI EI, SOBRE O QUÊ VOCÊS ESTÃO COCHICHANDO AÌ???"
+texture = ExtResource("2_yfmw1")
+metadata/_custom_type_script = "uid://b53h58t0u6r53"
+
+[resource]
+script = ExtResource("2_43p8s")
+dialogue_list = Array[ExtResource("1_e4kvc")]([SubResource("Resource_kbr3v"), SubResource("Resource_v6rha"), SubResource("Resource_2svgw"), SubResource("Resource_4sq6c"), SubResource("Resource_h5xtg"), SubResource("Resource_eufck")])
+metadata/_custom_type_script = "uid://bkcphsf37cfk4"

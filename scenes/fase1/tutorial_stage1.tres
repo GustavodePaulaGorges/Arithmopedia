@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://ceejumgy7gt0s"]
+
+[ext_resource type="Script" uid="uid://b53h58t0u6r53" path="res://scenes/default_stage/dialogue/dialogue_item.gd" id="1_7j6iw"]
+[ext_resource type="Texture2D" uid="uid://dydwbio8mj8v1" path="res://assets/sprites/Pitaclides.png" id="2_htuc8"]
+[ext_resource type="Script" uid="uid://bkcphsf37cfk4" path="res://scenes/default_stage/dialogue/dialogue_data.gd" id="2_kiknm"]
+
+[sub_resource type="Resource" id="Resource_yekyu"]
+script = ExtResource("1_7j6iw")
+char_name = "Pitáclides"
+text = "Olá aventureiro! Vou te ensinar como utilizar as torres matemáticas para me ajudar nessa aventura."
+texture = ExtResource("2_htuc8")
+metadata/_custom_type_script = "uid://b53h58t0u6r53"
+
+[sub_resource type="Resource" id="Resource_brpww"]
+script = ExtResource("1_7j6iw")
+char_name = "Pitáclides"
+text = "Para colocar uma torre, clique nela no canto inferior direito, e depois na àrea com o pontilhado branco!"
+texture = ExtResource("2_htuc8")
+metadata/_custom_type_script = "uid://b53h58t0u6r53"
+
+[sub_resource type="Resource" id="Resource_kiknm"]
+script = ExtResource("1_7j6iw")
+char_name = "Pitáclides"
+text = "E se cometer um erro, pode usar o clique direito para remover uma torre! Errar é necessário para o aprendizado!"
+texture = ExtResource("2_htuc8")
+metadata/_custom_type_script = "uid://b53h58t0u6r53"
+
+[sub_resource type="Resource" id="Resource_htuc8"]
+script = ExtResource("1_7j6iw")
+char_name = "Pitáclides"
+text = "Temos apenas uma torre disponível no momento, a de adição, ela vai pegar 2 números e somá-los, utilize esse poder com cautela!"
+texture = ExtResource("2_htuc8")
+metadata/_custom_type_script = "uid://b53h58t0u6r53"
+
+[resource]
+script = ExtResource("2_kiknm")
+dialogue_list = Array[ExtResource("1_7j6iw")]([SubResource("Resource_yekyu"), SubResource("Resource_brpww"), SubResource("Resource_kiknm"), SubResource("Resource_htuc8")])
+metadata/_custom_type_script = "uid://bkcphsf37cfk4"

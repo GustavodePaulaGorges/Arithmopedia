@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://boobqvo08c7yr"]
+
+[ext_resource type="Script" uid="uid://b53h58t0u6r53" path="res://scenes/default_stage/dialogue/dialogue_item.gd" id="1_hcdrp"]
+[ext_resource type="Texture2D" uid="uid://dydwbio8mj8v1" path="res://assets/sprites/Pitaclides.png" id="2_qtsrc"]
+[ext_resource type="Script" uid="uid://bkcphsf37cfk4" path="res://scenes/default_stage/dialogue/dialogue_data.gd" id="2_u0pug"]
+
+[sub_resource type="Resource" id="Resource_umfh0"]
+script = ExtResource("1_hcdrp")
+char_name = "Pitáclides"
+text = "Estamos chegando ao fim da nossa aventura, você se tornou um matemágico(a) de respeito! Vou te indicar pro Rei quando terminarmos de limpar essa baguça :)"
+texture = ExtResource("2_qtsrc")
+metadata/_custom_type_script = "uid://b53h58t0u6r53"
+
+[sub_resource type="Resource" id="Resource_u0pug"]
+script = ExtResource("1_hcdrp")
+char_name = "Pitáclides"
+text = "Você tem acesso agora a algumas das minhas torres mais poderosas, a potenciação e a radiciação, essas torres apenas recebem 1 número, e fazem o seu valor ao quadrado, ou sua raiz quadrada, respectivamente."
+texture = ExtResource("2_qtsrc")
+metadata/_custom_type_script = "uid://b53h58t0u6r53"
+
+[sub_resource type="Resource" id="Resource_qtsrc"]
+script = ExtResource("1_hcdrp")
+char_name = "Pitáclides"
+text = "Tenha isso em mente ao utilizá-las, seu comportamento é levemente diferente das outras torres que conhecemos até o momento."
+texture = ExtResource("2_qtsrc")
+metadata/_custom_type_script = "uid://b53h58t0u6r53"
+
+[resource]
+script = ExtResource("2_u0pug")
+dialogue_list = Array[ExtResource("1_hcdrp")]([SubResource("Resource_umfh0"), SubResource("Resource_u0pug"), SubResource("Resource_qtsrc")])
+metadata/_custom_type_script = "uid://bkcphsf37cfk4"

@@ -68,7 +68,7 @@ scale = Vector2(0.95, 0.9333333)
 texture = ExtResource("2_0ebjn")
 
 [node name="MainMenuLabel" type="Sprite2D" parent="." unique_id=1540749609]
-position = Vector2(154, 59)
+position = Vector2(153.00002, 58.999996)
 scale = Vector2(0.4840497, 0.416725)
 texture = ExtResource("3_main_menu_label")
 
@@ -83,7 +83,7 @@ layout_mode = 1
 
 [node name="SettingsButton" type="Button" parent="." unique_id=111268954]
 layout_mode = 0
-offset_left = 276.0
+offset_left = 274.0
 offset_top = 4.0
 offset_right = 300.0
 offset_bottom = 28.0
