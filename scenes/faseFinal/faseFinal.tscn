@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bfasefinal001"]
 
+[ext_resource type="PackedScene" uid="uid://dgs0c5g45f5re" path="res://scenes/default_stage/dialogue/dialogue_popup.tscn" id="1_1201l"]
 [ext_resource type="PackedScene" uid="uid://clqgj3kjqgkk4" path="res://scenes/default_stage/default_stage.tscn" id="1_default_stage"]
+[ext_resource type="Resource" uid="uid://dkol0x3rj6ddb" path="res://scenes/faseFinal/tutorial_final_stage.tres" id="2_1201l"]
 [ext_resource type="PackedScene" uid="uid://d36v5y8k6osia" path="res://scenes/default_stage/enemy_spawner/enemy_spawner.tscn" id="2_spawner"]
 [ext_resource type="Resource" uid="uid://bstgfinaldata" path="res://scenes/faseFinal/stage_final.tres" id="3_stage_data"]
 [ext_resource type="Resource" uid="uid://bstgfinalpath" path="res://scenes/faseFinal/stage_final_path.tres" id="4_stage_path"]
@@ -38,6 +40,13 @@ _data = {
 point_count = 4
 
 [node name="FaseFinal" type="Node2D" unique_id=888888888]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=649057673]
+layer = 99
+
+[node name="DialoguePopup" parent="CanvasLayer" unique_id=111493891 instance=ExtResource("1_1201l")]
+visible = false
+dialogue_data = ExtResource("2_1201l")
 
 [node name="Tilemap" parent="." unique_id=178453628 instance=ExtResource("5_gm71a")]
 

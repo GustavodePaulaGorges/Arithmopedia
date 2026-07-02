@@ -26,6 +26,46 @@ func _ready() -> void:
 	# Aguarda 1 frame para garantir que os nós da fase irmã (tilemap, spawner,
 	# endpoint, path) já entraram na cena e nos seus grupos.
 	call_deferred("_initialize")
+	
+	print("\n========== DEBUG TREE DO MODAL ==========")
+	debug_control_tree($Modals)
+	print("========================================\n")
+
+func debug_control_tree(node: Node, depth: int = 0) -> void:
+	var indent := "  ".repeat(depth)
+
+	var info := "%s%s [%s]" % [
+		indent,
+		node.name,
+		node.get_class()
+	]
+
+	if node is Control:
+		var control := node as Control
+
+		var mouse_filter_name := ""
+		match control.mouse_filter:
+			Control.MOUSE_FILTER_STOP:
+				mouse_filter_name = "STOP"
+			Control.MOUSE_FILTER_PASS:
+				mouse_filter_name = "PASS"
+			Control.MOUSE_FILTER_IGNORE:
+				mouse_filter_name = "IGNORE"
+
+		info += " | visible: %s" % control.visible
+		info += " | mouse_filter: %s" % mouse_filter_name
+		info += " | pos: %s" % control.global_position
+		info += " | size: %s" % control.size
+		info += " | global_rect: %s" % control.get_global_rect()
+		info += " | z_index: %s" % control.z_index
+
+		if control.get_global_rect().has_point(get_viewport().get_mouse_position()):
+			info += " | MOUSE_EM_CIMA"
+
+	print(info)
+
+	for child in node.get_children():
+		debug_control_tree(child, depth + 1)
 
 func _initialize() -> void:
 	if stage_data == null:

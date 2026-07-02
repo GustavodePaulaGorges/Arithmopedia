@@ -37,6 +37,7 @@ enemy_path=""
 towers_tilemap=""
 boss_enemy=""
 ending_modal=""
+dialogue_popup=""
 
 [input]
 

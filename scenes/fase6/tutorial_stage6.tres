@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://d27j4af5rlxua"]
+
+[ext_resource type="Script" uid="uid://b53h58t0u6r53" path="res://scenes/default_stage/dialogue/dialogue_item.gd" id="1_r2y4i"]
+[ext_resource type="Texture2D" uid="uid://dydwbio8mj8v1" path="res://assets/sprites/Pitaclides.png" id="2_bix4c"]
+[ext_resource type="Script" uid="uid://bkcphsf37cfk4" path="res://scenes/default_stage/dialogue/dialogue_data.gd" id="2_o7efk"]
+
+[sub_resource type="Resource" id="Resource_18mos"]
+script = ExtResource("1_r2y4i")
+char_name = "Pitáclides"
+text = "Meus paraéns, você já chegou muito longe na nossa jornada, agora as coisas vão ficar um pouco mais complicadas..."
+texture = ExtResource("2_bix4c")
+metadata/_custom_type_script = "uid://b53h58t0u6r53"
+
+[sub_resource type="Resource" id="Resource_4yc24"]
+script = ExtResource("1_r2y4i")
+char_name = "Pitáclides"
+text = "Mas eu sei que você é capaz! A partir de agora estão disponíveis as torres de multiplicação e divisão, pense bem em como utilizá-las, pois seus resultados são mais imprevisíveis."
+texture = ExtResource("2_bix4c")
+metadata/_custom_type_script = "uid://b53h58t0u6r53"
+
+[resource]
+script = ExtResource("2_o7efk")
+dialogue_list = Array[ExtResource("1_r2y4i")]([SubResource("Resource_18mos"), SubResource("Resource_4yc24")])
+metadata/_custom_type_script = "uid://bkcphsf37cfk4"

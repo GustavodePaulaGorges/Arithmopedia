@@ -24,6 +24,11 @@ func show_modal():
 func hide_modal():
 	visible = false
 	get_tree().paused = false
+	
+	var dialogue_popup = get_tree().get_first_node_in_group("dialogue_popup")
+	
+	if (dialogue_popup != null):
+		dialogue_popup.show_modal()
 
 func set_stage_info(title: String, criteria: String, history: String):
 	if title_label:

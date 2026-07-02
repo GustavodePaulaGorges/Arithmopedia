@@ -98,9 +98,17 @@ mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("2_4vdxt")
 text = "Fechar"
 
+[node name="ReturnButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=674814015]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("2_4vdxt")
+text = "Retornar ao menu principal"
+
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="item_focused" from="MarginContainer/VBoxContainer/Resolutions" to="." method="_on_resolutions_item_focused"]
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/Resolutions" to="." method="_on_resolutions_item_selected"]
 [connection signal="mouse_entered" from="MarginContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ReturnButton" to="." method="_on_return_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]

@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://dyid0m43q4ryf"]
 
+[ext_resource type="PackedScene" uid="uid://dgs0c5g45f5re" path="res://scenes/default_stage/dialogue/dialogue_popup.tscn" id="1_tftg0"]
 [ext_resource type="PackedScene" uid="uid://clqgj3kjqgkk4" path="res://scenes/default_stage/default_stage.tscn" id="1_xc77g"]
 [ext_resource type="PackedScene" uid="uid://3lmh178myu3h" path="res://scenes/default_stage/enemy_endpoint/enemy_endpoint.tscn" id="2_of271"]
+[ext_resource type="Resource" uid="uid://d3eqe25de3gmv" path="res://scenes/fase2/tutorial_stage2.tres" id="2_tftg0"]
 [ext_resource type="Resource" uid="uid://d2e8xnrgex74m" path="res://scenes/fase2/stage2.tres" id="2_tno5y"]
 [ext_resource type="PackedScene" uid="uid://d36v5y8k6osia" path="res://scenes/default_stage/enemy_spawner/enemy_spawner.tscn" id="3_7cvnh"]
 [ext_resource type="PackedScene" uid="uid://bt150ytiejyam" path="res://scenes/fase2/tilemap.tscn" id="4_7cvnh"]
@@ -14,6 +16,13 @@ _data = {
 point_count = 2
 
 [node name="Fase2" type="Node2D" unique_id=1829403963]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1646547463]
+layer = 99
+
+[node name="DialoguePopup" parent="CanvasLayer" unique_id=111493891 instance=ExtResource("1_tftg0")]
+visible = false
+dialogue_data = ExtResource("2_tftg0")
 
 [node name="DefaultStage" parent="." unique_id=612317291 instance=ExtResource("1_xc77g")]
 stage_data = ExtResource("2_tno5y")

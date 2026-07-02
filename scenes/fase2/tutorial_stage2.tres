@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://d3eqe25de3gmv"]
+
+[ext_resource type="Script" uid="uid://b53h58t0u6r53" path="res://scenes/default_stage/dialogue/dialogue_item.gd" id="1_pvslp"]
+[ext_resource type="Texture2D" uid="uid://dydwbio8mj8v1" path="res://assets/sprites/Pitaclides.png" id="2_8t7af"]
+[ext_resource type="Script" uid="uid://bkcphsf37cfk4" path="res://scenes/default_stage/dialogue/dialogue_data.gd" id="2_ysxbc"]
+
+[sub_resource type="Resource" id="Resource_sfboj"]
+script = ExtResource("1_pvslp")
+char_name = "Pitáclides"
+text = "Parabens! você prosseguiu pra fase 2!"
+texture = ExtResource("2_8t7af")
+metadata/_custom_type_script = "uid://b53h58t0u6r53"
+
+[sub_resource type="Resource" id="Resource_ciji7"]
+script = ExtResource("1_pvslp")
+char_name = "Pitáclides"
+text = "Agora você tem a seu dispor a torre de subtração além da torre de adição, utilize-as para completar essa fase!"
+texture = ExtResource("2_8t7af")
+metadata/_custom_type_script = "uid://b53h58t0u6r53"
+
+[resource]
+script = ExtResource("2_ysxbc")
+dialogue_list = Array[ExtResource("1_pvslp")]([SubResource("Resource_sfboj"), SubResource("Resource_ciji7")])
+metadata/_custom_type_script = "uid://bkcphsf37cfk4"
