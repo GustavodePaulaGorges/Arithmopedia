@@ -18,7 +18,7 @@ extends Node2D
 @onready var button_click = $ButtonClick
 @onready var button_hover = $ButtonHover
 
-var selected_tower_type: TowerTypes.TowerType = TowerTypes.TowerType.ADDITION
+var selected_tower_type: TowerTypes.TowerType
 var towers_tilemap: TileMapLayer
 var stage_ended := false
 

@@ -50,28 +50,28 @@ stage_path_data = ExtResource("3_haeb0")
 
 [node name="EnemyEndpoint" parent="." unique_id=1339613512 instance=ExtResource("3_axmrb")]
 z_index = 99
-position = Vector2(297, 107)
+position = Vector2(297, 97)
 
 [node name="EnemySpawner" parent="." unique_id=261037420 instance=ExtResource("4_haeb0")]
 z_index = 99
-position = Vector2(8, 107)
+position = Vector2(8, 97)
 
 [node name="StartPath" type="Path2D" parent="." unique_id=1566455539]
 z_index = 99
-position = Vector2(2, 16)
+position = Vector2(2, 6)
 curve = SubResource("Curve2D_qugwn")
 
 [node name="UpperPath" type="Path2D" parent="." unique_id=1952719989]
 z_index = 99
-position = Vector2(2, 16)
+position = Vector2(2, 6)
 curve = SubResource("Curve2D_nndkd")
 
 [node name="LowerPath" type="Path2D" parent="." unique_id=374920742]
 z_index = 99
-position = Vector2(2, 16)
+position = Vector2(2, 6)
 curve = SubResource("Curve2D_q5sj1")
 
 [node name="EndPath" type="Path2D" parent="." unique_id=576285167]
 z_index = 99
-position = Vector2(2, 16)
+position = Vector2(2, 6)
 curve = SubResource("Curve2D_vdhgi")
